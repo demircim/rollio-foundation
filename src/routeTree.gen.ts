@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PilotConsultationRouteImport } from './routes/pilot-consultation'
 import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
 import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
 import { Route as AdminRouteImport } from './routes/admin'
@@ -25,6 +26,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PilotConsultationRoute = PilotConsultationRouteImport.update({
+  id: '/pilot-consultation',
+  path: '/pilot-consultation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsultationBookingRoute = ConsultationBookingRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
+  '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
+  '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
+  '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/ai-co-workers'
     | '/consultation-booking'
+    | '/pilot-consultation'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/ai-co-workers'
     | '/consultation-booking'
+    | '/pilot-consultation'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/ai-co-workers'
     | '/consultation-booking'
+    | '/pilot-consultation'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AiCoWorkersRoute: typeof AiCoWorkersRoute
   ConsultationBookingRoute: typeof ConsultationBookingRoute
+  PilotConsultationRoute: typeof PilotConsultationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
@@ -193,6 +206,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pilot-consultation': {
+      id: '/pilot-consultation'
+      path: '/pilot-consultation'
+      fullPath: '/pilot-consultation'
+      preLoaderRoute: typeof PilotConsultationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/consultation-booking': {
@@ -280,6 +300,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   AiCoWorkersRoute: AiCoWorkersRoute,
   ConsultationBookingRoute: ConsultationBookingRoute,
+  PilotConsultationRoute: PilotConsultationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   CaseStudiesCampariRoute: CaseStudiesCampariRoute,
