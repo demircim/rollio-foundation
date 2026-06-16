@@ -1,0 +1,111 @@
+import { createServerFn } from "@tanstack/react-start";
+import { createClient } from "@supabase/supabase-js";
+import { z } from "zod";
+import type { Database } from "@/integrations/supabase/types";
+
+export interface BlogPostCard {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string | null;
+  featured_image: string | null;
+  author: string | null;
+  read_time: number | null;
+  tags: string[];
+  published_at: string | null;
+}
+
+export interface BlogPostFull extends BlogPostCard {
+  body: string;
+  meta_title: string | null;
+  meta_keywords: string | null;
+  updated_at: string;
+}
+
+const CARD_COLUMNS =
+  "id, slug, title, excerpt, featured_image, author, read_time, tags, published_at";
+const FULL_COLUMNS = `${CARD_COLUMNS}, body, meta_title, meta_keywords, updated_at`;
+
+function getPublicClient() {
+  return createClient<Database>(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_PUBLISHABLE_KEY!,
+    {
+      auth: {
+        storage: undefined,
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    },
+  );
+}
+
+/** List published posts, newest first. Optional tag filter. */
+export const listPublishedPosts = createServerFn({ method: "GET" })
+  .inputValidator((input: unknown) =>
+    z
+      .object({ tag: z.string().optional(), limit: z.number().int().positive().max(50).optional() })
+      .parse(input ?? {}),
+  )
+  .handler(async ({ data }) => {
+    const supabase = getPublicClient();
+    let query = supabase
+      .from("blog_posts")
+      .select(CARD_COLUMNS)
+      .eq("status", "published")
+      .order("published_at", { ascending: false });
+
+    if (data.tag) query = query.contains("tags", [data.tag]);
+    if (data.limit) query = query.limit(data.limit);
+
+    const { data: rows, error } = await query;
+    if (error) throw new Error(error.message);
+    return (rows ?? []) as BlogPostCard[];
+  });
+
+/** Get a single published post by slug. Returns null if not found. */
+export const getPublishedPostBySlug = createServerFn({ method: "GET" })
+  .inputValidator((input: unknown) =>
+    z.object({ slug: z.string().min(1) }).parse(input),
+  )
+  .handler(async ({ data }) => {
+    const supabase = getPublicClient();
+    const { data: row, error } = await supabase
+      .from("blog_posts")
+      .select(FULL_COLUMNS)
+      .eq("status", "published")
+      .eq("slug", data.slug)
+      .maybeSingle();
+    if (error) throw new Error(error.message);
+    return (row ?? null) as BlogPostFull | null;
+  });
+
+/** Up to N related published posts sharing any tag, excluding the current slug. */
+export const getRelatedPosts = createServerFn({ method: "GET" })
+  .inputValidator((input: unknown) =>
+    z
+      .object({
+        slug: z.string().min(1),
+        tags: z.array(z.string()).default([]),
+        limit: z.number().int().positive().max(12).optional(),
+      })
+      .parse(input),
+  )
+  .handler(async ({ data }) => {
+    const supabase = getPublicClient();
+    const limit = data.limit ?? 3;
+
+    let query = supabase
+      .from("blog_posts")
+      .select(CARD_COLUMNS)
+      .eq("status", "published")
+      .neq("slug", data.slug)
+      .order("published_at", { ascending: false })
+      .limit(limit);
+
+    if (data.tags.length > 0) query = query.overlaps("tags", data.tags);
+
+    const { data: rows, error } = await query;
+    if (error) throw new Error(error.message);
+    return (rows ?? []) as BlogPostCard[];
+  });
