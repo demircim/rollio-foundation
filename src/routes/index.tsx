@@ -69,13 +69,18 @@ const faqs = HOME_FAQS;
 function Home() {
   return (
     <>
-      <Section as="header" className="!py-16 md:!py-28">
+      <Section
+        as="header"
+        tone="dark"
+        data-hero-dark
+        className="!py-16 md:!py-28"
+      >
         <div className="max-w-3xl">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
             Enterprise automation
           </span>
           <h1 className="mt-6">Automation that moves at the speed of your business.</h1>
-          <p className="mt-6 text-lg text-muted-foreground md:text-xl">
+          <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
             Rollio unifies Order to Cash, Finance, Claims, and ITSM into one
             composable platform — designed for the scale and rigor of the modern enterprise.
           </p>
