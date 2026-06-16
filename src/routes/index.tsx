@@ -64,23 +64,7 @@ const steps = [
   { label: "Step 04", title: "Scale", description: "Expand across teams and geographies." },
 ];
 
-const faqs = [
-  {
-    question: "How long does deployment take?",
-    answer:
-      "Most enterprise customers go live with their first workflow in 4 to 8 weeks.",
-  },
-  {
-    question: "Is Rollio secure for regulated industries?",
-    answer:
-      "Yes. Rollio is SOC 2 Type II certified and supports GDPR, HIPAA, and regional data residency.",
-  },
-  {
-    question: "Can Rollio integrate with our existing ERP?",
-    answer:
-      "Rollio ships native connectors for SAP, Oracle, NetSuite, Workday, and 200+ enterprise systems.",
-  },
-];
+const faqs = HOME_FAQS;
 
 function Home() {
   return (
