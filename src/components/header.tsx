@@ -22,15 +22,7 @@ const nav: NavItem[] = [
     ],
   },
   { kind: "link", label: "Resources", href: "/blog", typed: true },
-  {
-    kind: "menu",
-    label: "Company",
-    children: [
-      { href: "/about", label: "About Us" },
-      { href: "/customers", label: "Customers" },
-      { href: "/careers", label: "Careers" },
-    ],
-  },
+  { kind: "link", label: "About", href: "/about", typed: true },
 ];
 
 function NavLink({
