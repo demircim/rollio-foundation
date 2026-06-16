@@ -23,7 +23,7 @@ export const Section = React.forwardRef<HTMLElement, SectionProps>(
     return (
       <Tag
         ref={ref as never}
-        className={cn("py-10 md:py-[60px]", toneClass, className)}
+        className={cn("py-12 md:py-20", toneClass, className)}
         {...props}
       >
         {bleed ? (
