@@ -214,7 +214,7 @@ function Home() {
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
-                <Link to="/pilot-consultation">
+                <Link to="/consultation-booking">
                   See How It Works in 90 Days <ArrowRight />
                 </Link>
               </Button>

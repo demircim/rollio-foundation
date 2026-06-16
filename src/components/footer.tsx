@@ -1,7 +1,6 @@
-import { useState, type FormEvent } from "react";
 import { Link } from "@tanstack/react-router";
 import { Linkedin, Twitter, ShieldCheck, BadgeCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { HubSpotForm } from "@/components/hubspot-form";
 
 type Col = {
   title: string;
@@ -158,20 +157,9 @@ function TrustBadge({
   );
 }
 
+const NEWSLETTER_FORM_ID = "cec9b0a4-8aee-434d-8f88-3b86996ce8e7";
+
 function NewsletterForm() {
-  const [email, setEmail] = useState("");
-  const [consent, setConsent] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!email || !consent) return;
-    // Wire to backend later.
-    setSubmitted(true);
-    setEmail("");
-    setConsent(false);
-  }
-
   return (
     <div>
       <h4 className="font-display text-xs font-semibold uppercase tracking-wider text-surface-light">
@@ -180,47 +168,9 @@ function NewsletterForm() {
       <p className="mt-2 max-w-md text-sm text-surface-light/70">
         Product updates, customer stories, and the occasional deep dive. No spam.
       </p>
-      <form onSubmit={onSubmit} className="mt-4 max-w-md space-y-3">
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <label htmlFor="newsletter-email" className="sr-only">
-            Work email
-          </label>
-          <input
-            id="newsletter-email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder="you@company.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-11 flex-1 rounded-md border border-white/10 bg-white/5 px-3 text-sm text-surface-light placeholder:text-surface-light/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/40"
-          />
-          <Button type="submit" variant="primary" className="h-11">
-            Subscribe
-          </Button>
-        </div>
-        <label className="flex items-start gap-2 text-xs text-surface-light/65">
-          <input
-            type="checkbox"
-            required
-            checked={consent}
-            onChange={(e) => setConsent(e.target.checked)}
-            className="mt-0.5 h-4 w-4 rounded border-white/20 bg-white/5 text-accent focus:ring-2 focus:ring-accent/40"
-          />
-          <span>
-            I agree to receive marketing emails from Rollio and accept the{" "}
-            <a href="/privacy" className="underline hover:text-accent">
-              Privacy Policy
-            </a>
-            .
-          </span>
-        </label>
-        {submitted && (
-          <p role="status" className="text-xs text-accent">
-            Thanks — you're on the list.
-          </p>
-        )}
-      </form>
+      <div className="mt-4 max-w-md [&_input]:!bg-white/5 [&_input]:!text-surface-light">
+        <HubSpotForm formId={NEWSLETTER_FORM_ID} formName="newsletter_signup" />
+      </div>
     </div>
   );
 }
