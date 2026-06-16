@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createClient } from "@supabase/supabase-js";
 import { SITE_URL } from "@/lib/seo";
-import { listPublishedSlugs } from "@/lib/blog-data";
+import type { Database } from "@/integrations/supabase/types";
 
 interface SitemapEntry {
   path: string;
@@ -20,17 +21,32 @@ const STATIC_ENTRIES: SitemapEntry[] = [
   { path: "/blog", changefreq: "weekly", priority: "0.7" },
 ];
 
+async function fetchPublishedBlogEntries(): Promise<SitemapEntry[]> {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
+  if (!url || !key) return [];
+  const supabase = createClient<Database>(url, key, {
+    auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+  });
+  const { data, error } = await supabase
+    .from("blog_posts")
+    .select("slug, updated_at, published_at")
+    .eq("status", "published")
+    .order("published_at", { ascending: false });
+  if (error || !data) return [];
+  return data.map((p) => ({
+    path: `/blog/${p.slug}`,
+    lastmod: p.updated_at ?? p.published_at ?? undefined,
+    changefreq: "monthly" as const,
+    priority: "0.6",
+  }));
+}
+
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const blogEntries: SitemapEntry[] = listPublishedSlugs().map((p) => ({
-          path: `/blog/${p.slug}`,
-          lastmod: p.lastmod,
-          changefreq: "monthly",
-          priority: "0.6",
-        }));
-
+        const blogEntries = await fetchPublishedBlogEntries();
         const entries = [...STATIC_ENTRIES, ...blogEntries];
 
         const urls = entries.map((e) =>
