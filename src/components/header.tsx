@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ type NavItem =
 
 const nav: NavItem[] = [
   { kind: "link", label: "Home", href: "/", typed: true },
-  { kind: "link", label: "Co-Workers", href: "/#co-workers" },
+  { kind: "link", label: "Co-Workers", href: "/ai-co-workers", typed: true },
   {
     kind: "menu",
     label: "Solutions",
@@ -68,14 +68,45 @@ function NavLink({
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [overDark, setOverDark] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const hero = document.querySelector("[data-hero-dark]");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setOverDark(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.05, rootMargin: "-64px 0px 0px 0px" }
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
+  const isDark = overDark;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <header
+      ref={headerRef}
+      className={cn(
+        "sticky top-0 z-50 w-full border-b backdrop-blur transition-colors duration-300",
+        isDark
+          ? "border-white/10 bg-surface-dark/80 supports-[backdrop-filter]:bg-surface-dark/60"
+          : "border-border bg-background/90 supports-[backdrop-filter]:bg-background/70"
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-content items-center justify-between px-6 md:h-20 md:px-8">
         <Link
           to="/"
           aria-label="Rollio — home"
-          className="font-display text-xl font-bold tracking-tight text-primary"
+          className={cn(
+            "font-display text-xl font-bold tracking-tight transition-colors",
+            isDark ? "text-surface-light" : "text-primary"
+          )}
         >
           Rollio
         </Link>
@@ -86,7 +117,12 @@ export function Header() {
             item.kind === "menu" ? (
               <div key={item.label} className="group relative">
                 <button
-                  className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-accent"
+                  className={cn(
+                    "flex items-center gap-1 text-sm font-medium transition-colors",
+                    isDark
+                      ? "text-surface-light/90 hover:text-accent"
+                      : "text-foreground hover:text-accent"
+                  )}
                   aria-haspopup="true"
                 >
                   {item.label}
@@ -113,7 +149,12 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 typed={item.typed}
-                className="text-sm font-medium text-foreground hover:text-accent"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  isDark
+                    ? "text-surface-light/90 hover:text-accent"
+                    : "text-foreground hover:text-accent"
+                )}
               >
                 {item.label}
               </NavLink>
@@ -123,14 +164,17 @@ export function Header() {
 
         <div className="hidden md:block">
           <Button variant="primary" size="default" asChild>
-            <a href="/consultation-booking">Request a Demo</a>
+            <Link to="/consultation-booking">Request a Demo</Link>
           </Button>
         </div>
 
         {/* Mobile toggle */}
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground md:hidden"
+          className={cn(
+            "inline-flex h-11 w-11 items-center justify-center rounded-md md:hidden",
+            isDark ? "text-surface-light" : "text-foreground"
+          )}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -142,7 +186,8 @@ export function Header() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "md:hidden overflow-hidden border-t border-border transition-[max-height] duration-300",
+          "md:hidden overflow-hidden border-t transition-[max-height] duration-300",
+          isDark ? "border-white/10" : "border-border",
           open ? "max-h-[800px]" : "max-h-0",
         )}
       >
@@ -151,7 +196,12 @@ export function Header() {
             {nav.map((item) =>
               item.kind === "menu" ? (
                 <li key={item.label} className="pt-3">
-                  <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <p
+                    className={cn(
+                      "px-3 pb-1 text-xs font-semibold uppercase tracking-wider",
+                      isDark ? "text-surface-light/60" : "text-muted-foreground"
+                    )}
+                  >
                     {item.label}
                   </p>
                   <ul>
@@ -161,7 +211,12 @@ export function Header() {
                           href={c.href}
                           typed={c.typed}
                           onClick={() => setOpen(false)}
-                          className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-accent"
+                          className={cn(
+                            "block rounded-md px-3 py-3 text-base font-medium transition-colors",
+                            isDark
+                              ? "text-surface-light hover:bg-white/5 hover:text-accent"
+                              : "text-foreground hover:bg-muted hover:text-accent"
+                          )}
                         >
                           {c.label}
                         </NavLink>
@@ -175,7 +230,12 @@ export function Header() {
                     href={item.href}
                     typed={item.typed}
                     onClick={() => setOpen(false)}
-                    className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-accent"
+                    className={cn(
+                      "block rounded-md px-3 py-3 text-base font-medium transition-colors",
+                      isDark
+                        ? "text-surface-light hover:bg-white/5 hover:text-accent"
+                        : "text-foreground hover:bg-muted hover:text-accent"
+                    )}
                   >
                     {item.label}
                   </NavLink>
@@ -184,9 +244,9 @@ export function Header() {
             )}
             <li className="pt-4">
               <Button variant="primary" className="w-full" asChild>
-                <a href="/consultation-booking" onClick={() => setOpen(false)}>
+                <Link to="/consultation-booking" onClick={() => setOpen(false)}>
                   Request a Demo
-                </a>
+                </Link>
               </Button>
             </li>
           </ul>
