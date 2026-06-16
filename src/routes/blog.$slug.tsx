@@ -142,6 +142,8 @@ function BlogPostPage() {
             <img
               src={post.featured_image}
               alt={post.title}
+              loading="lazy"
+              decoding="async"
               className="aspect-[16/9] w-full object-cover"
             />
           </div>

@@ -20,28 +20,23 @@ const columns: Col[] = [
   {
     title: "Company",
     links: [
-      { href: "/about", label: "About Us" },
-      { href: "/careers", label: "Careers" },
+      { href: "/about", label: "About Us", typed: true },
       { href: "/blog", label: "Blog & Resources", typed: true },
       { href: "/case-studies/campari", label: "Case Studies", typed: true },
+      { href: "/consultation-booking", label: "Contact", typed: true },
     ],
   },
   {
-    title: "Resources",
+    title: "Trust",
     links: [
-      { href: "/security", label: "Security & Compliance" },
-      { href: "/integrations", label: "Integrations" },
-      { href: "/documentation", label: "Documentation" },
-      { href: "/help", label: "Help Center" },
+      { href: "/security", label: "Security & Compliance", typed: true },
     ],
   },
   {
     title: "Legal",
     links: [
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms of Service" },
-      { href: "/security-datasheet", label: "Security Datasheet" },
-      { href: "/cookies", label: "Cookie Policy" },
+      { href: "/privacy", label: "Privacy Policy", typed: true },
+      { href: "/terms", label: "Terms of Service", typed: true },
     ],
   },
 ];

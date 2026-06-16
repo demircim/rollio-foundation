@@ -9,11 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PilotConsultationRouteImport } from './routes/pilot-consultation'
 import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -27,9 +31,24 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminPostsIdRouteImport } from './routes/_authenticated/admin.posts.$id'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PilotConsultationRoute = PilotConsultationRouteImport.update({
@@ -50,6 +69,11 @@ const AuthRoute = AuthRouteImport.update({
 const AiCoWorkersRoute = AiCoWorkersRouteImport.update({
   id: '/ai-co-workers',
   path: '/ai-co-workers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
@@ -115,11 +139,15 @@ const AuthenticatedAdminPostsIdRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/pilot-consultation': typeof PilotConsultationRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -133,11 +161,15 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/pilot-consultation': typeof PilotConsultationRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
   '/solutions/claims': typeof SolutionsClaimsRoute
@@ -152,11 +184,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/pilot-consultation': typeof PilotConsultationRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -172,11 +208,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/ai-co-workers'
     | '/auth'
     | '/consultation-booking'
     | '/pilot-consultation'
+    | '/privacy'
+    | '/security'
     | '/sitemap.xml'
+    | '/terms'
     | '/admin'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -190,11 +230,15 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/ai-co-workers'
     | '/auth'
     | '/consultation-booking'
     | '/pilot-consultation'
+    | '/privacy'
+    | '/security'
     | '/sitemap.xml'
+    | '/terms'
     | '/blog/$slug'
     | '/case-studies/campari'
     | '/solutions/claims'
@@ -208,11 +252,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/about'
     | '/ai-co-workers'
     | '/auth'
     | '/consultation-booking'
     | '/pilot-consultation'
+    | '/privacy'
+    | '/security'
     | '/sitemap.xml'
+    | '/terms'
     | '/_authenticated/admin'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -228,11 +276,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
   AiCoWorkersRoute: typeof AiCoWorkersRoute
   AuthRoute: typeof AuthRoute
   ConsultationBookingRoute: typeof ConsultationBookingRoute
   PilotConsultationRoute: typeof PilotConsultationRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SecurityRoute: typeof SecurityRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
   SolutionsClaimsRoute: typeof SolutionsClaimsRoute
@@ -244,11 +296,32 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pilot-consultation': {
@@ -277,6 +350,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-co-workers'
       fullPath: '/ai-co-workers'
       preLoaderRoute: typeof AiCoWorkersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -393,11 +473,15 @@ const AuthenticatedRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
   AiCoWorkersRoute: AiCoWorkersRoute,
   AuthRoute: AuthRoute,
   ConsultationBookingRoute: ConsultationBookingRoute,
   PilotConsultationRoute: PilotConsultationRoute,
+  PrivacyRoute: PrivacyRoute,
+  SecurityRoute: SecurityRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   CaseStudiesCampariRoute: CaseStudiesCampariRoute,
   SolutionsClaimsRoute: SolutionsClaimsRoute,
