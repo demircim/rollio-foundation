@@ -11,7 +11,6 @@ type NavItem =
 
 const nav: NavItem[] = [
   { kind: "link", label: "Home", href: "/", typed: true },
-  { kind: "link", label: "Co-Workers", href: "/#use-cases" },
   {
     kind: "menu",
     label: "Solutions",
