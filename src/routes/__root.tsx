@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
+import { GA4_MEASUREMENT_ID, captureUtmParams } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
