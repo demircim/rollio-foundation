@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
 import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
@@ -24,6 +25,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultationBookingRoute = ConsultationBookingRouteImport.update({
+  id: '/consultation-booking',
+  path: '/consultation-booking',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AiCoWorkersRoute = AiCoWorkersRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
+  '/consultation-booking': typeof ConsultationBookingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
+  '/consultation-booking': typeof ConsultationBookingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
+  '/consultation-booking': typeof ConsultationBookingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/ai-co-workers'
+    | '/consultation-booking'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/ai-co-workers'
+    | '/consultation-booking'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/ai-co-workers'
+    | '/consultation-booking'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -163,6 +175,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   AiCoWorkersRoute: typeof AiCoWorkersRoute
+  ConsultationBookingRoute: typeof ConsultationBookingRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
@@ -180,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consultation-booking': {
+      id: '/consultation-booking'
+      path: '/consultation-booking'
+      fullPath: '/consultation-booking'
+      preLoaderRoute: typeof ConsultationBookingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ai-co-workers': {
@@ -259,6 +279,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   AiCoWorkersRoute: AiCoWorkersRoute,
+  ConsultationBookingRoute: ConsultationBookingRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   CaseStudiesCampariRoute: CaseStudiesCampariRoute,
