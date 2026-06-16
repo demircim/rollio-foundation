@@ -18,6 +18,16 @@ const buttonVariants = cva(
         tertiary:
           "text-primary underline-offset-4 hover:underline hover:text-accent px-0",
         ghost: "hover:bg-secondary text-foreground",
+        // shadcn compat aliases
+        default:
+          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
+        outline:
+          "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        link: "text-primary underline-offset-4 hover:underline px-0",
       },
       size: {
         default: "h-11 px-6 text-sm min-w-11",
