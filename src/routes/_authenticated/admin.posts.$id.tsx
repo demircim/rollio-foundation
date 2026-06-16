@@ -329,7 +329,7 @@ function PostEditor() {
               </TabsContent>
               <TabsContent value="preview">
                 <div className="min-h-[480px] rounded-md border border-border bg-background p-6">
-                  {form.body ? <Markdown content={form.body} /> : (
+                  {form.body ? <Markdown>{form.body}</Markdown> : (
                     <p className="text-sm text-muted-foreground">Nothing to preview yet.</p>
                   )}
                 </div>
@@ -343,7 +343,7 @@ function PostEditor() {
                     className="font-mono text-sm"
                   />
                   <div className="min-h-[480px] overflow-auto rounded-md border border-border bg-background p-4">
-                    {form.body ? <Markdown content={form.body} /> : (
+                    {form.body ? <Markdown>{form.body}</Markdown> : (
                       <p className="text-sm text-muted-foreground">Nothing to preview yet.</p>
                     )}
                   </div>
