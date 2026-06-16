@@ -1,22 +1,70 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const nav = [
+type NavChild = { href: string; label: string; typed?: boolean };
+type NavItem =
+  | { kind: "link"; href: string; label: string; typed?: boolean }
+  | { kind: "menu"; label: string; children: NavChild[] };
+
+const nav: NavItem[] = [
+  { kind: "link", label: "Home", href: "/", typed: true },
+  { kind: "link", label: "Co-Workers", href: "/#co-workers" },
   {
+    kind: "menu",
     label: "Solutions",
     children: [
-      { to: "/solutions/order-to-cash", label: "Order to Cash" },
-      { to: "/solutions/finance", label: "Finance" },
-      { to: "/solutions/claims", label: "Claims" },
-      { to: "/solutions/itsm", label: "ITSM" },
+      { href: "/solutions/order-to-cash", label: "Order-to-Cash", typed: true },
+      { href: "/solutions/finance", label: "Finance", typed: true },
+      { href: "/solutions/claims", label: "Claims", typed: true },
+      { href: "/solutions/itsm", label: "ITSM", typed: true },
     ],
   },
-  { to: "/case-studies/campari", label: "Case Studies" },
-  { to: "/blog", label: "Blog" },
-] as const;
+  { kind: "link", label: "Resources", href: "/blog", typed: true },
+  {
+    kind: "menu",
+    label: "Company",
+    children: [
+      { href: "/about", label: "About Us" },
+      { href: "/customers", label: "Customers" },
+      { href: "/careers", label: "Careers" },
+    ],
+  },
+];
+
+function NavLink({
+  href,
+  typed,
+  className,
+  children,
+  onClick,
+}: {
+  href: string;
+  typed?: boolean;
+  className?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}) {
+  if (typed) {
+    return (
+      <Link
+        to={href}
+        className={className}
+        activeProps={{ className: "text-accent" }}
+        onClick={onClick}
+      >
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={className} onClick={onClick}>
+      {children}
+    </a>
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -33,48 +81,49 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav aria-label="Primary" className="hidden md:flex md:items-center md:gap-8">
+        <nav aria-label="Primary" className="hidden md:flex md:items-center md:gap-7">
           {nav.map((item) =>
-            "children" in item ? (
+            item.kind === "menu" ? (
               <div key={item.label} className="group relative">
                 <button
                   className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-accent"
                   aria-haspopup="true"
                 >
                   {item.label}
+                  <ChevronDown className="h-4 w-4" aria-hidden />
                 </button>
                 <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <ul className="min-w-[220px] rounded-xl border border-border bg-popover p-2 shadow-lg">
                     {item.children.map((c) => (
-                      <li key={c.to}>
-                        <Link
-                          to={c.to}
+                      <li key={c.href}>
+                        <NavLink
+                          href={c.href}
+                          typed={c.typed}
                           className="block rounded-md px-3 py-2 text-sm text-popover-foreground hover:bg-muted hover:text-accent"
-                          activeProps={{ className: "text-accent" }}
                         >
                           {c.label}
-                        </Link>
+                        </NavLink>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
             ) : (
-              <Link
-                key={item.to}
-                to={item.to}
+              <NavLink
+                key={item.label}
+                href={item.href}
+                typed={item.typed}
                 className="text-sm font-medium text-foreground hover:text-accent"
-                activeProps={{ className: "text-accent" }}
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ),
           )}
         </nav>
 
         <div className="hidden md:block">
-          <Button variant="primary" size="default">
-            Request a Demo
+          <Button variant="primary" size="default" asChild>
+            <a href="/consultation-booking">Request a Demo</a>
           </Button>
         </div>
 
@@ -94,46 +143,50 @@ export function Header() {
       <div
         className={cn(
           "md:hidden overflow-hidden border-t border-border transition-[max-height] duration-300",
-          open ? "max-h-[640px]" : "max-h-0",
+          open ? "max-h-[800px]" : "max-h-0",
         )}
       >
         <nav aria-label="Mobile" className="px-6 py-4">
           <ul className="space-y-1">
-            <li className="pt-2 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Solutions
-            </li>
-            {nav[0].children!.map((c) => (
-              <li key={c.to}>
-                <Link
-                  to={c.to}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-accent"
-                >
-                  {c.label}
-                </Link>
-              </li>
-            ))}
-            <li className="pt-3">
-              <Link
-                to="/case-studies/campari"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-accent"
-              >
-                Case Studies
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/blog"
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-accent"
-              >
-                Blog
-              </Link>
-            </li>
-            <li className="pt-3">
-              <Button variant="primary" className="w-full">
-                Request a Demo
+            {nav.map((item) =>
+              item.kind === "menu" ? (
+                <li key={item.label} className="pt-3">
+                  <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {item.label}
+                  </p>
+                  <ul>
+                    {item.children.map((c) => (
+                      <li key={c.href}>
+                        <NavLink
+                          href={c.href}
+                          typed={c.typed}
+                          onClick={() => setOpen(false)}
+                          className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-accent"
+                        >
+                          {c.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={item.label}>
+                  <NavLink
+                    href={item.href}
+                    typed={item.typed}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-md px-3 py-3 text-base font-medium text-foreground hover:bg-muted hover:text-accent"
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ),
+            )}
+            <li className="pt-4">
+              <Button variant="primary" className="w-full" asChild>
+                <a href="/consultation-booking" onClick={() => setOpen(false)}>
+                  Request a Demo
+                </a>
               </Button>
             </li>
           </ul>
