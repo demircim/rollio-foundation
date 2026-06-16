@@ -24,6 +24,7 @@ import { Route as SolutionsClaimsRouteImport } from './routes/solutions.claims'
 import { Route as CaseStudiesCampariRouteImport } from './routes/case-studies.campari'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -99,6 +100,11 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -107,7 +113,7 @@ export interface FileRoutesByFullPath {
   '/consultation-booking': typeof ConsultationBookingRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/admin': typeof AuthenticatedAdminRoute
+  '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
   '/solutions/claims': typeof SolutionsClaimsRoute
@@ -115,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
   '/blog/': typeof BlogIndexRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -123,7 +130,6 @@ export interface FileRoutesByTo {
   '/consultation-booking': typeof ConsultationBookingRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/admin': typeof AuthenticatedAdminRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
   '/solutions/claims': typeof SolutionsClaimsRoute
@@ -131,6 +137,7 @@ export interface FileRoutesByTo {
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
   '/blog': typeof BlogIndexRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -141,7 +148,7 @@ export interface FileRoutesById {
   '/consultation-booking': typeof ConsultationBookingRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
   '/solutions/claims': typeof SolutionsClaimsRoute
@@ -149,6 +156,7 @@ export interface FileRoutesById {
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
   '/blog/': typeof BlogIndexRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -167,6 +175,7 @@ export interface FileRouteTypes {
     | '/solutions/itsm'
     | '/solutions/order-to-cash'
     | '/blog/'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -175,7 +184,6 @@ export interface FileRouteTypes {
     | '/consultation-booking'
     | '/pilot-consultation'
     | '/sitemap.xml'
-    | '/admin'
     | '/blog/$slug'
     | '/case-studies/campari'
     | '/solutions/claims'
@@ -183,6 +191,7 @@ export interface FileRouteTypes {
     | '/solutions/itsm'
     | '/solutions/order-to-cash'
     | '/blog'
+    | '/admin'
   id:
     | '__root__'
     | '/'
@@ -200,6 +209,7 @@ export interface FileRouteTypes {
     | '/solutions/itsm'
     | '/solutions/order-to-cash'
     | '/blog/'
+    | '/_authenticated/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -326,15 +336,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
   }
 }
 
+interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+}
+
+const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+}
+
+const AuthenticatedAdminRouteWithChildren =
+  AuthenticatedAdminRoute._addFileChildren(AuthenticatedAdminRouteChildren)
+
 interface AuthenticatedRouteRouteChildren {
-  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
-  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
 }
 
 const AuthenticatedRouteRouteWithChildren =
