@@ -9,38 +9,153 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as SolutionsOrderToCashRouteImport } from './routes/solutions.order-to-cash'
+import { Route as SolutionsItsmRouteImport } from './routes/solutions.itsm'
+import { Route as SolutionsFinanceRouteImport } from './routes/solutions.finance'
+import { Route as SolutionsClaimsRouteImport } from './routes/solutions.claims'
+import { Route as CaseStudiesCampariRouteImport } from './routes/case-studies.campari'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsOrderToCashRoute = SolutionsOrderToCashRouteImport.update({
+  id: '/solutions/order-to-cash',
+  path: '/solutions/order-to-cash',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsItsmRoute = SolutionsItsmRouteImport.update({
+  id: '/solutions/itsm',
+  path: '/solutions/itsm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsFinanceRoute = SolutionsFinanceRouteImport.update({
+  id: '/solutions/finance',
+  path: '/solutions/finance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsClaimsRoute = SolutionsClaimsRouteImport.update({
+  id: '/solutions/claims',
+  path: '/solutions/claims',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesCampariRoute = CaseStudiesCampariRouteImport.update({
+  id: '/case-studies/campari',
+  path: '/case-studies/campari',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/case-studies/campari': typeof CaseStudiesCampariRoute
+  '/solutions/claims': typeof SolutionsClaimsRoute
+  '/solutions/finance': typeof SolutionsFinanceRoute
+  '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/case-studies/campari': typeof CaseStudiesCampariRoute
+  '/solutions/claims': typeof SolutionsClaimsRoute
+  '/solutions/finance': typeof SolutionsFinanceRoute
+  '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/case-studies/campari': typeof CaseStudiesCampariRoute
+  '/solutions/claims': typeof SolutionsClaimsRoute
+  '/solutions/finance': typeof SolutionsFinanceRoute
+  '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/blog/$slug'
+    | '/case-studies/campari'
+    | '/solutions/claims'
+    | '/solutions/finance'
+    | '/solutions/itsm'
+    | '/solutions/order-to-cash'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/blog/$slug'
+    | '/case-studies/campari'
+    | '/solutions/claims'
+    | '/solutions/finance'
+    | '/solutions/itsm'
+    | '/solutions/order-to-cash'
+    | '/blog'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/blog/$slug'
+    | '/case-studies/campari'
+    | '/solutions/claims'
+    | '/solutions/finance'
+    | '/solutions/itsm'
+    | '/solutions/order-to-cash'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
+  SolutionsClaimsRoute: typeof SolutionsClaimsRoute
+  SolutionsFinanceRoute: typeof SolutionsFinanceRoute
+  SolutionsItsmRoute: typeof SolutionsItsmRoute
+  SolutionsOrderToCashRoute: typeof SolutionsOrderToCashRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +163,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/order-to-cash': {
+      id: '/solutions/order-to-cash'
+      path: '/solutions/order-to-cash'
+      fullPath: '/solutions/order-to-cash'
+      preLoaderRoute: typeof SolutionsOrderToCashRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/itsm': {
+      id: '/solutions/itsm'
+      path: '/solutions/itsm'
+      fullPath: '/solutions/itsm'
+      preLoaderRoute: typeof SolutionsItsmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/finance': {
+      id: '/solutions/finance'
+      path: '/solutions/finance'
+      fullPath: '/solutions/finance'
+      preLoaderRoute: typeof SolutionsFinanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/claims': {
+      id: '/solutions/claims'
+      path: '/solutions/claims'
+      fullPath: '/solutions/claims'
+      preLoaderRoute: typeof SolutionsClaimsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/campari': {
+      id: '/case-studies/campari'
+      path: '/case-studies/campari'
+      fullPath: '/case-studies/campari'
+      preLoaderRoute: typeof CaseStudiesCampariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  CaseStudiesCampariRoute: CaseStudiesCampariRoute,
+  SolutionsClaimsRoute: SolutionsClaimsRoute,
+  SolutionsFinanceRoute: SolutionsFinanceRoute,
+  SolutionsItsmRoute: SolutionsItsmRoute,
+  SolutionsOrderToCashRoute: SolutionsOrderToCashRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
