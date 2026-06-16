@@ -6,24 +6,36 @@ import { Grid } from "@/components/grid";
 import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/timeline";
 import { FAQ } from "@/components/faq";
+import { buildSeo, organizationLd, websiteLd, faqPageLd } from "@/lib/seo";
+
+const HOME_FAQS = [
+  {
+    question: "How long does deployment take?",
+    answer:
+      "Most enterprise customers go live with their first workflow in 4 to 8 weeks.",
+  },
+  {
+    question: "Is Rollio secure for regulated industries?",
+    answer:
+      "Yes. Rollio is SOC 2 Type II certified and supports GDPR, HIPAA, and regional data residency.",
+  },
+  {
+    question: "Can Rollio integrate with our existing ERP?",
+    answer:
+      "Rollio ships native connectors for SAP, Oracle, NetSuite, Workday, and 200+ enterprise systems.",
+  },
+];
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Rollio — Enterprise Automation that Scales" },
-      {
-        name: "description",
-        content:
-          "Rollio automates Order to Cash, Finance, Claims, and ITSM for the enterprise.",
-      },
-      { property: "og:title", content: "Rollio — Enterprise Automation that Scales" },
-      {
-        property: "og:description",
-        content:
-          "Rollio automates Order to Cash, Finance, Claims, and ITSM for the enterprise.",
-      },
-    ],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/",
+      title: "Rollio — Enterprise Automation that Scales",
+      description:
+        "Rollio automates Order to Cash, Finance, Claims, and ITSM for the enterprise.",
+      ogType: "website",
+      jsonLd: [organizationLd(), websiteLd(), faqPageLd(HOME_FAQS)],
+    }),
   component: Home,
 });
 
@@ -52,23 +64,7 @@ const steps = [
   { label: "Step 04", title: "Scale", description: "Expand across teams and geographies." },
 ];
 
-const faqs = [
-  {
-    question: "How long does deployment take?",
-    answer:
-      "Most enterprise customers go live with their first workflow in 4 to 8 weeks.",
-  },
-  {
-    question: "Is Rollio secure for regulated industries?",
-    answer:
-      "Yes. Rollio is SOC 2 Type II certified and supports GDPR, HIPAA, and regional data residency.",
-  },
-  {
-    question: "Can Rollio integrate with our existing ERP?",
-    answer:
-      "Rollio ships native connectors for SAP, Oracle, NetSuite, Workday, and 200+ enterprise systems.",
-  },
-];
+const faqs = HOME_FAQS;
 
 function Home() {
   return (
