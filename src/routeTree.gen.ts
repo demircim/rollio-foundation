@@ -10,6 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PilotConsultationRouteImport } from './routes/pilot-consultation'
+import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
+import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -23,6 +26,21 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PilotConsultationRoute = PilotConsultationRouteImport.update({
+  id: '/pilot-consultation',
+  path: '/pilot-consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultationBookingRoute = ConsultationBookingRouteImport.update({
+  id: '/consultation-booking',
+  path: '/consultation-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiCoWorkersRoute = AiCoWorkersRouteImport.update({
+  id: '/ai-co-workers',
+  path: '/ai-co-workers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminRoute = AdminRouteImport.update({
@@ -74,6 +92,9 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/ai-co-workers': typeof AiCoWorkersRoute
+  '/consultation-booking': typeof ConsultationBookingRoute
+  '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -86,6 +107,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/ai-co-workers': typeof AiCoWorkersRoute
+  '/consultation-booking': typeof ConsultationBookingRoute
+  '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -99,6 +123,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/ai-co-workers': typeof AiCoWorkersRoute
+  '/consultation-booking': typeof ConsultationBookingRoute
+  '/pilot-consultation': typeof PilotConsultationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -113,6 +140,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/admin'
+    | '/ai-co-workers'
+    | '/consultation-booking'
+    | '/pilot-consultation'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -125,6 +155,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/admin'
+    | '/ai-co-workers'
+    | '/consultation-booking'
+    | '/pilot-consultation'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -137,6 +170,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/admin'
+    | '/ai-co-workers'
+    | '/consultation-booking'
+    | '/pilot-consultation'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -150,6 +186,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
+  AiCoWorkersRoute: typeof AiCoWorkersRoute
+  ConsultationBookingRoute: typeof ConsultationBookingRoute
+  PilotConsultationRoute: typeof PilotConsultationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
@@ -167,6 +206,27 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pilot-consultation': {
+      id: '/pilot-consultation'
+      path: '/pilot-consultation'
+      fullPath: '/pilot-consultation'
+      preLoaderRoute: typeof PilotConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consultation-booking': {
+      id: '/consultation-booking'
+      path: '/consultation-booking'
+      fullPath: '/consultation-booking'
+      preLoaderRoute: typeof ConsultationBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-co-workers': {
+      id: '/ai-co-workers'
+      path: '/ai-co-workers'
+      fullPath: '/ai-co-workers'
+      preLoaderRoute: typeof AiCoWorkersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -238,6 +298,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
+  AiCoWorkersRoute: AiCoWorkersRoute,
+  ConsultationBookingRoute: ConsultationBookingRoute,
+  PilotConsultationRoute: PilotConsultationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   CaseStudiesCampariRoute: CaseStudiesCampariRoute,
