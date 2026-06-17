@@ -163,7 +163,7 @@ function ClaimsPage() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <a href="#" aria-label="Download Claims Guide (placeholder)">
                 <Download /> Download Claims Guide
               </a>
@@ -355,7 +355,7 @@ function ClaimsPage() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <a href="#" aria-label="Download Claims Guide (placeholder)">
                 <Download /> Download Guide
               </a>

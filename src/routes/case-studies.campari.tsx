@@ -233,7 +233,7 @@ function CampariCaseStudy() {
                   <Download /> Download Case Study PDF
                 </a>
               </Button>
-              <Button variant="secondary-outline" size="lg" asChild>
+              <Button variant="outline-light" size="lg" asChild>
                 <Link to="/consultation-booking">
                   Schedule Consultation <ArrowRight />
                 </Link>
@@ -572,7 +572,7 @@ function CampariCaseStudy() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <a href="#" aria-label="Download Full Case Study PDF (placeholder)">
                 <Download /> Download Full Case Study PDF
               </a>
