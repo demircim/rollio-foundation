@@ -162,7 +162,7 @@ function OrderToCashPage() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <a href="#" aria-label="Download O2C Guide (placeholder)">
                 <Download /> Download O2C Guide
               </a>
@@ -385,7 +385,7 @@ function OrderToCashPage() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <a href="#" aria-label="Download O2C Guide (placeholder)">
                 <Download /> Download Guide
               </a>

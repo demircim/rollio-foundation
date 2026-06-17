@@ -162,7 +162,7 @@ function ITSMPage() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <a href="#" aria-label="Download ITSM Guide (placeholder)">
                 <Download /> Download ITSM Guide
               </a>
@@ -354,7 +354,7 @@ function ITSMPage() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <a href="#" aria-label="Download ITSM Guide (placeholder)">
                 <Download /> Download Guide
               </a>
