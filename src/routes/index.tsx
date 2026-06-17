@@ -218,7 +218,7 @@ function Home() {
                   See How It Works in 90 Days <ArrowRight />
                 </Link>
               </Button>
-              <Button variant="secondary-outline" size="lg" asChild>
+              <Button variant="outline-light" size="lg" asChild>
                 <Link to="/consultation-booking">Schedule a consultation</Link>
               </Button>
             </div>
@@ -514,7 +514,7 @@ function Home() {
                 Schedule Consultation (Free) <ArrowRight />
               </Link>
             </Button>
-            <Button variant="secondary-outline" size="lg" asChild>
+            <Button variant="outline-light" size="lg" asChild>
               <Link to="/case-studies/campari">Watch Campari Case Study</Link>
             </Button>
           </div>
