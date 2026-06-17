@@ -13,6 +13,7 @@ interface SitemapEntry {
 // /ai-co-workers is intentionally omitted — it 301-redirects to /#use-cases.
 const STATIC_ENTRIES: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/how-it-works", changefreq: "monthly", priority: "0.9" },
   { path: "/solutions/order-to-cash", changefreq: "monthly", priority: "0.8" },
   { path: "/solutions/finance", changefreq: "monthly", priority: "0.8" },
   { path: "/solutions/claims", changefreq: "monthly", priority: "0.8" },
