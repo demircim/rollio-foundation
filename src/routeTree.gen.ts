@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PilotConsultationRouteImport } from './routes/pilot-consultation'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
@@ -54,6 +55,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PilotConsultationRoute = PilotConsultationRouteImport.update({
   id: '/pilot-consultation',
   path: '/pilot-consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsultationBookingRoute = ConsultationBookingRouteImport.update({
@@ -143,6 +149,7 @@ export interface FileRoutesByFullPath {
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/consultation-booking': typeof ConsultationBookingRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
@@ -165,6 +172,7 @@ export interface FileRoutesByTo {
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/consultation-booking': typeof ConsultationBookingRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
@@ -188,6 +196,7 @@ export interface FileRoutesById {
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/consultation-booking': typeof ConsultationBookingRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
@@ -212,6 +221,7 @@ export interface FileRouteTypes {
     | '/ai-co-workers'
     | '/auth'
     | '/consultation-booking'
+    | '/how-it-works'
     | '/pilot-consultation'
     | '/privacy'
     | '/security'
@@ -234,6 +244,7 @@ export interface FileRouteTypes {
     | '/ai-co-workers'
     | '/auth'
     | '/consultation-booking'
+    | '/how-it-works'
     | '/pilot-consultation'
     | '/privacy'
     | '/security'
@@ -256,6 +267,7 @@ export interface FileRouteTypes {
     | '/ai-co-workers'
     | '/auth'
     | '/consultation-booking'
+    | '/how-it-works'
     | '/pilot-consultation'
     | '/privacy'
     | '/security'
@@ -280,6 +292,7 @@ export interface RootRouteChildren {
   AiCoWorkersRoute: typeof AiCoWorkersRoute
   AuthRoute: typeof AuthRoute
   ConsultationBookingRoute: typeof ConsultationBookingRoute
+  HowItWorksRoute: typeof HowItWorksRoute
   PilotConsultationRoute: typeof PilotConsultationRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
@@ -329,6 +342,13 @@ declare module '@tanstack/react-router' {
       path: '/pilot-consultation'
       fullPath: '/pilot-consultation'
       preLoaderRoute: typeof PilotConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/consultation-booking': {
@@ -477,6 +497,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiCoWorkersRoute: AiCoWorkersRoute,
   AuthRoute: AuthRoute,
   ConsultationBookingRoute: ConsultationBookingRoute,
+  HowItWorksRoute: HowItWorksRoute,
   PilotConsultationRoute: PilotConsultationRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,

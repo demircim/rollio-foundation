@@ -21,6 +21,7 @@ const nav: NavItem[] = [
       { href: "/solutions/itsm", label: "ITSM", typed: true },
     ],
   },
+  { kind: "link", label: "How It Works", href: "/how-it-works", typed: true },
   { kind: "link", label: "Resources", href: "/blog", typed: true },
   { kind: "link", label: "About", href: "/about", typed: true },
 ];
