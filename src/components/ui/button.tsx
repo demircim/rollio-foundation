@@ -14,6 +14,9 @@ const buttonVariants = cva(
         // Outline — Navy border on light, teal on dark
         "secondary-outline":
           "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground",
+        // Outline for dark backgrounds — white/light border & text
+        "outline-light":
+          "border-2 border-surface-light/80 text-surface-light bg-transparent hover:bg-surface-light hover:text-surface-dark",
         // Tertiary — text link with underline on hover
         tertiary:
           "text-primary underline-offset-4 hover:underline hover:text-accent px-0",
