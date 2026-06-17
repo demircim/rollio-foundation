@@ -202,7 +202,7 @@ function Home() {
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
               Enterprise AI Agents
             </span>
-            <h1 className="mt-6 text-balance">
+            <h1 className="mt-6 text-balance text-surface-light">
               Discovers What Matters.{" "}
               <span className="text-accent">Executes What Works.</span>
             </h1>
