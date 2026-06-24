@@ -8,9 +8,9 @@ export const Route = createFileRoute("/about")({
   head: () =>
     buildSeo({
       path: "/about",
-      title: "About Rollio — Making AI a Natural Extension of How We Work",
+      title: "About Rollio — The Architects of Contextual AI Agents",
       description:
-        "Rollio deploys autonomous AI agents that handle complex, repetitive enterprise work — so human teams focus on strategy, innovation, and growth.",
+        "Rollio was founded to bridge the gap between rigid enterprise systems and unstructured reality. Meet the team building the Contextual Data Engine.",
     }),
   component: AboutPage,
 });
@@ -25,11 +25,10 @@ function AboutPage() {
             About Rollio
           </p>
           <h1 className="mt-4 font-display text-4xl font-bold tracking-tight md:text-6xl">
-            Making AI a Natural Extension of How We Work
+            We Build the Engine for Autonomous Enterprise Work
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            We're on a mission to free enterprise teams from repetitive work and let them
-            focus on strategy, innovation, and growth.
+            We are on a mission to bridge the gap between rigid data silos and true AI autonomy, freeing enterprise teams to focus on strategy, innovation, and growth.
           </p>
         </div>
       </Section>
@@ -42,18 +41,13 @@ function AboutPage() {
           </h2>
           <div className="mt-6 space-y-5 text-lg text-muted-foreground">
             <p>
-              Every enterprise has world-class talent spending countless hours on manual
-              processes that could be automated. We believe these teams deserve better.
+              Every enterprise has world-class talent spending countless hours acting as human bridges between unstructured emails and rigid ERP systems. We believe these teams deserve better.
             </p>
             <p className="font-medium text-foreground">
-              Rollio exists to deploy autonomous AI agents that handle the complex,
-              repetitive work — so human teams can focus on strategic initiatives that
-              drive real business value.
+              Rollio exists to deploy Autonomous AI Agents powered by a Contextual Data Engine. We handle the complex, unstructured workflows so human teams can focus on strategic initiatives.
             </p>
             <p>
-              Our agents don't replace people. They free people. Your best talent should
-              spend their time on what humans do best: strategy, innovation, and growth.
-              Not on repetitive, manual tasks.
+              Our agents don't replace people; they augment them. By executing the mundane, we unlock your talent to do what humans do best: strategic problem solving and relationship building.
             </p>
           </div>
         </div>
@@ -67,23 +61,16 @@ function AboutPage() {
           </h2>
           <div className="mt-6 space-y-5 text-lg text-muted-foreground">
             <p>
-              Rollio was founded with a simple observation: process mining tools show
-              enterprises what's broken. But they don't fix anything. They sit on
-              dashboards. Actionable intelligence gets lost in reports that nobody reads.
+              Rollio was founded on a hard truth: Billions are spent on RPA and process mining, yet the actual work remains manual. Why? Because existing tools only understand structured data.
             </p>
             <p className="font-medium text-foreground">
-              Meanwhile, your team is still doing the work manually.
+              But 80% of enterprise business happens in unstructured context—emails, claims, and chat.
             </p>
             <p>
-              We built Rollio to bridge that gap. Our agents read your complete business
-              context — not just structured data, but the 80% that lives in emails,
-              tickets, and conversations. Then they act autonomously in real-time to
-              execute what your business needs.
+              We built Rollio to solve this specific architectural gap. We realized that without a Contextual Data Engine to translate human communication into machine-actionable data, true AI autonomy is impossible.
             </p>
             <p>
-              We're not another reporting tool. We're not another RPA platform that
-              breaks when reality changes. We're outcome-focused partners that execute
-              the outcomes your business needs.
+              We are not another dashboard. We are not another brittle bot. We are the execution layer for the modern enterprise.
             </p>
           </div>
         </div>
@@ -98,24 +85,24 @@ function AboutPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {[
               {
-                title: "Discover What Matters",
+                title: "Context is Everything",
                 body:
-                  "Complete business context matters. Your agents should understand the whole picture before deciding — not just what's in your ERP, but what's in emails, tickets, and conversations. That's where the real intelligence lives.",
+                  "Data without context is just noise. We believe AI must understand the 'why' behind a transaction before it can autonomously execute the 'how'.",
               },
               {
-                title: "Execute What Works",
+                title: "Execution over Analysis",
                 body:
-                  "Understanding is just the start. Real impact comes from execution. Our agents execute autonomously, 24/7, within guardrails you set. Your business doesn't wait for humans. Neither should your agents.",
+                  "Dashboards don't save time; action does. We build agents that execute end-to-end workflows safely within your exact guardrails.",
               },
               {
-                title: "Learn Continuously",
+                title: "Human-in-the-Loop Trust",
                 body:
-                  "The world changes. Your processes change. Traditional automation breaks. Our agents learn from execution and adapt when your business evolves. Value compounds over time — not degrades.",
+                  "Trust is earned through transparency. We design our systems to keep you in control, escalating edge cases seamlessly to Human Supervisors.",
               },
               {
                 title: "Outcome-Based Partnership",
                 body:
-                  "We don't believe in feature counting or seat licenses. We believe in outcomes. We succeed when you succeed. Your outcomes drive our revenue. That's how partnerships should work.",
+                  "We align our success entirely with yours. We don't sell seats; we sell measurable reductions in cycle times and manual effort.",
               },
             ].map((v) => (
               <div
@@ -141,20 +128,14 @@ function AboutPage() {
 
           <figure className="mt-10 rounded-2xl border bg-card p-8 md:p-10">
             <blockquote className="font-display text-xl italic leading-relaxed text-foreground md:text-2xl">
-              "We at Rollio have always envisioned that one day AI will become a
-              natural extension of who we are — allowing us to focus on what we want
-              to do, instead of how to get there. That is our goal with every agent we
-              build."
+              "We founded Rollio because we saw enterprise teams trapped acting as human APIs. We knew that if we could build an engine to contextualize the messy reality of business, we could unlock true AI autonomy."
             </blockquote>
             <figcaption className="mt-6">
               <p className="font-semibold">Markus Demirci</p>
               <p className="text-sm text-muted-foreground">CEO &amp; Co-Founder</p>
             </figcaption>
             <p className="mt-6 text-muted-foreground">
-              Markus leads Rollio's vision and strategy. Before founding Rollio, he
-              spent years observing enterprise teams trapped in manual processes — and
-              wondering why process mining tools never actually automated anything.
-              That frustration became Rollio's founding thesis.
+              Markus leads Rollio's vision and strategy. Before founding Rollio, he spent years observing enterprise architectures fail because they couldn't process unstructured context. That frustration became the founding thesis for the Contextual Data Engine.
             </p>
           </figure>
 
@@ -312,16 +293,15 @@ function AboutPage() {
       <Section tone="dark" className="!py-16 md:!py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Ready to meet our team?
+            Ready to discuss your enterprise architecture?
           </h2>
           <p className="mt-4 text-lg text-surface-light/80">
-            We'd love to show you how Rollio agents can transform your enterprise
-            operations.
+            We'd love to show you how our Contextual Data Engine can transform your specific workflows.
           </p>
           <div className="mt-8">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule a consultation <ArrowRight />
+                Book an Architecture Call <ArrowRight />
               </Link>
             </Button>
           </div>
