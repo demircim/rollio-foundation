@@ -12,22 +12,22 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "How does Rollio handle invoice exceptions?",
     answer:
-      "Rollio reads the full context — the PO, the receipt, the invoice, and the email thread around them — to resolve the exception on its own when it can: missing references, unit-of-measure mismatches, price tolerances, duplicate detection, and tax differences. When an exception falls outside the rules you set (unusual amount, new vendor, contract gap), Rollio routes it to the right person with everything they need to decide in one place, and learns from the outcome.",
+      "Rollio reads the full context — the PO, the receipt, the invoice, and the email thread around them — to resolve the exception on its own when it can: missing references, unit-of-measure mis[...]
   },
   {
     question: "Will this change our vendor relationships?",
     answer:
-      "Yes — for the better. Vendors get faster, more predictable communication, on-time payments, and early-discount capture where it makes sense. Rollio handles vendor outreach in your tone and on your schedule, escalates issues before they become disputes, and gives your team time back for strategic vendor management instead of chasing paperwork.",
+      "Yes — for the better. Vendors get faster, more predictable communication, on-time payments, and early-discount capture where it makes sense. Rollio handles vendor outreach in your tone and on[...]
   },
   {
     question: "Does Rollio work with our procurement system (SAP, Ariba, Coupa)?",
     answer:
-      "Yes. Ready-made connections to SAP S/4HANA and ECC, Ariba, Coupa, Oracle, NetSuite, and the major e-invoicing networks. Typical integration: 2–3 weeks. Rollio reads and writes through the connections you already use, without changing your source of truth.",
+      "Yes. Ready-made connections to SAP S/4HANA and ECC, Ariba, Coupa, Oracle, NetSuite, and the major e-invoicing networks. Typical integration: 2–3 weeks. Rollio reads and writes through the con[...]
   },
   {
     question: "What about contract edge cases — discounts, rebates, special terms?",
     answer:
-      "Rollio reads the contract alongside the transaction, so volume rebates, tiered pricing, payment-term variations, and special clauses are applied automatically. Edge cases that aren't clearly covered by a rule are routed to a person for a one-time decision, and the pattern is captured so the next similar case is handled cleanly.",
+      "Rollio reads the contract alongside the transaction, so volume rebates, tiered pricing, payment-term variations, and special clauses are applied automatically. Edge cases that aren't clearly co[...]
   },
 ];
 
@@ -35,9 +35,9 @@ export const Route = createFileRoute("/solutions/order-to-cash")({
   head: () =>
     buildSeo({
       path: "/solutions/order-to-cash",
-      title: "Order-to-Cash & Procurement Automation — Rollio",
+      title: "Autonomous AI Agents for Order-to-Cash | Rollio",
       description:
-        "Hands-free order-to-cash: Rollio's AI agents handle PO creation, invoice checks, payment timing, and vendor management — around the clock.",
+        "Deploy AI Agents that contextualize SAP data with email correspondence to autonomously resolve invoice exceptions and accelerate your cash conversion cycle.",
       jsonLd: [
         breadcrumbListLd([
           { name: "Home", path: "/" },
@@ -146,20 +146,19 @@ function OrderToCashPage() {
         />
         <div className="relative z-10 max-w-3xl">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-            Solutions · Order-to-Cash &amp; Procurement
+            Enterprise AI Solutions · Order-to-Cash
           </span>
           <h1 className="mt-6 text-balance">
-            From order to cash in days,{" "}
-            <span className="text-accent">not weeks.</span>
+            Accelerate Cash Flow with{" "}
+            <span className="text-accent">Context-Aware AI Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Rollio handles your full procure-to-pay and order-to-cash work — purchase
-            orders, invoice checks, payment timing, vendor management — around the clock.
+            Your ERP only sees the transaction. Rollio's Contextual Data Engine reads the missing 80%—emails, claims, and contracts—empowering AI Agents to resolve invoice exceptions, manage vendors, and close the order-to-cash loop autonomously.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book an O2C Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
@@ -175,19 +174,14 @@ function OrderToCashPage() {
       <Section tone="default">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
           <div className="max-w-2xl">
-            <CardEyebrow>The Problem</CardEyebrow>
-            <h2>Your O2C process is a black hole.</h2>
+            <CardEyebrow>The Core O2C Bottleneck</CardEyebrow>
+            <h2>Your ERP lacks the context to automate.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                POs scattered across email, systems, and spreadsheets. Invoices arriving
-                unchecked. Payment terms ignored. Frustrated vendors. Unpredictable cash
-                flow.
+                Standard RPA bots and SAP workflows fail when exceptions occur because they cannot read unstructured data. When a price mismatch or missing PO reference happens, the automation stops.
               </p>
               <p>
-                Teams spend 40% of their time reconciling POs to invoices, 30% on payment
-                exceptions, and 20% chasing vendors. The result: a 45–60 day O2C cycle,
-                2–5% of invoices needing correction, and $50–100 of labor per
-                transaction.
+                Your finance team spends hours manually digging through email threads to find the context, reconciling it with the ERP, and chasing vendors. The result: bloated DSO (Days Sales Outstanding), missed early-payment discounts, and a scaling wall for your back-office.
               </p>
             </div>
           </div>
@@ -205,30 +199,29 @@ function OrderToCashPage() {
       <Section tone="muted">
         <div className="max-w-3xl">
           <CardEyebrow>The Solution</CardEyebrow>
-          <h2>Hands-free order-to-cash.</h2>
+          <h2>Contextual data meets autonomous execution.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio's AI agents read the complete picture — your ERP plus the email,
-            spreadsheet, and contract context around it — and do the work end-to-end.
+            Rollio bridges the gap. By contextualizing your unstructured communications with your structured ERP data, our AI Agents can execute complex O2C workflows end-to-end, escalating only true anomalies to a Human Supervisor.
           </p>
         </div>
 
         <Grid cols={2} gap="lg" className="mt-12">
           {[
             {
-              title: "PO creation",
-              body: "Read approvals, pull details, check budget and contract, create the PO, and confirm to the vendor.",
+              title: "Contextual PO Processing",
+              body: "Agents read approval emails, validate against budget/contracts, create the PO in SAP, and handle vendor confirmation.",
             },
             {
-              title: "Invoice checking",
-              body: "Three-way match against PO and receipt, catch duplicates, flag exceptions, and approve within policy.",
+              title: "Autonomous Exception Handling",
+              body: "Performs 3-way matching. When an exception occurs, the Agent reads the email history to understand the context and resolves it within policy.",
             },
             {
-              title: "Payment timing",
-              body: "Weigh discounts against cash flow and schedule payments at the optimal moment — automatically.",
+              title: "Strategic Payment Timing",
+              body: "Analyzes vendor history and dynamic discount terms to schedule payments that optimize your working capital.",
             },
             {
-              title: "Collections & follow-up",
-              body: "Send reminders in your tone, track aged receivables, and escalate to a person only when needed.",
+              title: "Intelligent Vendor Follow-up",
+              body: "Proactively tracks missing documents and sends context-aware reminders in your corporate tone, preventing payment delays.",
             },
           ].map((c) => (
             <Card key={c.title} variant="elevated">
@@ -243,8 +236,7 @@ function OrderToCashPage() {
 
         <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
           <p className="text-base text-foreground">
-            <strong className="text-primary">The result:</strong> O2C cycle down to 15–20
-            days, error rate under 0.5%, and cost per transaction at $10–15 — 80% lower.
+            <strong className="text-primary">The business impact:</strong> O2C cycle reduced to 15–20 days, error rates under 0.5%, and human touchpoints reduced by up to 80%.
           </p>
         </Card>
       </Section>
@@ -253,7 +245,7 @@ function OrderToCashPage() {
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>Workflow Examples</CardEyebrow>
-          <h2>What Rollio actually does, step by step.</h2>
+          <h2>How the O2C Agent operates in reality.</h2>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
@@ -373,16 +365,16 @@ function OrderToCashPage() {
         <div className="relative z-10 flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
             <h2 className="text-surface-light">
-              Ready to close the loop on order-to-cash?
+              Ready to deploy autonomous O2C Agents?
             </h2>
             <p className="mt-3 text-surface-light/75">
-              30 minutes, no obligation — let's scope the outcomes for your business.
+              Let's map your current O2C workflows and identify the highest-impact areas for contextual AI automation.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book an O2C Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
