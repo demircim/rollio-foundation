@@ -12,22 +12,22 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "Does Rollio work with our ticketing system?",
     answer:
-      "Yes. Ready-made connections to ServiceNow, Jira Service Management, Zendesk, Freshservice, and the major IT platforms. Rollio reads and writes through the connections you already use — your ticketing system stays the system of record.",
+      "Yes. Ready-made connections to ServiceNow, Jira Service Management, Zendesk, Freshservice, and the major IT platforms. Rollio reads and writes through the connections you already use — your t[...]
   },
   {
     question: "What tickets can Rollio resolve on its own?",
     answer:
-      "Within the rules you set: password resets, account create/deactivate, license requests, printer and VPN issues, common network checks, and equipment requests — typically the 60% of routine ticket volume that swallows your team's time. Anything outside the rules is routed with a clear summary so a person can act fast.",
+      "Within the rules you set: password resets, account create/deactivate, license requests, printer and VPN issues, common network checks, and equipment requests — typically the 60% of routine ti[...]
   },
   {
     question: "How does Rollio handle incident response and change management?",
     answer:
-      "Incidents are triaged, classified, and routed with relevant context from the CMDB, recent changes, and prior incidents pulled in automatically. Change requests are checked against policy and prior patterns, with risk highlighted for human approval. Every step is logged for ITIL and audit purposes.",
+      "Incidents are triaged, classified, and routed with relevant context from the CMDB, recent changes, and prior incidents pulled in automatically. Change requests are checked against policy and pr[...]
   },
   {
     question: "What about user onboarding and offboarding?",
     answer:
-      "Rollio runs the full checklist: accounts created across systems, licenses assigned, equipment ordered, access provisioned per role, and the new hire notified — by end of Day 1, not Day 3. Offboarding mirrors it: access revoked, equipment recovered, licenses reclaimed, with a complete audit trail.",
+      "Rollio runs the full checklist: accounts created across systems, licenses assigned, equipment ordered, access provisioned per role, and the new hire notified — by end of Day 1, not Day 3. Off[...]
   },
 ];
 
@@ -35,9 +35,9 @@ export const Route = createFileRoute("/solutions/itsm")({
   head: () =>
     buildSeo({
       path: "/solutions/itsm",
-      title: "IT Service Management Automation — Rollio",
+      title: "Autonomous AI Agents for ITSM & Ticketing | Rollio",
       description:
-        "Hands-free IT operations: Rollio's AI agents handle ticket triage, resolution, incidents, and onboarding — cutting resolution time from days to hours.",
+        "Deploy AI Agents that read unstructured IT tickets, cross-reference your CMDB, and autonomously resolve L1/L2 requests within ServiceNow or Jira.",
       jsonLd: [
         breadcrumbListLd([
           { name: "Home", path: "/" },
@@ -146,20 +146,19 @@ function ITSMPage() {
         />
         <div className="relative z-10 max-w-3xl">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-            Solutions · IT Service Management &amp; Ticketing
+            Enterprise AI Solutions · ITSM &amp; Ticketing
           </span>
           <h1 className="mt-6 text-balance">
-            Resolve IT tickets 10x faster.{" "}
-            <span className="text-accent">Hands-free IT operations.</span>
+            Autonomously resolve IT tickets with{" "}
+            <span className="text-accent">Context-Aware Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Rollio handles your IT service work — ticket triage, resolution, escalation,
-            user onboarding — cutting resolution time from days to hours.
+            Most IT tickets are messy, unstructured human text that standard RPA bots cannot process. Rollio's Contextual Data Engine translates natural language into structured actions, empowering AI Agents to resolve Level 1 & 2 tickets autonomously directly within your ITSM platform.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book an ITSM Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
@@ -174,19 +173,14 @@ function ITSMPage() {
       <Section tone="default">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
           <div className="max-w-2xl">
-            <CardEyebrow>The Problem</CardEyebrow>
-            <h2>Your IT team is drowning in tickets.</h2>
+            <CardEyebrow>The ITSM Bottleneck</CardEyebrow>
+            <h2>Standard IT automation cannot read human context.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                Growing volume. A 200+ ticket backlog. 5–10 day resolution. Frustrated
-                users. Your best engineers stuck on password resets and license requests
-                instead of strategic work.
+                Your users don't submit perfectly formatted requests; they write natural language. Because standard workflows and RPA bots cannot understand unstructured text, automation breaks at step one. Your ticketing system becomes an expensive routing tool.
               </p>
               <p>
-                Teams spend 60% of their time on routine tickets, 20% on triage and
-                routing, 15% on escalation, and only 5% on strategic work. The result:
-                30% first-contact resolution, 5/10 satisfaction, $1M+ in staffing, and
-                volume outpacing headcount.
+                Highly paid engineers spend 60% of their day reading tickets, manually checking the CMDB, verifying HRIS data, and executing routine fixes (like password resets or VPN access). Volume outpaces headcount, resulting in bloated MTTR (Mean Time to Resolution) and frustrated users.
               </p>
             </div>
           </div>
@@ -203,22 +197,20 @@ function ITSMPage() {
       <Section tone="muted">
         <div className="max-w-3xl">
           <CardEyebrow>The Solution</CardEyebrow>
-          <h2>Hands-free IT service management.</h2>
+          <h2>Contextual resolution, not just routing.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio's AI agents read the complete picture — your ticketing system, CMDB,
-            HRIS, and the email and chat context around them — and do the work
-            end-to-end, within the rules you set.
+            Rollio bridges the gap. By contextualizing the unstructured intent of a user's ticket with your structured CMDB and identity data, our AI Agents actually solve problems end-to-end, escalating only complex incidents to human engineers.
           </p>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
           {[
-            { title: "Triage & classification", body: "Every ticket categorized, prioritized, and routed in seconds — with the right context attached." },
-            { title: "Routine resolution", body: "Password resets, account create/deactivate, license requests, printer/VPN/network, and equipment — handled end-to-end." },
-            { title: "Incident response", body: "CMDB, recent changes, and prior incidents pulled in automatically so engineers act fast." },
-            { title: "Change management", body: "Requests checked against policy and prior patterns; risk surfaced for human approval." },
-            { title: "Onboarding & offboarding", body: "Full provisioning run on Day 1; full deprovisioning on the last day — with audit trail." },
-            { title: "Compliance & SLA tracking", body: "SLAs watched continuously, breach risk escalated early, and reporting generated automatically." },
+            { title: "Contextual Triage", body: "Every ticket is read, understood, categorized, and prioritized in seconds—with relevant CMDB context automatically attached." },
+            { title: "Autonomous L1/L2 Resolution", body: "Password resets, access provisioning, and VPN troubleshooting are executed end-to-end without human touch." },
+            { title: "AI-Assisted Incident Response", body: "Agents instantly pull related configuration items, recent changes, and prior incident patterns so engineers can act immediately." },
+            { title: "Intelligent Change Management", body: "Change requests are cross-referenced against policies and historical patterns, surfacing risk profiles for Human Supervisors." },
+            { title: "Zero-Touch Onboarding", body: "Cross-system account creation, license assignment, and access provisioning are fully executed by Day 1." },
+            { title: "Continuous SLA Enforcement", body: "Agents monitor SLA thresholds proactively, resolving imminent breaches or escalating them before they impact users." },
           ].map((c) => (
             <Card key={c.title} variant="elevated">
               <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
@@ -232,9 +224,8 @@ function ITSMPage() {
 
         <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
           <p className="text-base text-foreground">
-            <strong className="text-primary">The result:</strong> 75%+ first-contact
-            resolution, 2–4 hour resolution times, 8–9/10 user satisfaction, and your IT
-            team on strategy.
+            <strong className="text-primary">The business impact:</strong> 75%+ autonomous
+            first-contact resolution, MTTR reduced from days to hours, and your engineers finally focused on strategic infrastructure.
           </p>
         </Card>
       </Section>
@@ -242,7 +233,7 @@ function ITSMPage() {
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>Workflow Examples</CardEyebrow>
-          <h2>What Rollio actually does, step by step.</h2>
+          <h2>How the ITSM Agent operates in reality.</h2>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
@@ -343,15 +334,15 @@ function ITSMPage() {
         />
         <div className="relative z-10 flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
-            <h2 className="text-surface-light">Ready to resolve in hours, not days?</h2>
+            <h2 className="text-surface-light">Ready to deploy autonomous ITSM Agents?</h2>
             <p className="mt-3 text-surface-light/75">
-              30 minutes, no obligation — let's scope the outcomes for your IT team.
+              Let's map your highest-volume ticket categories and identify the fastest path to autonomous resolution.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book an ITSM Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
