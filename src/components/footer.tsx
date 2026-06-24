@@ -21,7 +21,7 @@ const columns: Col[] = [
     title: "Company",
     links: [
       { href: "/about", label: "About Us", typed: true },
-      { href: "/blog", label: "Blog & Resources", typed: true },
+      { href: "/blog", label: "Insights & Resources", typed: true },
       { href: "/case-studies/campari", label: "Case Studies", typed: true },
       { href: "/consultation-booking", label: "Contact", typed: true },
     ],
@@ -76,8 +76,7 @@ export function Footer() {
               Rollio
             </Link>
             <p className="mt-4 max-w-sm text-sm text-surface-light/70">
-              Enterprise automation for the work that runs your business — built for
-              Order-to-Cash, Finance, Claims, and IT Service Management.
+              Autonomous AI Agents powered by a Contextual Data Engine. We bridge the gap between rigid ERP silos and unstructured communications for enterprise operations.
             </p>
           </div>
           {columns.map((col) => (
@@ -161,7 +160,7 @@ function NewsletterForm() {
         Stay in the loop
       </h4>
       <p className="mt-2 max-w-md text-sm text-surface-light/70">
-        Product updates, customer stories, and the occasional deep dive. No spam.
+        Insights on data contextualization, autonomous agent execution, and enterprise AI transformation. No spam.
       </p>
       <div className="mt-4 max-w-md [&_input]:!bg-white/5 [&_input]:!text-surface-light">
         <HubSpotForm formId={NEWSLETTER_FORM_ID} formName="newsletter_signup" />
