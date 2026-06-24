@@ -12,22 +12,22 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "How does Rollio stay compliant with HIPAA and regulatory deadlines?",
     answer:
-      "Compliance is built in. Rollio honors timely-notice rules, required documentation, and regulatory deadlines for each line of business. PHI is handled per HIPAA: minimum necessary access, encryption in transit and at rest, role-based access, and a full audit trail of every read and decision. Deadlines are tracked continuously and escalated before they're missed.",
+      "Compliance is built in. Rollio honors timely-notice rules, required documentation, and regulatory deadlines for each line of business. PHI is handled per HIPAA: minimum necessary access, encryp[...]
   },
   {
     question: "Will Rollio make adjudication decisions on its own?",
     answer:
-      "Within the rules and limits you set — yes, for clear-cut cases that match policy, coverage, and prior patterns. Edge cases, large amounts, and anything outside the rules are routed to a person with a full summary and recommended action. You decide where the line sits, and Rollio learns from every decision.",
+      "Within the rules and limits you set — yes, for clear-cut cases that match policy, coverage, and prior patterns. Edge cases, large amounts, and anything outside the rules are routed to a perso[...]
   },
   {
     question: "Does Rollio work with our claims system?",
     answer:
-      "Yes. Ready-made connections to Guidewire, Duck Creek, Majesco, FINEOS, and the major healthcare and government platforms, plus document intake from email, portals, and paper (scanned). Rollio reads and writes through the connections you already use, without changing your system of record.",
+      "Yes. Ready-made connections to Guidewire, Duck Creek, Majesco, FINEOS, and the major healthcare and government platforms, plus document intake from email, portals, and paper (scanned). Rollio r[...]
   },
   {
     question: "How is the audit trail handled?",
     answer:
-      "Every action is logged: what was read, what rule applied, what was decided, and by whom (Rollio or a person). Auditors and regulators get a single, searchable trail per claim — no email archaeology, no missing context.",
+      "Every action is logged: what was read, what rule applied, what was decided, and by whom (Rollio or a person). Auditors and regulators get a single, searchable trail per claim — no email archa[...]
   },
 ];
 
@@ -35,9 +35,9 @@ export const Route = createFileRoute("/solutions/claims")({
   head: () =>
     buildSeo({
       path: "/solutions/claims",
-      title: "Claims Processing & Compliance Automation — Rollio",
+      title: "Autonomous AI Agents for Claims & Compliance | Rollio",
       description:
-        "Hands-free claims: Rollio's AI agents handle intake, validation, compliance checks, and payment — process claims in hours with zero compliance risk.",
+        "Deploy AI Agents that read unstructured claim documents, validate against policy coverage, and autonomously adjudicate claims with full compliance.",
       jsonLd: [
         breadcrumbListLd([
           { name: "Home", path: "/" },
@@ -146,21 +146,19 @@ function ClaimsPage() {
         />
         <div className="relative z-10 max-w-3xl">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-            Solutions · Claims Processing &amp; Compliance
+            Enterprise AI Solutions · Claims &amp; Compliance
           </span>
           <h1 className="mt-6 text-balance">
-            Process claims in hours, not days.{" "}
-            <span className="text-accent">With zero compliance risk.</span>
+            Process complex claims in hours,{" "}
+            <span className="text-accent">with zero compliance risk.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Rollio handles claims intake, validation, compliance checks, and payment —
-            running compliant workflows for insurance, healthcare, and government
-            programs.
+            Claims don't arrive neatly formatted; they arrive as messy emails, PDFs, and photos. Rollio's Contextual Data Engine reads the unstructured reality, cross-references it with your policy systems, and empowers AI Agents to adjudicate claims autonomously or prep them perfectly for a Human Supervisor.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book a Claims Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
@@ -175,20 +173,14 @@ function ClaimsPage() {
       <Section tone="default">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
           <div className="max-w-2xl">
-            <CardEyebrow>The Problem</CardEyebrow>
-            <h2>Your claims process is a compliance minefield.</h2>
+            <CardEyebrow>The Core Claims Bottleneck</CardEyebrow>
+            <h2>Rigid systems cannot read human context.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                Claims arrive by email, phone, portal, and paper. Each one needs
-                validation against policy, coverage, and exclusions. Compliance
-                documentation, adjudication, payment, and appeals all stack up.
+                Standard claims systems and RPA bots demand perfectly structured data. But the reality of a claim—a dispute, a medical record, a damaged shipment—is inherently unstructured. When your system can't read the context, automation stops.
               </p>
               <p>
-                Teams spend 50% of their time on intake and validation, 30% on
-                compliance and documentation, 15% on payment and communications, and 5%
-                on appeals. The result: 5–10 day processing, 10–15% compliance findings
-                at audit, and $15–25 of labor per claim — plus the risk of missed
-                deadlines, wrong eligibility calls, and delayed payouts.
+                Highly skilled adjusters spend 50% of their day doing manual data entry: reading emails, extracting numbers, checking coverage limits in another system, and verifying compliance. This manual bottleneck results in 5–10 day processing times, compliance gaps at audit, and massive labor costs.
               </p>
             </div>
           </div>
@@ -205,22 +197,20 @@ function ClaimsPage() {
       <Section tone="muted">
         <div className="max-w-3xl">
           <CardEyebrow>The Solution</CardEyebrow>
-          <h2>Hands-free claims and compliance.</h2>
+          <h2>Contextual intake, autonomous adjudication.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio's AI agents read the complete picture — your claims system plus the
-            email, document, and policy context around it — and do the work end-to-end,
-            within the rules you set.
+            Rollio bridges the gap. By contextualizing unstructured intake channels with your core claims system, our AI Agents can execute the entire workflow—validating policies, enforcing compliance, and adjudicating standard claims end-to-end.
           </p>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
           {[
-            { title: "Intake & normalization", body: "Pull claims from every channel, extract and normalize fields, and open cases cleanly." },
-            { title: "Policy & coverage checks", body: "Validate member, policy, coverage, and exclusions against the live rules." },
-            { title: "Compliance verification", body: "Timely-notice, required documentation, regulatory deadlines, HIPAA, and audit trail — built in." },
-            { title: "Adjudication", body: "Apply rules and patterns to clear-cut cases; route edge cases to a person with full context." },
-            { title: "Payment", body: "Issue payment within policy, with notification and rationale captured automatically." },
-            { title: "Appeals & exceptions", body: "Pull prior decisions, supporting docs, and applicable rules into one summary for fast resolution." },
+            { title: "Contextual Intake & Extraction", body: "Agents read emails, portals, and scanned paper, extracting and normalizing data to open cases cleanly in your system." },
+            { title: "Autonomous Policy Validation", body: "Instantly cross-references the extracted claim data against the member's specific policy, coverage limits, and exclusions." },
+            { title: "Continuous Compliance", body: "Enforces timely-notice rules, verifies required documentation, and maintains HIPAA/regulatory compliance automatically." },
+            { title: "AI-Driven Adjudication", body: "Applies policy rules to adjudicate clear-cut cases autonomously. Escalates complex edge cases to human adjusters with full context summaries." },
+            { title: "Automated Payment & Rationale", body: "Issues approved payments and automatically generates detailed, contextual rationale letters for the claimant." },
+            { title: "Audit-Ready Transparency", body: "Every AI decision and extraction is permanently logged. Auditors see exactly how a decision was reached, eliminating compliance risk." },
           ].map((c) => (
             <Card key={c.title} variant="elevated">
               <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
@@ -234,8 +224,7 @@ function ClaimsPage() {
 
         <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
           <p className="text-base text-foreground">
-            <strong className="text-primary">The result:</strong> claims in hours,
-            100% compliance posture, consistent decisions, and 60% lower cost per claim.
+            <strong className="text-primary">The business impact:</strong> Processing time reduced to 1–2 days, compliance findings dropped to near zero, and cost-per-claim reduced by up to 60%.
           </p>
         </Card>
       </Section>
@@ -243,7 +232,7 @@ function ClaimsPage() {
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>Workflow Examples</CardEyebrow>
-          <h2>What Rollio actually does, step by step.</h2>
+          <h2>How the Claims Agent operates in reality.</h2>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
@@ -344,15 +333,15 @@ function ClaimsPage() {
         />
         <div className="relative z-10 flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
-            <h2 className="text-surface-light">Ready to process claims in hours?</h2>
+            <h2 className="text-surface-light">Ready to deploy autonomous Claims Agents?</h2>
             <p className="mt-3 text-surface-light/75">
-              30 minutes, no obligation — let's scope the outcomes for your claims team.
+              Let's map your intake channels and identify the highest-volume claims ready for autonomous adjudication.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book a Claims Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
