@@ -12,17 +12,17 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "Will Rollio replace our ERP or accounting system?",
     answer:
-      "No. Rollio works on top of SAP, NetSuite, Oracle, Workday, Microsoft Dynamics, and the spreadsheets your team already uses. Your ERP stays the system of record; Rollio reads and writes through the connections you already have, and coordinates the work around it.",
+      "No. Rollio works on top of SAP, NetSuite, Oracle, Workday, Microsoft Dynamics, and the spreadsheets your team already uses. Your ERP stays the system of record; Rollio reads and writes through [...]
   },
   {
     question: "How does Rollio handle reconciliation exceptions?",
     answer:
-      "Rollio reads the full context — the bank feed, the GL, related invoices and emails — and resolves common breaks on its own: timing differences, FX rounding, missing references. Exceptions outside the rules you set are routed to the right person with a clear summary and recommended action, and the pattern is captured for next time.",
+      "Rollio reads the full context — the bank feed, the GL, related invoices and emails — and resolves common breaks on its own: timing differences, FX rounding, missing references. Exceptions o[...]
   },
   {
     question: "Is this safe for month-end close and audit?",
     answer:
-      "Yes. Every action is logged with a complete audit trail — what was read, what was decided, what was posted, and why. Materiality thresholds, approvals, and SoD controls are honored. Auditors get a single, searchable trail instead of email chains and spreadsheet versions.",
+      "Yes. Every action is logged with a complete audit trail — what was read, what was decided, what was posted, and why. Materiality thresholds, approvals, and SoD controls are honored. Auditors [...]
   },
   {
     question: "How long until we see results?",
@@ -35,9 +35,9 @@ export const Route = createFileRoute("/solutions/finance")({
   head: () =>
     buildSeo({
       path: "/solutions/finance",
-      title: "Finance & Accounting Automation — Rollio",
+      title: "Autonomous AI Agents for Finance & Accounting | Rollio",
       description:
-        "Hands-free financial close: Rollio's AI agents handle reconciliation, accruals, journal entries, and close — cutting close time from weeks to days.",
+        "Deploy Finance AI Agents that contextualize unstructured data with your GL, autonomously resolving reconciliations and accelerating your month-end close.",
       jsonLd: [
         breadcrumbListLd([
           { name: "Home", path: "/" },
@@ -146,20 +146,19 @@ function FinancePage() {
         />
         <div className="relative z-10 max-w-3xl">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-            Solutions · Finance &amp; Accounting Operations
+            Enterprise AI Solutions · Finance &amp; Accounting
           </span>
           <h1 className="mt-6 text-balance">
-            Close your months in days,{" "}
-            <span className="text-accent">not weeks.</span>
+            Accelerate month-end close with{" "}
+            <span className="text-accent">Context-Aware AI Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Rollio handles your accounting operations — reconciliation, close procedures,
-            journal entries, reporting — so the work runs itself.
+            Your ERP is the system of record, but the context for every transaction lives in emails, PDFs, and spreadsheets. Rollio's Contextual Data Engine bridges the gap, empowering AI Agents to autonomously handle reconciliation, accruals, and journal entries—leaving a perfect audit trail.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book a Finance Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
@@ -174,19 +173,14 @@ function FinancePage() {
       <Section tone="default">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
           <div className="max-w-2xl">
-            <CardEyebrow>The Problem</CardEyebrow>
-            <h2>Your month-end close is a nightmare.</h2>
+            <CardEyebrow>The Core Finance Bottleneck</CardEyebrow>
+            <h2>Your ERP cannot read unstructured context.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                Reconciliation stretched across SAP, NetSuite, and Excel. Manual journal
-                entries, accruals, and discrepancy hunts. Revenue recognition, lease, and
-                tax all piled into the same window.
+                Standard RPA and ERP automation breaks the moment a transaction doesn't perfectly match. A missing PO reference, an FX rounding difference, or a disputed invoice requires context that your general ledger simply doesn't have.
               </p>
               <p>
-                Teams spend 60% of their time on reconciliation and investigation, 20% on
-                manual entries, and 15% on cross-system checks. The result: a 10–15 day
-                close, 5–10 entries needing correction, and $50K–100K of labor per close
-                — with overtime, burnout, and audit findings on top.
+                Highly skilled accountants spend 60% of their month doing manual detective work: digging through email chains to verify discrepancies, copy-pasting data into Excel for reconciliation, and drafting manual journal entries. This burns capital, delays the month-end close, and creates compliance risks.
               </p>
             </div>
           </div>
@@ -203,22 +197,20 @@ function FinancePage() {
       <Section tone="muted">
         <div className="max-w-3xl">
           <CardEyebrow>The Solution</CardEyebrow>
-          <h2>Hands-free financial close.</h2>
+          <h2>Contextual reconciliation, autonomous execution.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio's AI agents read the complete picture — your ERP, sub-ledgers, and the
-            spreadsheet, email, and document context around them — and do the work
-            end-to-end.
+            Rollio links your rigid ERP data (SAP, NetSuite, Oracle) with your messy, unstructured documents. Our Finance AI Agents understand the business reality behind a transaction, resolve exceptions autonomously, and draft fully compliant journal entries for human review.
           </p>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
           {[
-            { title: "Daily reconciliation", body: "Bank, AR, AP, and inter-company — matched and reconciled by morning, exceptions surfaced clearly." },
-            { title: "Accruals & cutoff", body: "Calculated from supporting documents, applied per policy, and routed for the right approvals." },
-            { title: "Journal entries & posting", body: "Drafted, validated, and posted within the rules you set — with a complete audit trail." },
-            { title: "Inter-company reconciliation", body: "Matches across entities, currencies, and timing differences — automatically." },
-            { title: "Close procedures", body: "Checklist verified continuously, not at the eleventh hour. Readiness in hours, not days." },
-            { title: "Reporting & analysis", body: "Variance explanations drafted with full context, ready for review and commentary." },
+            { title: "Context-Aware Reconciliation", body: "Agents read bank feeds, GLs, and the related email/invoice context to autonomously resolve timing and FX differences." },
+            { title: "Intelligent Accruals", body: "Calculates accrual amounts directly from unstructured supporting documents, applying your specific policy rules." },
+            { title: "Autonomous Journal Entries", body: "Drafts and posts journal entries to your ERP automatically, retaining a complete, searchable audit log for every action." },
+            { title: "Inter-company Matching", body: "Matches transactions across multiple entities and currencies, flagging true anomalies for Human Supervisors." },
+            { title: "Continuous Close Procedures", body: "Validates sub-ledgers and close checklists in real-time throughout the month, eliminating the eleventh-hour scramble." },
+            { title: "Audit-Ready Transparency", body: "Every AI decision is logged. Auditors get a clear, traceable path from the unstructured source document to the final ERP posting." },
           ].map((c) => (
             <Card key={c.title} variant="elevated">
               <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
@@ -232,9 +224,7 @@ function FinancePage() {
 
         <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
           <p className="text-base text-foreground">
-            <strong className="text-primary">The result:</strong> close in 3–5 days,
-            errors under 0.5%, your team refocused on strategy, and a complete audit
-            trail for every action.
+            <strong className="text-primary">The business impact:</strong> Month-end close reduced to 3–5 days, manual journal errors cut to <0.5%, and full audit compliance out-of-the-box.
           </p>
         </Card>
       </Section>
@@ -242,7 +232,7 @@ function FinancePage() {
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>Workflow Examples</CardEyebrow>
-          <h2>What Rollio actually does, step by step.</h2>
+          <h2>How the Finance Agent operates in reality.</h2>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
@@ -343,15 +333,15 @@ function FinancePage() {
         />
         <div className="relative z-10 flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
-            <h2 className="text-surface-light">Ready to close in days, not weeks?</h2>
+            <h2 className="text-surface-light">Ready to deploy autonomous Finance Agents?</h2>
             <p className="mt-3 text-surface-light/75">
-              30 minutes, no obligation — let's scope the outcomes for your finance team.
+              Let's map your month-end close process and identify the manual bottlenecks slowing down your accounting team.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation <ArrowRight />
+                Book a Finance Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
