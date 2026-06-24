@@ -17,9 +17,9 @@ export const Route = createFileRoute("/blog/")({
   head: () =>
     buildSeo({
       path: "/blog",
-      title: "Blog & Resources — Rollio",
+      title: "Enterprise AI Insights & Architectural Research | Rollio",
       description:
-        "Insights on enterprise AI agents and automation across Order-to-Cash, Finance, Claims, and ITSM.",
+        "Deep dives, architectural blueprints, and engineering notes on context-aware AI agents, unstructured data mapping, and enterprise automation.",
     }),
   loader: ({ context }) => context.queryClient.ensureQueryData(postsQuery),
   component: BlogIndex,
@@ -63,15 +63,14 @@ function BlogIndex() {
         />
         <div className="relative z-10 max-w-3xl">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-            Blog &amp; Resources
+            Insights &amp; Research
           </span>
           <h1 className="mt-6 text-balance">
             Field notes on enterprise{" "}
-            <span className="text-accent">AI agents.</span>
+            <span className="text-accent">AI autonomy.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Deep dives, customer stories, and practical guides for automating the work
-            that runs your business.
+            Deep dives, architectural blueprints, and practical guides for bridging data silos and deploying context-aware AI Agents within legacy enterprise stacks.
           </p>
         </div>
       </Section>
@@ -80,8 +79,8 @@ function BlogIndex() {
       <Section tone="default">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
-            <CardEyebrow>Latest posts</CardEyebrow>
-            <h2>From the Rollio team.</h2>
+            <CardEyebrow>Latest Insights</CardEyebrow>
+            <h2>Engineering notes &amp; case studies.</h2>
           </div>
 
           {allTags.length > 0 && (
