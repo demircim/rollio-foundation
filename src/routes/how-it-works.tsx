@@ -23,9 +23,9 @@ export const Route = createFileRoute("/how-it-works")({
   head: () =>
     buildSeo({
       path: "/how-it-works",
-      title: "How Rollio Works — Smart Business Understanding",
+      title: "How it Works: The Contextual Data Engine | Rollio",
       description:
-        "See how Rollio gives you complete business context and executes faster decisions. Real example: 7-day approvals reduced to 2 hours.",
+        "See how Rollio's AI Agents ingest unstructured data, connect it to your ERP, and execute complex business workflows autonomously. Real example inside.",
       jsonLd: [
         breadcrumbListLd([
           { name: "Home", path: "/" },
@@ -130,15 +130,15 @@ function Hero() {
             className="mt-5 max-w-4xl font-display text-4xl font-bold tracking-tight text-surface-light opacity-0 md:text-6xl lg:text-7xl"
             style={{ animation: "fadeInUp 0.7s ease-out 0.2s forwards" }}
           >
-            How Your Business Gets Smarter Every Day
+            The Engine Behind Autonomous Execution
           </h1>
           <div
             className="mt-7 max-w-2xl space-y-1 text-lg text-surface-light/85 opacity-0 md:text-xl"
             style={{ animation: "fadeInUp 0.7s ease-out 0.4s forwards" }}
           >
-            <p>Most companies are flying blind.</p>
-            <p>We show you what's really happening.</p>
-            <p>Then we help you act on it faster.</p>
+            <p>Standard automation stops when data gets messy.</p>
+            <p>We built a data engine that reads the context.</p>
+            <p>So your AI Agents can finally do the work.</p>
           </div>
           <div
             className="mt-10 opacity-0"
@@ -201,27 +201,23 @@ function ProblemSection() {
       >
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            The Problem
+            The Architecture Gap
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            The Problem Most Companies Face
+            Why standard bots fail at real-world work.
           </h2>
           <p className="mt-4 text-lg font-medium text-foreground">
-            Your teams are working hard. But they're working on incomplete information.
+            Your systems are rigid. But your business is unstructured.
           </p>
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
-              The most important business decisions happen outside of your systems —
-              in emails, in chat messages, in conversations between your team.
+              Business doesn't happen neatly inside database rows. It happens in email threads, Slack negotiations, PDF contracts, and support tickets.
             </p>
             <p>
-              Traditional systems don't see any of this. They only look at the official
-              transactions — the 20% of your business that's documented.
+              Standard RPA and basic LLM integrations fail because they only see the structured 20% of your business. When they hit an unstructured exception, the automation breaks and a human has to step in.
             </p>
             <p>
-              The result: managers make decisions with incomplete information,
-              processes have hidden bottlenecks nobody can see, and your team keeps
-              solving the same problems over and over.
+              To build truly autonomous AI agents, you need an architecture that understands context—translating human communication into machine-actionable data.
             </p>
           </div>
         </div>
@@ -266,10 +262,10 @@ function ProblemSection() {
               <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-accent" />
               <div>
                 <p className="font-display text-lg font-bold">
-                  Rollio Sees Everything
+                  The Contextual Data Engine
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Complete visibility into how your business really works.
+                  Bridging unstructured human reality with structured ERP systems.
                 </p>
               </div>
             </div>
@@ -287,22 +283,22 @@ function HowItWorksSteps() {
     {
       n: 1,
       Icon: Brain,
-      title: "We Learn How Your Business Works",
-      body: "We look at everything — your systems, your emails, your conversations. We learn how your business actually operates, including the shortcuts and workarounds your team has created.",
+      title: "We Ingest & Map",
+      body: "Rollio securely reads your structured systems (SAP, Salesforce) alongside unstructured channels (Email, Slack, PDFs) without altering your source of truth.",
       accent: "var(--navy)",
     },
     {
       n: 2,
       Icon: Sprout,
-      title: "Your System Grows Automatically",
-      body: "As your business changes, we adapt automatically. New rules? We learn them instantly. New processes? We understand them. No downtime. No manual updates. It just works.",
+      title: "We Contextualize",
+      body: "Our engine links the raw data. It understands that an angry email from a vendor is directly connected to PO #4821 and a specific delivery delay.",
       accent: "var(--teal)",
     },
     {
       n: 3,
       Icon: CheckCircle2,
-      title: "Smart Decisions Happen Automatically",
-      body: "Our agents take action based on complete business context. Faster decisions. Better outcomes. Full transparency. No more waiting — just results.",
+      title: "Agents Execute & Log",
+      body: "The AI Agent executes the optimal action in your ERP based on your business rules, leaving a permanent, human-readable audit trail.",
       accent: "var(--navy)",
     },
   ];
@@ -312,13 +308,13 @@ function HowItWorksSteps() {
       <div ref={ref} className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            The Approach
+            The Methodology
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            How Our System Actually Works
+            How Rollio Agents execute workflows.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Three simple steps: <span className="font-semibold text-foreground">Learn → Grow → Execute</span>
+            Three steps to autonomy: <span className="font-semibold text-foreground">Ingest → Contextualize → Execute</span>
           </p>
         </div>
 
@@ -386,18 +382,18 @@ function RealExample() {
   const { ref, inView } = useInView<HTMLDivElement>();
   const [revealed, setRevealed] = useState(false);
 
-  const beforeItems = ["Loan arrives", "Underwriting review", "Approval issued"];
+  const beforeItems = ["Invoice arrives in SAP", "Price mismatch flagged", "Routed for manual review"];
   const hiddenItems = [
-    "Risk review email (awaiting)",
-    "VP approval stuck in inbox (3 days)",
-    "Compliance check (hidden)",
+    "Agent reads email history",
+    "Finds approved price change via Slack",
+    "Matches new price to PO",
   ];
 
   const impacts = [
-    { label: "Bottleneck Found", value: "VP approval delay" },
-    { label: "Solution", value: "Parallel approvals enabled" },
+    { label: "Bottleneck Found", value: "Manual exception review" },
+    { label: "Agent Action", value: "Contextual 3-way match" },
     { label: "84% Faster", value: "7 days → 2 hours" },
-    { label: "Freed Time", value: "Team focused on strategy" },
+    { label: "Result", value: "Zero human touch" },
   ];
 
   return (
@@ -408,10 +404,10 @@ function RealExample() {
             Real Example
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Credit Approvals: From 7 Days to 2 Hours
+            Exception Handling: From 7 Days to 2 Hours
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            What systems show vs. what's really happening.
+            How contextual understanding accelerates complex workflows.
           </p>
         </div>
 
@@ -440,7 +436,7 @@ function RealExample() {
               ))}
             </ul>
             <div className="mt-8 rounded-xl bg-muted px-4 py-3 text-sm font-semibold text-foreground">
-              ⏱️ Reported cycle: <span className="text-primary">3 days</span>
+              ⏱️ Reported delay: <span className="text-primary">3 days</span>
             </div>
           </div>
 
@@ -463,7 +459,7 @@ function RealExample() {
             <ul className="mt-6 space-y-4">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span>Loan arrives</span>
+                <span>Invoice arrives in SAP</span>
               </li>
 
               {hiddenItems.map((t, i) => (
@@ -487,20 +483,20 @@ function RealExample() {
 
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span>Underwriting review</span>
+                <span>Price mismatch flagged</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span>Approval issued</span>
+                <span>Routed for manual review</span>
               </li>
             </ul>
 
             <div className="mt-8 space-y-2 rounded-xl bg-accent/10 px-4 py-3 text-sm">
               <p className="font-semibold">
-                📊 Real cycle: <span className="text-primary">7 days</span>
+                📊 Manual bottleneck: <span className="text-primary">7 days</span>
               </p>
               <p className="font-semibold text-accent-foreground">
-                ✨ With parallel approvals:{" "}
+                ✨ With Contextual AI Action:{" "}
                 <span className="text-teal-text">2 hours</span>
               </p>
             </div>
@@ -557,28 +553,28 @@ function ResultsMetrics() {
       target: 60,
       suffix: "%",
       label: "Faster Processing",
-      desc: "Cycles reduced across operations",
+      desc: "Average cycle time reduction",
     },
     {
       Icon: Target,
       target: 99,
       suffix: "%",
       label: "Accuracy",
-      desc: "vs. 2–5% manual error rate",
+      desc: "In autonomous decision making",
     },
     {
       Icon: ShieldCheck,
       target: 100,
       suffix: "%",
-      label: "Full Visibility",
-      desc: "Audit-ready, always compliant",
+      label: "Auditability",
+      desc: "Every action fully logged",
     },
     {
       Icon: Users,
       target: 4,
       suffix: "h",
       label: "Team Focus",
-      desc: "Per person, freed for strategy",
+      desc: "Hours saved per person weekly",
     },
   ];
 
@@ -590,10 +586,10 @@ function ResultsMetrics() {
             The Results
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Better Decisions, Faster
+            Autonomy you can measure.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Real outcomes from companies using our platform.
+            The impact of contextual data on enterprise operations.
           </p>
         </div>
 
@@ -685,15 +681,15 @@ function CtaSection() {
 
         <div className="relative mx-auto max-w-3xl px-6 py-20 text-center md:px-8 md:py-28">
           <h2 className="font-display text-3xl font-bold tracking-tight text-surface-light md:text-5xl">
-            See How It Works in Your Business
+            See the Engine in Action
           </h2>
           <p className="mt-5 text-lg text-surface-light/85 md:text-xl">
-            A 30-minute consultation showing exactly where you can save time and money.
+            A 30-minute architectural deep-dive into how we contextualize your data.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" variant="primary">
               <Link to="/consultation-booking">
-                Request Demo <ArrowRight />
+                Book an Architecture Call <ArrowRight />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline-light">
