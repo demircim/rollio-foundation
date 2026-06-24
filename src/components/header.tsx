@@ -21,8 +21,8 @@ const nav: NavItem[] = [
       { href: "/solutions/itsm", label: "ITSM", typed: true },
     ],
   },
-  { kind: "link", label: "How It Works", href: "/how-it-works", typed: true },
-  { kind: "link", label: "Resources", href: "/blog", typed: true },
+  { kind: "link", label: "Platform Engine", href: "/how-it-works", typed: true },
+  { kind: "link", label: "Insights", href: "/blog", typed: true },
   { kind: "link", label: "About", href: "/about", typed: true },
 ];
 
@@ -120,7 +120,7 @@ export function Header() {
                   {item.label}
                   <ChevronDown className="h-4 w-4" aria-hidden />
                 </button>
-                <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-fo[...]">
                   <ul className="min-w-[220px] rounded-xl border border-border bg-popover p-2 shadow-lg">
                     {item.children.map((c) => (
                       <li key={c.href}>
@@ -156,7 +156,7 @@ export function Header() {
 
         <div className="hidden md:block">
           <Button variant="primary" size="default" asChild>
-            <Link to="/consultation-booking">Request a Demo</Link>
+            <Link to="/consultation-booking">Book Assessment</Link>
           </Button>
         </div>
 
@@ -237,7 +237,7 @@ export function Header() {
             <li className="pt-4">
               <Button variant="primary" className="w-full" asChild>
                 <Link to="/consultation-booking" onClick={() => setOpen(false)}>
-                  Request a Demo
+                  Book Assessment
                 </Link>
               </Button>
             </li>
