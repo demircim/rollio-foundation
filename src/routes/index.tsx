@@ -131,7 +131,7 @@ const whyChoose = [
     icon: Sparkles,
     eyebrow: "Complete Context",
     title: "Understands 100% of your business — including the 80% everyone misses.",
-    body: "Most tools read only your structured data. Your real intelligence — customer intent, context, exceptions — lives in emails, tickets, and notes. Rollio reads both, so the work gets done [...]
+    body: "Most tools read only your structured data. Your real intelligence — customer intent, context, exceptions — lives in emails, tickets, and notes. Rollio reads both, so the work gets done right.",
     cta: "See how complete context works",
   },
   {
@@ -427,11 +427,11 @@ function Home() {
             <dl className="mt-8 space-y-6">
               <StoryRow
                 term="Challenge"
-                desc="Manual AR/AP/Collections scattered across systems; unpredictable cash flow; hundreds of hours a month of manual work; SAP plus email-based approvals; a cash conversion cycle stre[...]
+                desc="Manual AR/AP/Collections scattered across systems; unpredictable cash flow; hundreds of hours a month of manual work; SAP plus email-based approvals; a cash conversion cycle stretched too long."
               />
               <StoryRow
                 term="Solution"
-                desc="Rollio's finance AI agents read the complete picture (SAP plus emails, spreadsheets, notes) and do the AR/AP/Collections work — approval routing, payment timing, vendor managem[...]
+                desc="Rollio's finance AI agents read the complete picture (SAP plus emails, spreadsheets, notes) and do the AR/AP/Collections work — approval routing, payment timing, vendor management."
               />
               <StoryRow
                 term="Result"
