@@ -15,62 +15,62 @@ const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "How long does deployment actually take?",
     answer:
-      "Typically 30–90 days, depending on scope. Week 1–2 is Discovery: we read your information across systems, find the highest-impact opportunities, and define a 30-day pilot. Week 3–6 is the Pilot: Rollio starts doing the work on 1–2 core processes, with real-time measurement and team training on the rules and limits you set. Month 2–3 is Scaling: expand to more processes while the system keeps improving. Month 4+ is Full Speed: it runs on its own with light oversight. Most customers see measurable results within 30 days of piloting, and ROI within 90 days.",
+      "Typically 30–90 days, depending on scope. Week 1–2 is Discovery: we read your information across systems, find the highest-impact opportunities, and define a 30-day pilot. Week 3–6 is[...]",
   },
   {
     question: "Is this the same as process mining (like Celonis)?",
     answer:
-      "Process mining is a great foundation — it shows you what happened historically. Rollio goes two steps further. First, it reads everything: not just your structured data, but the messy context in emails, tickets, notes, and spreadsheets — so it works from the full picture, not the visible 20%. Second, it acts: process mining shows you the problem; Rollio shows you and fixes it in real time. Celonis might tell you 'approval cycles take 7 days.' Rollio tells you that and then cuts them to hours by doing the work. They complement each other — many customers use both.",
+      "Process mining is a great foundation — it shows you what happened historically. Rollio goes two steps further. First, it reads everything: not just your structured data, but the messy context[...]",
   },
   {
     question: "Will Rollio replace our existing systems?",
     answer:
-      "No. Rollio works on top of the systems you already have. It reads without changing your source of truth, coordinates work across systems, and keeps your data where it lives. It works with Salesforce, Celonis, Microsoft Dynamics, ServiceNow, SAP, and your other systems. You keep your systems and your data — Rollio makes them faster and more accurate.",
+      "No. Rollio works on top of the systems you already have. It reads without changing your source of truth, coordinates work across systems, and keeps your data where it lives. It works with Sales[...]",
   },
   {
     question: "How secure is Rollio with our data?",
     answer:
-      "Security is foundational. Certifications and compliance: SOC 2 Type II, zero-trust architecture, GDPR compliant, HIPAA-ready, FedRAMP ready. Data handling: read-only access, encryption in transit (TLS 1.3) and at rest (AES-256), data stays in your environment, and a full audit trail of every action. Access control: role-based access, multi-factor authentication, IP allow-listing, and regular key rotation. A dedicated security contact provides monthly reports, quarterly reviews, and incident-response procedures.",
+      "Security is foundational. Certifications and compliance: SOC 2 Type II, zero-trust architecture, GDPR compliant, HIPAA-ready, FedRAMP ready. Data handling: read-only access, encryption in trans[...]",
   },
   {
     question: "How does outcome-based pricing work?",
     answer:
-      "You pay based on the results your business achieves — not features or seats. Instead of a fixed subscription, pricing tracks measurable outcomes: faster payment cycles (shared savings from accelerated cash), less manual work (shared labor savings), or fewer errors (shared value). We only succeed when you succeed. The next step is a short consultation to structure pricing around your outcomes.",
+      "You pay based on the results your business achieves — not features or seats. Instead of a fixed subscription, pricing tracks measurable outcomes: faster payment cycles (shared savings from ac[...]",
   },
   {
     question: "What's the investment range?",
     answer:
-      "It's outcome-based and varies with (1) the outcomes you're targeting, (2) how many processes are in scope, and (3) integration complexity. For reference only: a small pilot (1 process) $X–$Y per month; mid-market (3–5 processes) $Y–$Z per month; enterprise (5+) custom. A consultation gets you a model tied to your outcomes — no surprises, no hidden fees.",
+      "It's outcome-based and varies with (1) the outcomes you're targeting, (2) how many processes are in scope, and (3) integration complexity. For reference only: a small pilot (1 process) $X–$Y [...]",
   },
   {
     question: "What if we don't see the outcomes we're targeting?",
     answer:
-      "That's the point of outcome-based pricing — we're aligned with your success. If the targeted outcomes aren't reached, pricing adjusts accordingly. Whether the goal is a cash-conversion improvement, a lower error rate, or time saved, pricing scales to what's actually achieved. We're confident enough to put our money where our mouth is.",
+      "That's the point of outcome-based pricing — we're aligned with your success. If the targeted outcomes aren't reached, pricing adjusts accordingly. Whether the goal is a cash-conversion improv[...]",
   },
   {
     question: "What systems does Rollio work with?",
     answer:
-      "Ready-made connections for Salesforce (Sales/Service/Platform), Celonis, Microsoft (Dynamics 365, Teams, 365), ServiceNow (ITSM, CMDB), SAP (S/4HANA, ECC, SuccessFactors), and your other systems. It reads your data securely and works in real time. Typical timing: ready-made connections 1–2 weeks; custom connections 2–4 weeks; full deployment 6–8 weeks.",
+      "Ready-made connections for Salesforce (Sales/Service/Platform), Celonis, Microsoft (Dynamics 365, Teams, 365), ServiceNow (ITSM, CMDB), SAP (S/4HANA, ECC, SuccessFactors), and your other system[...]",
   },
   {
     question: "What's the difference between Rollio and RPA (like UiPath)?",
     answer:
-      "Both automate, but very differently. RPA is rules-based ('if X, then Y') — it breaks when reality is more complex, reads only structured data, and needs reprogramming when your process changes. Rollio understands context, adapts to exceptions, reads both structured and unstructured information (emails, intent), and keeps learning. Example: an RPA rule breaks when a vendor relationship or PO changes; Rollio weighs the full context, handles the exception, and learns your approval patterns. Use RPA for simple, repetitive tasks; use Rollio for the complex, context-heavy work.",
+      "Both automate, but very differently. RPA is rules-based ('if X, then Y') — it breaks when reality is more complex, reads only structured data, and needs reprogramming when your process change[...]",
   },
   {
     question: "Can we start small and expand?",
     answer:
-      "Yes — it's what we recommend. Month 1–2: a 30-day pilot on one high-impact process (~10% of volume), low risk. Month 3–4: validate and expand to 2–3 related processes (~50%). Month 5–6: scale to 5+ processes (80%+). Month 7+: ongoing improvement. Starting with a process you know well builds internal champions and proves ROI before a wider rollout.",
+      "Yes — it's what we recommend. Month 1–2: a 30-day pilot on one high-impact process (~10% of volume), low risk. Month 3–4: validate and expand to 2–3 related processes (~50%). Month 5–[...]",
   },
   {
     question: "What happens when our processes change?",
     answer:
-      "Rollio adapts on its own. Old-style automation needs manual rule updates and breaks until they're done. Rollio keeps running within the rules you set, learns the new pattern, updates its understanding, applies it going forward, and notifies you — asking for approval if needed. Example: when an approval threshold changes from $50K to $100K, Rollio reads the new approval, recognizes the change, and applies it immediately, with a notification. No downtime, no manual fixes.",
+      "Rollio adapts on its own. Old-style automation needs manual rule updates and breaks until they're done. Rollio keeps running within the rules you set, learns the new pattern, updates its unders[...]",
   },
   {
     question: "Who should we talk to first?",
     answer:
-      "Schedule a 30-minute consultation with our outcomes team. We'll talk through your top business challenges, the outcomes that matter most, which processes to prioritize, your timeline, and how Rollio connects to your systems. By the end you'll know whether Rollio is a fit, which processes to start with, a realistic timeline and outcomes, and an outcome-based pricing structure. No pressure — just a conversation about the results you want.",
+      "Schedule a 30-minute consultation with our outcomes team. We'll talk through your top business challenges, the outcomes that matter most, which processes to prioritize, your timeline, and how R[...]",
   },
 ];
 
@@ -131,7 +131,7 @@ const whyChoose = [
     icon: Sparkles,
     eyebrow: "Complete Context",
     title: "Understands 100% of your business — including the 80% everyone misses.",
-    body: "Most tools read only your structured data. Your real intelligence — customer intent, context, exceptions — lives in emails, tickets, and notes. Rollio reads both, so the work gets done with the full picture in view.",
+    body: "Most tools read only your structured data. Your real intelligence — customer intent, context, exceptions — lives in emails, tickets, and notes. Rollio reads both, so the work gets done [...]
     cta: "See how complete context works",
   },
   {
@@ -200,26 +200,22 @@ function Home() {
         <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
           <div>
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-              Enterprise AI Agents
+              Enterprise AI Agents for ERP & CRM
             </span>
             <h1 className="mt-6 text-balance text-surface-light">
-              Discovers What Matters.{" "}
-              <span className="text-accent">Executes What Works.</span>
+              No AI Autonomy Without Context. <span className="text-accent">We Give Agents the Full Picture.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-surface-light/80 md:text-xl">
-              Rollio reads your whole business — not just the data in your systems, but
-              the hidden 80% buried in emails, tickets, and conversations. Then its AI
-              agents get the work done for you, in real time. No more manual workarounds.
-              No more brittle automation that breaks the moment your process changes.
+              Most enterprise AI projects fail because models lack business context. Rollio bridges the gap between rigid data silos (like SAP or ServiceNow) and true AI capability. We contextualize 100% of your data—from structured fields to messy emails—empowering AI agents to execute complex back-office workflows autonomously or with Human-in-the-Loop control.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
                 <Link to="/consultation-booking">
-                  See How It Works in 90 Days <ArrowRight />
+                  Book a Use-Case Assessment <ArrowRight />
                 </Link>
               </Button>
               <Button variant="outline-light" size="lg" asChild>
-                <Link to="/consultation-booking">Schedule a consultation</Link>
+                <Link to="/consultation-booking">Talk to an AI Architect</Link>
               </Button>
             </div>
           </div>
@@ -286,25 +282,19 @@ function Home() {
       <Section tone="muted">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
           <div className="max-w-2xl">
-            <CardEyebrow>The Problem</CardEyebrow>
+            <CardEyebrow>The Core Problem</CardEyebrow>
             <h2>
-              Your intelligence is locked away. Your business runs on workarounds.
+              Why 80% of Enterprise AI projects fail at the data layer.
             </h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                80% of what you need to run your business lives in emails, tickets, and
-                notes — invisible to the dashboards and reports you already pay for. Your
-                team connects the dots by hand every day: spotting issues, weighing
-                options, building workarounds. It costs you millions.
+                You have structured data in SAP, Salesforce, and ServiceNow. You have unconstructed data in emails, claims, and service tickets. But your systems cannot connect the dots.
               </p>
               <p>
-                When something breaks, your team reacts instead of preventing it — because
-                the insight is scattered and acting on it takes time. Every hour of delay
-                costs you customer satisfaction, cash flow, and competitive edge.
+                Standard AI models and RPA bots break when reality gets complex because they lack contextual understanding. Your team spends hundreds of hours manually bridging the gap: reading an email, checking the ERP, validating a claim, and updating a ticket.
               </p>
               <p>
-                The companies pulling ahead already read all of their information — the
-                structured and the messy — and act on it right away. Waiting is expensive.
+                <strong>Without contextual data, you cannot build autonomous AI agents.</strong> You are stuck paying for expensive workarounds while your back-office processes hit a scaling wall.
               </p>
             </div>
           </div>
@@ -327,29 +317,27 @@ function Home() {
             <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
               <Sparkles className="h-5 w-5" aria-hidden />
             </span>
-            <CardTitle>Complete business context</CardTitle>
+            <CardTitle>1. Contextual Data Engine</CardTitle>
             <CardBody>
-              It reads everything — the structured data and the messy stuff in emails,
-              tickets, and notes — so it understands the full picture.
+              We ingest structured ERP data and unstructured text (emails, tickets), translating it into rich, contextual datasets that LLMs and AI agents can actually understand.
             </CardBody>
           </Card>
           <Card variant="elevated">
             <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
               <Zap className="h-5 w-5" aria-hidden />
             </span>
-            <CardTitle>Real execution</CardTitle>
+            <CardTitle>2. Autonomous AI Agents</CardTitle>
             <CardBody>
-              Your AI agents don't just flag problems. They fix them for you, around the
-              clock.
+              Deploy specialized agents for Order-to-Cash, ITSM, or Procurement. They don't just recommend actions; they execute end-to-end workflows directly within your systems.
             </CardBody>
           </Card>
           <Card variant="elevated">
             <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
-              <CheckCircle2 className="h-5 w-5" aria-hidden />
+              <ShieldCheck className="h-5 w-5" aria-hidden />
             </span>
-            <CardTitle>The result</CardTitle>
+            <CardTitle>3. Human-in-the-Loop</CardTitle>
             <CardBody>
-              Your business doesn't wait. Your work doesn't stop.
+              You retain total control. Choose between full autonomy for standard processes, or set up Human Supervisors to approve edge cases and complex escalation management.
             </CardBody>
           </Card>
         </Grid>
@@ -439,11 +427,11 @@ function Home() {
             <dl className="mt-8 space-y-6">
               <StoryRow
                 term="Challenge"
-                desc="Manual AR/AP/Collections scattered across systems; unpredictable cash flow; hundreds of hours a month of manual work; SAP plus email-based approvals; a cash conversion cycle stretching past target."
+                desc="Manual AR/AP/Collections scattered across systems; unpredictable cash flow; hundreds of hours a month of manual work; SAP plus email-based approvals; a cash conversion cycle stre[...]
               />
               <StoryRow
                 term="Solution"
-                desc="Rollio's finance AI agents read the complete picture (SAP plus emails, spreadsheets, notes) and do the AR/AP/Collections work — approval routing, payment timing, vendor management — around the clock."
+                desc="Rollio's finance AI agents read the complete picture (SAP plus emails, spreadsheets, notes) and do the AR/AP/Collections work — approval routing, payment timing, vendor managem[...]
               />
               <StoryRow
                 term="Result"
@@ -550,7 +538,7 @@ function HeroVisual() {
             Before
           </p>
           <p className="mt-2 text-sm font-medium text-surface-light">
-            Your intelligence is scattered
+            Raw Data (No Context)
           </p>
           <div className="mt-4 space-y-2">
             {[
@@ -580,15 +568,15 @@ function HeroVisual() {
             After
           </p>
           <p className="mt-2 text-sm font-medium text-surface-light">
-            Your work gets done
+            Contextualized AI Execution
           </p>
           <div className="mt-4 space-y-2">
             {[
-              "Invoice matched & approved",
+              "Context mapped from email & SAP",
+              "AI Agent resolved exception",
+              "Human Supervisor approved",
               "Payment scheduled (early-discount)",
-              "Vendor notified",
-              "Ticket resolved · 4 min",
-              "Audit trail logged",
+              "Audit trail logged in ERP",
             ].map((t) => (
               <div
                 key={t}
@@ -639,7 +627,7 @@ function BeforeAfterVisual() {
           One organized, connected flow
         </p>
         <div className="mt-4 space-y-2">
-          {["Read", "Decide", "Execute", "Verify"].map((s) => (
+          {['Read', 'Decide', 'Execute', 'Verify'].map((s) => (
             <div
               key={s}
               className="flex items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-sm"
