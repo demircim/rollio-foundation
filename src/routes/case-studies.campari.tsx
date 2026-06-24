@@ -34,7 +34,7 @@ function articleLd() {
     headline:
       "How Campari Improved Cash Conversion Cycle by 24% with Hands-Free Finance",
     description:
-      "Campari Group worked with Rollio's finance AI agents to cut its cash conversion cycle by 24%, free $2.1M in working capital, and reduce manual AR/AP work by 60%.",
+      "Campari Group deployed Rollio's Contextual Data Engine and Autonomous AI Agents to bridge SAP and unstructured communications, cutting its cash conversion cycle by 24%, freeing $2.1M in working capital, and reducing manual AR/AP work by 60%.",
     mainEntityOfPage: PAGE_URL,
     url: PAGE_URL,
     datePublished: PUBLISHED_AT,
@@ -72,20 +72,20 @@ function videoObjectLd() {
 
 const agents = [
   {
-    title: "Accounts Receivable",
-    body: "Tracks invoices in SAP, watches payment status, sends reminders per Campari's rules, escalates aged receivables, and predicts payment timing — for better cash visibility and faster collections.",
+    title: "Context-Aware Accounts Receivable",
+    body: "Reads unstructured email correspondence and SAP data to resolve payment disputes, issue context-aware reminders, and predict payment timing.",
   },
   {
-    title: "Accounts Payable",
-    body: "Receives invoices (email, EDI, portal), runs three-way match (PO/receipt/invoice), routes for approval by policy, catches duplicates, and schedules best-timed payment — cutting approval from 2–3 days to 2–4 hours.",
+    title: "Autonomous AP Processing",
+    body: "Performs 3-way matching by extracting context from invoices, POs, and emails. Resolves discrepancies autonomously or escalates to a Human Supervisor.",
   },
   {
-    title: "Payments Optimization",
-    body: "Reviews cash position and obligations, finds early-payment discounts, weighs discount vs cash flow, makes the payment decision, and pays through the banking system — capturing discounts and optimizing cash.",
+    title: "Contextual Payment Optimization",
+    body: "Analyzes dynamic vendor terms buried in contracts and emails against current cash positions to execute optimal payment scheduling.",
   },
   {
-    title: "Vendor Management",
-    body: "Tracks vendor performance, handles vendor communication, manages compliance, and escalates issues — for better relationships and fewer exceptions.",
+    title: "Intelligent Vendor Management",
+    body: "Proactively handles routine vendor inquiries via email using natural language, escalating only complex compliance issues.",
   },
 ];
 
@@ -130,29 +130,29 @@ const secondaryResults = [
 
 const howWeDidIt = [
   {
-    title: "Connections",
-    body: "SAP S/4HANA, email, banking systems, and Excel/SAP exports — read securely without changing the system of record.",
+    title: "Contextual Ingestion",
+    body: "Integrated SAP S/4HANA with email servers and document portals to create a single, contextualized data layer—without altering the system of record.",
   },
   {
-    title: "Rules & limits",
-    body: "Auto-approve low-risk matches. Route exceptions, unusual amounts, and new vendors to a person. Hard payment limits and a full audit trail of every action.",
+    title: "Human-in-the-Loop Guardrails",
+    body: "Configured strict parameters. Standard matches execute autonomously; edge cases and high-value payments route to Human Supervisors with a full contextual summary.",
   },
   {
-    title: "Learning",
-    body: "Observes approval patterns, learns vendor behavior, improves over time. Monthly tuning with the finance team.",
+    title: "Continuous Agent Learning",
+    body: "Agents observe human approvals on edge cases, continuously updating their understanding of Campari's vendor behaviors and internal policies.",
   },
   {
-    title: "Safety",
-    body: "30-day pilot, gradual scaling, an off-switch, and human oversight on critical decisions.",
+    title: "Secure Autonomous Execution",
+    body: "Deployed via a 30-day pilot with strict read-only phases before enabling autonomous write-back to SAP, backed by a 100% transparent audit trail.",
   },
 ];
 
 const lessons = [
-  "Start with a pilot — small slice, clear baseline, fast feedback.",
-  "Business context matters: Rollio reads it; rigid rules break.",
-  "It keeps improving — from 40% of invoices in month 1 to 75% by month 3.",
-  "The team's role shifts from operational to strategic finance work.",
-  "The financial impact is real: $2.1M working capital, captured vendor discounts, Year 1 ROI.",
+  "Standard RPA breaks without context. AI Agents require a Contextual Data Engine to handle real-world exceptions.",
+  "The real bottleneck isn't the ERP; it's the unstructured data hidden in employee inboxes.",
+  "Trust is built through transparency. The Human-in-the-Loop model allowed Campari to scale autonomy safely.",
+  "The team's role shifted from manual data entry and detective work to strategic financial management.",
+  "The financial impact is real: $2.1M working capital, captured vendor discounts, and rapid ROI.",
 ];
 
 const roadmap = [
@@ -179,7 +179,7 @@ export const Route = createFileRoute("/case-studies/campari")({
       title:
         "Campari Case Study — 24% Faster Cash Conversion with Rollio",
       description:
-        "How Campari Group worked with Rollio's finance AI agents to cut cash conversion by 24% (45+ → ~35 days), free $2.1M in working capital, and cut manual AR/AP work by 60%.",
+        "How Campari Group used Rollio's Contextual AI Agents to bridge SAP and email data, cutting cash conversion by 24% and freeing $2.1M in working capital.",
       ogType: "article",
       jsonLd: [
         breadcrumbListLd([
@@ -220,12 +220,10 @@ function CampariCaseStudy() {
             </span>
             <h1 className="mt-6 text-balance">
               How Campari improved cash conversion cycle by{" "}
-              <span className="text-accent">24%</span> with hands-free finance.
+              <span className="text-accent">Contextual AI Agents.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-surface-light/80">
-              Rollio's finance AI agents read the complete picture across SAP and email,
-              and now run AR/AP/Collections around the clock — freeing $2.1M in working
-              capital and cutting manual work by 60%.
+              Campari's finance data was trapped in a disconnect between rigid SAP records and unstructured email threads. Rollio's Contextual Data Engine bridged the gap, empowering AI Agents to execute AR and AP workflows autonomously—freeing $2.1M in working capital.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
@@ -323,18 +321,14 @@ function CampariCaseStudy() {
       <Section tone="default">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
           <div className="max-w-2xl">
-            <CardEyebrow>The Challenge</CardEyebrow>
-            <h2>Fragmented finance work, slow cash conversion.</h2>
+            <CardEyebrow>The Context Gap</CardEyebrow>
+            <h2>Fragmented data and manual workarounds.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                AR lived across SAP and emails. AP came in via email, EDI, and portals.
-                Collections ran through email with no central tracking. Approvals routed
-                through email chains, adding 2–3 days of delay.
+                Campari's AR lived in SAP, but the context—disputes, missing POs, vendor questions—lived unstructured in emails. Approvals routed through manual email chains lacked ERP visibility, adding 2–3 days of delay per invoice.
               </p>
               <p>
-                The impact: limited visibility, slow collections, manual payment timing,
-                and a cash conversion cycle stuck at 45+ days against a target under 30
-                — with 60% of finance time on manual work and 3–5% payment errors.
+                The impact: Managers were flying blind. Standard automation couldn't read the context, leaving the finance team to spend 60% of their time acting as manual routers between SAP and Outlook. This drove the cash conversion cycle up to 45+ days and caused a 3–5% payment error rate.
               </p>
             </div>
           </div>
@@ -352,11 +346,9 @@ function CampariCaseStudy() {
       <Section tone="muted">
         <div className="max-w-2xl">
           <CardEyebrow>The Solution</CardEyebrow>
-          <h2>Four finance AI agents, running together.</h2>
+          <h2>Contextual Data Engine & Autonomous Execution.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio reads the complete picture — SAP plus the emails, spreadsheets, and
-            notes around it — and does the work end-to-end, within the rules Campari
-            set.
+            Rollio deployed specialized AI Agents that bridge the gap between SAP and unstructured communications. By contextualizing the data, the agents execute end-to-end workflows within Campari's exact guardrails.
           </p>
         </div>
 
