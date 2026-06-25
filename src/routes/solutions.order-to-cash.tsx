@@ -12,24 +12,25 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "How does Rollio handle invoice exceptions?",
     answer:
-      "Rollio reads the full context — the PO, the receipt, the invoice, and the email thread around them — to resolve the exception on its own when it can: missing references, unit-of-measure mis[...]
+      "Rollio reads the full context — the PO, the receipt, the invoice, and the email thread around them — to resolve the exception on its own when it can: missing references, unit-of-measure mismatches, minor price variances within tolerance, and similar issues. True anomalies are escalated to a human supervisor with full context attached.",
   },
   {
     question: "Will this change our vendor relationships?",
     answer:
-      "Yes — for the better. Vendors get faster, more predictable communication, on-time payments, and early-discount capture where it makes sense. Rollio handles vendor outreach in your tone and on[...]
+      "Yes — for the better. Vendors get faster, more predictable communication, on-time payments, and early-discount capture where it makes sense. Rollio handles vendor outreach in your tone and on your policies, so the experience stays consistent.",
   },
   {
     question: "Does Rollio work with our procurement system (SAP, Ariba, Coupa)?",
     answer:
-      "Yes. Ready-made connections to SAP S/4HANA and ECC, Ariba, Coupa, Oracle, NetSuite, and the major e-invoicing networks. Typical integration: 2–3 weeks. Rollio reads and writes through the con[...]
+      "Yes. Ready-made connections to SAP S/4HANA and ECC, Ariba, Coupa, Oracle, NetSuite, and the major e-invoicing networks. Typical integration: 2–3 weeks. Rollio reads and writes through the connectors you already have.",
   },
   {
     question: "What about contract edge cases — discounts, rebates, special terms?",
     answer:
-      "Rollio reads the contract alongside the transaction, so volume rebates, tiered pricing, payment-term variations, and special clauses are applied automatically. Edge cases that aren't clearly co[...]
+      "Rollio reads the contract alongside the transaction, so volume rebates, tiered pricing, payment-term variations, and special clauses are applied automatically. Edge cases that aren't clearly covered are escalated with the relevant contract excerpts attached.",
   },
 ];
+
 
 export const Route = createFileRoute("/solutions/order-to-cash")({
   head: () =>
