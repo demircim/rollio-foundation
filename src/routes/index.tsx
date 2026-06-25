@@ -15,62 +15,62 @@ const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "How long does deployment actually take?",
     answer:
-      "Typically 30–90 days, depending on scope. Week 1–2 is Discovery: we read your information across systems, find the highest-impact opportunities, and define a 30-day pilot. Week 3–6 is[...]",
+      "Typically 30–90 days, depending on scope. Week 1–2 is Discovery: we read your information across systems, find the highest-impact opportunities, and define a 30-day pilot. Week 3–6 is Pilot: Rollio starts doing the work on a focused process slice while your team sets rules, reviews exceptions, and measures early impact. Month 2–3 is Scaling: expand to adjacent processes and broader volume once outcomes are proven.",
   },
   {
     question: "Is this the same as process mining (like Celonis)?",
     answer:
-      "Process mining is a great foundation — it shows you what happened historically. Rollio goes two steps further. First, it reads everything: not just your structured data, but the messy context[...]",
+      "Process mining is a great foundation — it shows you what happened historically. Rollio goes two steps further. First, it reads everything: not just your structured data, but the messy context in emails, tickets, notes, and documents. Second, it acts on those insights by coordinating work across systems instead of only reporting bottlenecks.",
   },
   {
     question: "Will Rollio replace our existing systems?",
     answer:
-      "No. Rollio works on top of the systems you already have. It reads without changing your source of truth, coordinates work across systems, and keeps your data where it lives. It works with Sales[...]",
+      "No. Rollio works on top of the systems you already have. It reads without changing your source of truth, coordinates work across systems, and keeps your data where it lives. It works with Salesforce, ServiceNow, Microsoft, SAP, Celonis, and the tools your teams already rely on.",
   },
   {
     question: "How secure is Rollio with our data?",
     answer:
-      "Security is foundational. Certifications and compliance: SOC 2 Type II, zero-trust architecture, GDPR compliant, HIPAA-ready, FedRAMP ready. Data handling: read-only access, encryption in trans[...]",
+      "Security is foundational. Certifications and compliance include SOC 2 Type II, zero-trust architecture, GDPR alignment, HIPAA-ready controls, and FedRAMP-ready practices. Data handling includes read-only access where possible, encryption in transit and at rest, inherited permissions, audit logs, and no unnecessary data duplication.",
   },
   {
     question: "How does outcome-based pricing work?",
     answer:
-      "You pay based on the results your business achieves — not features or seats. Instead of a fixed subscription, pricing tracks measurable outcomes: faster payment cycles (shared savings from ac[...]",
+      "You pay based on the results your business achieves — not features or seats. Instead of a fixed subscription, pricing tracks measurable outcomes: faster payment cycles, reduced manual work, fewer exceptions, captured savings, faster approvals, or other business metrics agreed before launch.",
   },
   {
     question: "What's the investment range?",
     answer:
-      "It's outcome-based and varies with (1) the outcomes you're targeting, (2) how many processes are in scope, and (3) integration complexity. For reference only: a small pilot (1 process) $X–$Y [...]",
+      "It's outcome-based and varies with the outcomes you're targeting, how many processes are in scope, and integration complexity. A small pilot usually starts with one process and a narrow success metric; broader deployments expand pricing as measurable value is proven.",
   },
   {
     question: "What if we don't see the outcomes we're targeting?",
     answer:
-      "That's the point of outcome-based pricing — we're aligned with your success. If the targeted outcomes aren't reached, pricing adjusts accordingly. Whether the goal is a cash-conversion improv[...]",
+      "That's the point of outcome-based pricing — we're aligned with your success. If the targeted outcomes aren't reached, pricing adjusts accordingly. Whether the goal is a cash-conversion improvement, shorter approval cycle, lower exception rate, or fewer manual hours, the commercial model follows the business result.",
   },
   {
     question: "What systems does Rollio work with?",
     answer:
-      "Ready-made connections for Salesforce (Sales/Service/Platform), Celonis, Microsoft (Dynamics 365, Teams, 365), ServiceNow (ITSM, CMDB), SAP (S/4HANA, ECC, SuccessFactors), and your other system[...]",
+      "Ready-made connections cover Salesforce, Celonis, Microsoft Dynamics 365, Teams, Microsoft 365, ServiceNow, SAP S/4HANA, SAP ECC, SuccessFactors, and other systems through APIs, secure exports, and approved integration patterns.",
   },
   {
     question: "What's the difference between Rollio and RPA (like UiPath)?",
     answer:
-      "Both automate, but very differently. RPA is rules-based ('if X, then Y') — it breaks when reality is more complex, reads only structured data, and needs reprogramming when your process change[...]",
+      "Both automate, but very differently. RPA is rules-based ('if X, then Y') — it breaks when reality is more complex, reads only structured data, and needs reprogramming when your process changes. Rollio understands context, works across structured and unstructured information, and adapts within the business rules you set.",
   },
   {
     question: "Can we start small and expand?",
     answer:
-      "Yes — it's what we recommend. Month 1–2: a 30-day pilot on one high-impact process (~10% of volume), low risk. Month 3–4: validate and expand to 2–3 related processes (~50%). Month 5–[...]",
+      "Yes — it's what we recommend. Month 1–2: run a 30-day pilot on one high-impact process at a limited share of volume. Month 3–4: validate outcomes and expand to two or three related processes. Month 5 and beyond: scale to broader volume once the operating model is proven.",
   },
   {
     question: "What happens when our processes change?",
     answer:
-      "Rollio adapts on its own. Old-style automation needs manual rule updates and breaks until they're done. Rollio keeps running within the rules you set, learns the new pattern, updates its unders[...]",
+      "Rollio adapts on its own. Old-style automation needs manual rule updates and breaks until they're done. Rollio keeps running within the rules you set, learns the new pattern, updates its understanding, and escalates only when a change requires human approval.",
   },
   {
     question: "Who should we talk to first?",
     answer:
-      "Schedule a 30-minute consultation with our outcomes team. We'll talk through your top business challenges, the outcomes that matter most, which processes to prioritize, your timeline, and how R[...]",
+      "Schedule a 30-minute consultation with our outcomes team. We'll talk through your top business challenges, the outcomes that matter most, which processes to prioritize, your timeline, and how Rollio can prove value quickly without disrupting the systems you already use.",
   },
 ];
 
