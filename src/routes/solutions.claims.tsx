@@ -12,24 +12,25 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "How does Rollio stay compliant with HIPAA and regulatory deadlines?",
     answer:
-      "Compliance is built in. Rollio honors timely-notice rules, required documentation, and regulatory deadlines for each line of business. PHI is handled per HIPAA: minimum necessary access, encryp[...]
+      "Compliance is built in. Rollio honors timely-notice rules, required documentation, and regulatory deadlines for each line of business. PHI is handled per HIPAA: minimum necessary access, encryption in transit and at rest, and full audit logs of every read and write.",
   },
   {
     question: "Will Rollio make adjudication decisions on its own?",
     answer:
-      "Within the rules and limits you set — yes, for clear-cut cases that match policy, coverage, and prior patterns. Edge cases, large amounts, and anything outside the rules are routed to a perso[...]
+      "Within the rules and limits you set — yes, for clear-cut cases that match policy, coverage, and prior patterns. Edge cases, large amounts, and anything outside the rules are routed to a person with full context attached.",
   },
   {
     question: "Does Rollio work with our claims system?",
     answer:
-      "Yes. Ready-made connections to Guidewire, Duck Creek, Majesco, FINEOS, and the major healthcare and government platforms, plus document intake from email, portals, and paper (scanned). Rollio r[...]
+      "Yes. Ready-made connections to Guidewire, Duck Creek, Majesco, FINEOS, and the major healthcare and government platforms, plus document intake from email, portals, and paper (scanned). Rollio reads and writes through the systems you already use.",
   },
   {
     question: "How is the audit trail handled?",
     answer:
-      "Every action is logged: what was read, what rule applied, what was decided, and by whom (Rollio or a person). Auditors and regulators get a single, searchable trail per claim — no email archa[...]
+      "Every action is logged: what was read, what rule applied, what was decided, and by whom (Rollio or a person). Auditors and regulators get a single, searchable trail per claim — no email archaeology required.",
   },
 ];
+
 
 export const Route = createFileRoute("/solutions/claims")({
   head: () =>
