@@ -12,24 +12,25 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "Does Rollio work with our ticketing system?",
     answer:
-      "Yes. Ready-made connections to ServiceNow, Jira Service Management, Zendesk, Freshservice, and the major IT platforms. Rollio reads and writes through the connections you already use — your t[...]
+      "Yes. Ready-made connections to ServiceNow, Jira Service Management, Zendesk, Freshservice, and the major IT platforms. Rollio reads and writes through the connections you already use — your ticketing system stays the system of record.",
   },
   {
     question: "What tickets can Rollio resolve on its own?",
     answer:
-      "Within the rules you set: password resets, account create/deactivate, license requests, printer and VPN issues, common network checks, and equipment requests — typically the 60% of routine ti[...]
+      "Within the rules you set: password resets, account create/deactivate, license requests, printer and VPN issues, common network checks, and equipment requests — typically the 60% of routine tickets that follow well-known patterns. Anything outside policy is routed to a human with full context attached.",
   },
   {
     question: "How does Rollio handle incident response and change management?",
     answer:
-      "Incidents are triaged, classified, and routed with relevant context from the CMDB, recent changes, and prior incidents pulled in automatically. Change requests are checked against policy and pr[...]
+      "Incidents are triaged, classified, and routed with relevant context from the CMDB, recent changes, and prior incidents pulled in automatically. Change requests are checked against policy and prior outcomes; risky changes are escalated to CAB with the full impact assessment attached.",
   },
   {
     question: "What about user onboarding and offboarding?",
     answer:
-      "Rollio runs the full checklist: accounts created across systems, licenses assigned, equipment ordered, access provisioned per role, and the new hire notified — by end of Day 1, not Day 3. Off[...]
+      "Rollio runs the full checklist: accounts created across systems, licenses assigned, equipment ordered, access provisioned per role, and the new hire notified — by end of Day 1, not Day 3. Offboarding revokes access across all systems within minutes of the trigger.",
   },
 ];
+
 
 export const Route = createFileRoute("/solutions/itsm")({
   head: () =>
