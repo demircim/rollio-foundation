@@ -12,17 +12,17 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "Will Rollio replace our ERP or accounting system?",
     answer:
-      "No. Rollio works on top of SAP, NetSuite, Oracle, Workday, Microsoft Dynamics, and the spreadsheets your team already uses. Your ERP stays the system of record; Rollio reads and writes through [...]
+      "No. Rollio works on top of SAP, NetSuite, Oracle, Workday, Microsoft Dynamics, and the spreadsheets your team already uses. Your ERP stays the system of record; Rollio reads and writes through the connectors you already have.",
   },
   {
     question: "How does Rollio handle reconciliation exceptions?",
     answer:
-      "Rollio reads the full context — the bank feed, the GL, related invoices and emails — and resolves common breaks on its own: timing differences, FX rounding, missing references. Exceptions o[...]
+      "Rollio reads the full context — the bank feed, the GL, related invoices and emails — and resolves common breaks on its own: timing differences, FX rounding, missing references. Exceptions outside policy are escalated with full context attached.",
   },
   {
     question: "Is this safe for month-end close and audit?",
     answer:
-      "Yes. Every action is logged with a complete audit trail — what was read, what was decided, what was posted, and why. Materiality thresholds, approvals, and SoD controls are honored. Auditors [...]
+      "Yes. Every action is logged with a complete audit trail — what was read, what was decided, what was posted, and why. Materiality thresholds, approvals, and SoD controls are honored. Auditors get a single, searchable trail.",
   },
   {
     question: "How long until we see results?",
@@ -30,6 +30,7 @@ const FAQS: { question: string; answer: string }[] = [
       "Most finance teams see measurable impact within 30 days of piloting — typically faster reconciliation and fewer manual entries — and a meaningful close-time reduction by month 2–3.",
   },
 ];
+
 
 export const Route = createFileRoute("/solutions/finance")({
   head: () =>
@@ -224,7 +225,7 @@ function FinancePage() {
 
         <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
           <p className="text-base text-foreground">
-            <strong className="text-primary">The business impact:</strong> Month-end close reduced to 3–5 days, manual journal errors cut to <0.5%, and full audit compliance out-of-the-box.
+            <strong className="text-primary">The business impact:</strong> Month-end close reduced to 3–5 days, manual journal errors cut to &lt;0.5%, and full audit compliance out-of-the-box.
           </p>
         </Card>
       </Section>
