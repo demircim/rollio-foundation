@@ -224,7 +224,7 @@ function FinancePage() {
 
         <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
           <p className="text-base text-foreground">
-            <strong className="text-primary">The business impact:</strong> Month-end close reduced to 3–5 days, manual journal errors cut to <0.5%, and full audit compliance out-of-the-box.
+            <strong className="text-primary">The business impact:</strong> Month-end close reduced to 3–5 days, manual journal errors cut to &lt;0.5%, and full audit compliance out-of-the-box.
           </p>
         </Card>
       </Section>
