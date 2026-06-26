@@ -366,28 +366,8 @@ function Home() {
         </Card>
       </Section>
 
-      {/* ---------- Section 6 — Use Cases (2x2) ---------- */}
-      <Section tone="default" id="use-cases">
-        <div className="max-w-2xl">
-          <CardEyebrow>Use Cases</CardEyebrow>
-          <h2>Specialized AI agents for every business function.</h2>
-        </div>
 
-        <Grid cols={2} gap="lg" className="mt-12">
-          {useCases.map((u) => (
-            <Card key={u.title} variant="elevated" interactive>
-              <CardTitle>{u.title}</CardTitle>
-              <CardBody className="mt-2">{u.body}</CardBody>
-              <Link
-                to={u.href}
-                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-              >
-                Explore <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Card>
-          ))}
-        </Grid>
-      </Section>
+
 
       {/* ---------- Section 7 — Why Choose (2x2) ---------- */}
       <Section tone="muted">
