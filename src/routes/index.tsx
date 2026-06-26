@@ -549,53 +549,7 @@ function HowItWorksTabs() {
   );
 }
 
-  return (
-    <div className="grid gap-4">
-      <div className="rounded-xl border border-border bg-card p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          Today
-        </p>
-        <p className="mt-1 text-sm font-medium text-foreground">
-          Information scattered everywhere
-        </p>
-        <div className="mt-4 grid grid-cols-3 gap-2">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-8 rounded-md bg-muted"
-              style={{
-                transform: `rotate(${(i % 3) - 1}deg) translateY(${(i % 2) * 4}px)`,
-                opacity: 0.5 + (i % 4) * 0.1,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-      <div
-        className="rounded-xl border border-accent/30 bg-card p-6"
-        style={{ boxShadow: "0 0 60px -28px rgba(0,185,166,0.5)" }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-          With Rollio
-        </p>
-        <p className="mt-1 text-sm font-medium text-foreground">
-          One organized, connected flow
-        </p>
-        <div className="mt-4 space-y-2">
-          {['Read', 'Decide', 'Execute', 'Verify'].map((s) => (
-            <div
-              key={s}
-              className="flex items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-sm"
-            >
-              <CheckCircle2 className="h-4 w-4 text-accent" />
-              <span className="font-medium text-foreground">{s}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+
 
 function VideoPlaceholder({ label, src }: { label: string; src?: string }) {
   if (src && /^https?:\/\//.test(src)) {
