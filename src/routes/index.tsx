@@ -203,11 +203,11 @@ function Home() {
             {proofLogos.map((logo) => {
               if (logo === "W&S Financial Group") {
                 return (
-                  <span key={logo} className="group inline-flex flex-col items-center">
+                  <span key={logo} className="group relative inline-flex items-center">
                     <span className="font-display text-base font-semibold">{logo}</span>
                     <Link
                       to="/case-studies/western-southern"
-                      className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-accent opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+                      className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-wider text-accent opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
                     >
                       Read story →
                     </Link>
