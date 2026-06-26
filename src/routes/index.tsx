@@ -156,7 +156,7 @@ function Home() {
         as="header"
         tone="dark"
         data-hero-dark
-        className="relative overflow-hidden !py-20 md:!py-32"
+        className="relative overflow-hidden min-h-[calc(100vh-64px)] flex items-center !py-16 md:!py-20"
         style={{
           backgroundImage:
             "linear-gradient(180deg, #08081A 0%, #0D0D24 100%)",
@@ -171,16 +171,16 @@ function Home() {
               "radial-gradient(60% 60% at 40% 40%, rgba(0,185,166,0.35) 0%, rgba(0,185,166,0) 60%), radial-gradient(60% 60% at 70% 60%, rgba(124,111,240,0.30) 0%, rgba(124,111,240,0) 60%)",
           }}
         />
-        <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
+        <div className="relative z-10 grid w-full items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
           <div>
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-              Autonomous AI Agents · SAP · Celonis · ServiceNow
+              Enterprise AI Agents
             </span>
             <h1 className="mt-6 text-balance text-surface-light">
               Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-surface-light/80 md:text-xl">
-              Rollio's Contextual Data Engine reads your ERP data and the unstructured context around it — emails, tickets, approvals — and turns both into actions your AI agents can execute end-to-end.
+            <p className="mt-5 max-w-lg text-lg text-surface-light/75 md:text-xl">
+              Bridges your ERP, your processes, and the unstructured context between them — so AI agents can execute real work, end-to-end.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
@@ -197,7 +197,16 @@ function Home() {
           </div>
           <HeroVisual />
         </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-40">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-surface-light">Scroll</span>
+          <svg className="h-4 w-4 animate-bounce text-surface-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </Section>
+
 
       {/* ---------- Logo strip (standalone) ---------- */}
       <section className="border-b border-border bg-background py-10">
