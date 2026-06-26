@@ -223,26 +223,6 @@ export default function SecurityPage() {
             </div>
           </div>
 
-          <div className="mt-10 overflow-x-auto rounded-2xl border bg-card">
-            <table className="w-full text-left text-sm">
-              <thead className="border-b bg-muted/50 text-xs uppercase tracking-wider text-muted-foreground">
-                <tr>
-                  <th className="px-4 py-3">Certification</th>
-                  <th className="px-4 py-3">Status</th>
-                  <th className="px-4 py-3">Scope</th>
-                </tr>
-              </thead>
-              <tbody>
-                {certs.map((c) => (
-                  <tr key={c.name} className="border-b last:border-0">
-                    <td className="px-4 py-3 font-medium">{c.name}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{c.status}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{c.scope}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </Section>
 
