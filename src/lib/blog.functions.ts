@@ -40,30 +40,23 @@ function getPublicClient() {
   );
 }
 
-/** List published posts, newest first. Optional tag filter. */
+/** List published posts, newest first. Optional tag filter. Uses RPC to bypass PostgREST row limit. */
 export const listPublishedPosts = createServerFn({ method: "GET" })
   .inputValidator((input: unknown) =>
     z
-      .object({ tag: z.string().optional(), limit: z.number().int().positive().max(50).optional() })
+      .object({ tag: z.string().optional(), limit: z.number().int().positive().max(200).optional() })
       .parse(input ?? {}),
   )
   .handler(async ({ data }) => {
     const supabase = getPublicClient();
-    const now = new Date().toISOString();
-    let query = supabase
-      .from("blog_posts")
-      .select(CARD_COLUMNS)
-      .eq("status", "published")
-      .lte("published_at", now)
-      .order("published_at", { ascending: false });
-
-    if (data.tag) query = query.contains("tags", [data.tag]);
-    query = query.limit(data.limit ?? 100);
-
-    const { data: rows, error } = await query;
+    const { data: rows, error } = await supabase.rpc("get_published_posts", {
+      p_tag: data.tag ?? null,
+      p_limit: data.limit ?? 100,
+    });
     if (error) throw new Error(error.message);
     return (rows ?? []) as BlogPostCard[];
   });
+
 
 /** Get a single published post by slug. Returns null if not found. */
 export const getPublishedPostBySlug = createServerFn({ method: "GET" })
