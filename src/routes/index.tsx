@@ -77,55 +77,27 @@ const HOME_FAQS: { question: string; answer: string }[] = [
 
 // ---------- Static content ----------
 
-const timelineSteps = [
+const howTabs = [
   {
-    label: "Week 1–2",
-    title: "Discovery",
-    description:
-      "Rollio reads your information — systems plus emails, tickets, and notes — and finds the highest-impact opportunities. Data mapping, opportunity analysis, and a 30-day pilot scope.",
+    key: "bridge",
+    label: "Bridge",
+    title: "Connects everything your AI needs.",
+    body: "Rollio reads structured data from SAP, Celonis, and ServiceNow — and the unstructured context in emails, documents, and approvals. It translates both into a single, AI-executable picture of your business. No data scientists required.",
   },
   {
-    label: "Week 3–6",
-    title: "Pilot",
-    description:
-      "Rollio starts doing the work on 1–2 core processes; first results show quickly. Setup, the rules and limits you set, real execution, and measurement begin.",
+    key: "execute",
+    label: "Execute",
+    title: "Agents that act, not just recommend.",
+    body: "AI Agents execute end-to-end: resolving invoice exceptions, clearing approval bottlenecks, triaging tickets, running compliance checks. Routine tasks run fully autonomous. Complex ones involve a human supervisor with full context already attached.",
   },
   {
-    label: "Month 2–3",
-    title: "Scaling",
-    description:
-      "Expand to 3–5 processes; the system keeps getting sharper. Performance tuning and team training on how to manage it.",
-  },
-  {
-    label: "Month 4+",
-    title: "Full Speed",
-    description:
-      "Runs with minimal oversight; your team focuses on strategy. Continuous improvement, new processes, and ongoing ROI tracking.",
+    key: "scale",
+    label: "Scale",
+    title: "More volume. Same team.",
+    body: "Transaction volume goes up. Exceptions multiply. Your team doesn't grow. Rollio handles the scale — processing more, faster, with fewer errors — while your people focus on the decisions that need them.",
   },
 ];
 
-const useCases = [
-  {
-    title: "Order-to-Cash & Procurement",
-    body: "Manages purchase orders, checks invoices, optimizes payment timing, and keeps vendors compliant — handling the work from order to cash, around the clock.",
-    href: "/solutions/order-to-cash" as const,
-  },
-  {
-    title: "Finance & Accounting Operations",
-    body: "Handles reconciliation, collections, journal entries, and close — cutting month-end close time in half.",
-    href: "/solutions/finance" as const,
-  },
-  {
-    title: "Claims Processing & Compliance",
-    body: "Reviews claims, checks compliance, and manages audits with high accuracy.",
-    href: "/solutions/claims" as const,
-  },
-  {
-    title: "IT Service Management & Ticketing",
-    body: "Resolves tickets, manages incidents, and onboards users — cutting resolution time dramatically.",
-    href: "/solutions/itsm" as const,
-  },
-];
 
 const whyChoose = [
   {
