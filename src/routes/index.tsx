@@ -1,13 +1,14 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Mail, Sparkles, Workflow, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Workflow, ShieldCheck, Zap } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
 import { Button } from "@/components/ui/button";
-import { Timeline } from "@/components/timeline";
 import { FAQ } from "@/components/faq";
 import { VideoEmbed } from "@/components/video-embed";
 import { buildSeo, organizationLd, websiteLd, faqPageLd } from "@/lib/seo";
+
 
 // ---------- FAQ content (Appendix A, plain-business voice) ----------
 
@@ -76,55 +77,27 @@ const HOME_FAQS: { question: string; answer: string }[] = [
 
 // ---------- Static content ----------
 
-const timelineSteps = [
+const howTabs = [
   {
-    label: "Week 1–2",
-    title: "Discovery",
-    description:
-      "Rollio reads your information — systems plus emails, tickets, and notes — and finds the highest-impact opportunities. Data mapping, opportunity analysis, and a 30-day pilot scope.",
+    key: "bridge",
+    label: "Bridge",
+    title: "Connects everything your AI needs.",
+    body: "Rollio reads structured data from SAP, Celonis, and ServiceNow — and the unstructured context in emails, documents, and approvals. It translates both into a single, AI-executable picture of your business. No data scientists required.",
   },
   {
-    label: "Week 3–6",
-    title: "Pilot",
-    description:
-      "Rollio starts doing the work on 1–2 core processes; first results show quickly. Setup, the rules and limits you set, real execution, and measurement begin.",
+    key: "execute",
+    label: "Execute",
+    title: "Agents that act, not just recommend.",
+    body: "AI Agents execute end-to-end: resolving invoice exceptions, clearing approval bottlenecks, triaging tickets, running compliance checks. Routine tasks run fully autonomous. Complex ones involve a human supervisor with full context already attached.",
   },
   {
-    label: "Month 2–3",
-    title: "Scaling",
-    description:
-      "Expand to 3–5 processes; the system keeps getting sharper. Performance tuning and team training on how to manage it.",
-  },
-  {
-    label: "Month 4+",
-    title: "Full Speed",
-    description:
-      "Runs with minimal oversight; your team focuses on strategy. Continuous improvement, new processes, and ongoing ROI tracking.",
+    key: "scale",
+    label: "Scale",
+    title: "More volume. Same team.",
+    body: "Transaction volume goes up. Exceptions multiply. Your team doesn't grow. Rollio handles the scale — processing more, faster, with fewer errors — while your people focus on the decisions that need them.",
   },
 ];
 
-const useCases = [
-  {
-    title: "Order-to-Cash & Procurement",
-    body: "Manages purchase orders, checks invoices, optimizes payment timing, and keeps vendors compliant — handling the work from order to cash, around the clock.",
-    href: "/solutions/order-to-cash" as const,
-  },
-  {
-    title: "Finance & Accounting Operations",
-    body: "Handles reconciliation, collections, journal entries, and close — cutting month-end close time in half.",
-    href: "/solutions/finance" as const,
-  },
-  {
-    title: "Claims Processing & Compliance",
-    body: "Reviews claims, checks compliance, and manages audits with high accuracy.",
-    href: "/solutions/claims" as const,
-  },
-  {
-    title: "IT Service Management & Ticketing",
-    body: "Resolves tickets, manages incidents, and onboards users — cutting resolution time dramatically.",
-    href: "/solutions/itsm" as const,
-  },
-];
 
 const whyChoose = [
   {
@@ -225,7 +198,24 @@ function Home() {
         </div>
       </Section>
 
+      {/* ---------- Logo strip (standalone) ---------- */}
+      <section className="border-b border-border bg-background py-10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            Trusted by global leaders in critical operations
+          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-muted-foreground/80">
+            {proofLogos.map((logo) => (
+              <span key={logo} className="font-display text-base font-semibold">
+                {logo}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ---------- Section 2 — Proof (Campari) ---------- */}
+
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>Proof</CardEyebrow>
@@ -266,44 +256,12 @@ function Home() {
           <VideoPlaceholder label="Campari customer story (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
         </div>
 
-        {/* Logo strip */}
-        <div className="mt-14 border-t border-border pt-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-            Trusted by global leaders in critical operations
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-x-10 gap-y-3 text-muted-foreground/80">
-            {proofLogos.map((logo) => (
-              <span key={logo} className="font-display text-base font-semibold">
-                {logo}
-              </span>
-            ))}
-          </div>
-        </div>
+
+
       </Section>
 
-      {/* ---------- Section 3 — Problem ---------- */}
-      <Section tone="muted">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-          <div className="max-w-2xl">
-            <CardEyebrow>The Core Problem</CardEyebrow>
-            <h2>
-              Why 80% of Enterprise AI projects fail at the data layer.
-            </h2>
-            <div className="mt-6 space-y-5 text-lg text-muted-foreground">
-              <p>
-                You have structured data in SAP, Salesforce, and ServiceNow. You have unconstructed data in emails, claims, and service tickets. But your systems cannot connect the dots.
-              </p>
-              <p>
-                Standard AI models and RPA bots break when reality gets complex because they lack contextual understanding. Your team spends hundreds of hours manually bridging the gap: reading an email, checking the ERP, validating a claim, and updating a ticket.
-              </p>
-              <p>
-                <strong>Without contextual data, you cannot build autonomous AI agents.</strong> You are stuck paying for expensive workarounds while your back-office processes hit a scaling wall.
-              </p>
-            </div>
-          </div>
-          <BeforeAfterVisual />
-        </div>
-      </Section>
+
+
 
       {/* ---------- Section 4 — Solution ---------- */}
       <Section tone="default">
@@ -311,9 +269,10 @@ function Home() {
           <CardEyebrow>The Solution</CardEyebrow>
           <h2>From discovering what matters to executing what works.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio brings together two things most tools miss:
+            Three capabilities. One platform.
           </p>
         </div>
+
 
         <Grid cols={3} className="mt-12">
           <Card variant="elevated">
@@ -346,55 +305,27 @@ function Home() {
         </Grid>
       </Section>
 
-      {/* ---------- Section 5 — How It Works (Timeline) ---------- */}
+      {/* ---------- Section 5 — How It Works (Tabs) ---------- */}
       <Section tone="muted">
         <div className="max-w-2xl">
           <CardEyebrow>How It Works</CardEyebrow>
-          <h2>Your path to hands-free execution: 90 days.</h2>
+          <h2>Bridge. Execute. Scale.</h2>
         </div>
         <div className="mt-12">
-          <Timeline items={timelineSteps} />
+          <HowItWorksTabs />
         </div>
-
-        <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
-          <p className="text-base text-foreground">
-            <strong className="text-primary">Most customers see measurable results
-            within 30 days of piloting.</strong>{" "}
-            Faster approvals, less manual work, better cash flow, fewer errors, happier
-            customers.
-          </p>
-        </Card>
       </Section>
 
-      {/* ---------- Section 6 — Use Cases (2x2) ---------- */}
-      <Section tone="default" id="use-cases">
-        <div className="max-w-2xl">
-          <CardEyebrow>Use Cases</CardEyebrow>
-          <h2>Specialized AI agents for every business function.</h2>
-        </div>
 
-        <Grid cols={2} gap="lg" className="mt-12">
-          {useCases.map((u) => (
-            <Card key={u.title} variant="elevated" interactive>
-              <CardTitle>{u.title}</CardTitle>
-              <CardBody className="mt-2">{u.body}</CardBody>
-              <Link
-                to={u.href}
-                className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
-              >
-                Explore <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Card>
-          ))}
-        </Grid>
-      </Section>
+
+
 
       {/* ---------- Section 7 — Why Choose (2x2) ---------- */}
       <Section tone="muted">
         <div className="max-w-2xl">
-          <CardEyebrow>Why Rollio</CardEyebrow>
-          <h2>Why customers choose Rollio.</h2>
+          <h2>Why Rollio.</h2>
         </div>
+
 
         <Grid cols={2} gap="lg" className="mt-12">
           {whyChoose.map(({ icon: Icon, eyebrow, title, body, cta }) => (
@@ -494,7 +425,7 @@ function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation (Free) <ArrowRight />
+                Book a Use-Case Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
@@ -502,19 +433,9 @@ function Home() {
             </Button>
           </div>
           <p className="mt-6 max-w-xl text-surface-light/75">
-            Let's talk about the outcomes you want and how Rollio can deliver them. 30
-            minutes, no obligation.
+            30 minutes. No obligation. Let's find your highest-impact automation opportunity.
           </p>
-          <p className="mt-6 text-sm text-surface-light/60">
-            Trusted by Campari and enterprise teams worldwide. Our outcome-based model
-            means we only succeed when you succeed. Questions?{" "}
-            <a
-              href="mailto:hello@rollio.ai"
-              className="inline-flex items-center gap-1 text-accent hover:underline"
-            >
-              <Mail className="h-3.5 w-3.5" /> hello@rollio.ai
-            </a>
-          </p>
+
         </div>
       </Section>
     </>
@@ -588,54 +509,47 @@ function HeroVisual() {
   );
 }
 
-function BeforeAfterVisual() {
+function HowItWorksTabs() {
+  const [active, setActive] = useState(howTabs[0].key);
+  const current = howTabs.find((t) => t.key === active) ?? howTabs[0];
   return (
-    <div className="grid gap-4">
-      <div className="rounded-xl border border-border bg-card p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          Today
-        </p>
-        <p className="mt-1 text-sm font-medium text-foreground">
-          Information scattered everywhere
-        </p>
-        <div className="mt-4 grid grid-cols-3 gap-2">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-8 rounded-md bg-muted"
-              style={{
-                transform: `rotate(${(i % 3) - 1}deg) translateY(${(i % 2) * 4}px)`,
-                opacity: 0.5 + (i % 4) * 0.1,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-      <div
-        className="rounded-xl border border-accent/30 bg-card p-6"
-        style={{ boxShadow: "0 0 60px -28px rgba(0,185,166,0.5)" }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-          With Rollio
-        </p>
-        <p className="mt-1 text-sm font-medium text-foreground">
-          One organized, connected flow
-        </p>
-        <div className="mt-4 space-y-2">
-          {['Read', 'Decide', 'Execute', 'Verify'].map((s) => (
-            <div
-              key={s}
-              className="flex items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-sm"
+    <div>
+      <div role="tablist" aria-label="How Rollio works" className="flex flex-wrap gap-x-8 gap-y-2 border-b border-border">
+        {howTabs.map((tab) => {
+          const isActive = tab.key === active;
+          return (
+            <button
+              key={tab.key}
+              role="tab"
+              type="button"
+              aria-selected={isActive}
+              onClick={() => setActive(tab.key)}
+              className={`relative -mb-px py-3 text-sm font-semibold uppercase tracking-[0.12em] transition-colors ${
+                isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
-              <CheckCircle2 className="h-4 w-4 text-accent" />
-              <span className="font-medium text-foreground">{s}</span>
-            </div>
-          ))}
-        </div>
+              {tab.label}
+              <span
+                aria-hidden
+                className={`absolute inset-x-0 -bottom-px h-0.5 transition-opacity ${
+                  isActive ? "bg-accent opacity-100" : "opacity-0"
+                }`}
+              />
+            </button>
+          );
+        })}
+      </div>
+      <div className="mt-8 max-w-3xl">
+        <h3 className="font-display text-2xl font-semibold text-foreground md:text-3xl">
+          {current.title}
+        </h3>
+        <p className="mt-4 text-lg text-muted-foreground">{current.body}</p>
       </div>
     </div>
   );
 }
+
+
 
 function VideoPlaceholder({ label, src }: { label: string; src?: string }) {
   if (src && /^https?:\/\//.test(src)) {
