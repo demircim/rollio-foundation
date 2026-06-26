@@ -166,7 +166,7 @@ export const Route = createFileRoute("/")({
   head: () =>
     buildSeo({
       path: "/",
-      title: "Rollio — Discovers What Matters. Executes What Works.",
+      title: "Rollio — Autonomous AI Agents for Enterprise Operations | Scale Without Headcount",
       description:
         "Rollio reads your whole business — structured data and the messy 80% in emails, tickets, and notes — then its AI agents do the work, around the clock.",
       ogType: "website",
