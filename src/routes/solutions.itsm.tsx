@@ -196,7 +196,7 @@ function ITSMPage() {
           <CardEyebrow>The Solution</CardEyebrow>
           <h2>Contextual resolution, not just routing.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio bridges the gap. By contextualizing the unstructured intent of a user's ticket with your structured CMDB and identity data, our AI Agents actually solve problems end-to-end, escalating only complex incidents to human engineers.
+            Rollio bridges the gap. By contextualizing the unstructured intent of a user's ticket with your structured identity and service management data, our AI Agents actually solve problems end-to-end, escalating only complex incidents to human engineers.
           </p>
         </div>
 
