@@ -64,11 +64,12 @@ function AboutPage() {
               Rollio was founded on a hard truth: Billions are spent on RPA and process mining, yet the actual work remains manual. Why? Because existing tools only understand structured data.
             </p>
             <p className="font-medium text-foreground">
-              But 80% of enterprise business happens in unstructured context—emails, claims, and chat.
+              But 80% of enterprise business happens in unstructured context — emails, contracts, approvals, and chat. And existing tools — whether Celonis, ServiceNow, or basic RPA — lack the translation layer that converts this unstructured reality into data AI agents can actually act on.
             </p>
             <p>
-              We built Rollio to solve this specific architectural gap. We realized that without a Contextual Data Engine to translate human communication into machine-actionable data, true AI autonomy is impossible.
+              We built Rollio to close this gap. The Contextual Data Engine is that missing translation layer — bridging your ERP, your process intelligence tools, and your unstructured communications into a unified, AI-executable context. Without it, true AI autonomy is impossible. With it, your agents can do real work.
             </p>
+
             <p>
               We are not another dashboard. We are not another brittle bot. We are the execution layer for the modern enterprise.
             </p>
@@ -85,10 +86,11 @@ function AboutPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {[
               {
-                title: "Context is Everything",
+                title: "Context is the Missing Link",
                 body:
-                  "Data without context is just noise. We believe AI must understand the 'why' behind a transaction before it can autonomously execute the 'how'.",
+                  "SAP has the transaction. Celonis has the process. ServiceNow has the ticket. But none of them alone gives an AI agent what it needs to act. Rollio connects the dots — structured data, unstructured communications, and business rules — into one coherent picture.",
               },
+
               {
                 title: "Execution over Analysis",
                 body:
@@ -135,7 +137,7 @@ function AboutPage() {
               <p className="text-sm text-muted-foreground">CEO &amp; Co-Founder</p>
             </figcaption>
             <p className="mt-6 text-muted-foreground">
-              Markus leads Rollio's vision and strategy. Before founding Rollio, he spent years observing enterprise architectures fail because they couldn't process unstructured context. That frustration became the founding thesis for the Contextual Data Engine.
+              Markus leads Rollio's vision and strategy. Before founding Rollio, he spent years working with global enterprises — watching teams spend their days acting as human bridges between SAP, Celonis, ServiceNow, and the email threads, spreadsheets, and chat conversations that surrounded them. That frustration became the founding thesis: without a translation layer, AI agents will always hit a ceiling.
             </p>
           </figure>
         </div>
@@ -149,10 +151,10 @@ function AboutPage() {
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { metric: "Enterprise customers", value: "Fortune 500", note: "Finance, Operations, Claims, ITSM" },
+              { metric: "Enterprise customers", value: "Global Enterprise", note: "FS/Insurance · Manufacturing · ITSM · Tech" },
               { metric: "Outcome-based pricing", value: "100%", note: "We only win when you win" },
               { metric: "Compliance", value: "SOC 2 Type II", note: "GDPR · HIPAA-ready · FedRAMP path" },
-              { metric: "Time to value", value: "90 days", note: "From kickoff to production agents" },
+              { metric: "Time to first value", value: "30 days", note: "Pilot results within the first month" },
             ].map((t) => (
               <div key={t.metric} className="rounded-2xl border bg-card p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
@@ -255,8 +257,8 @@ function AboutPage() {
               Press &amp; Media
             </h3>
             <p className="mt-3 text-muted-foreground">
-              Featured in Salesforce AppExchange, Celonis Innovation Blog, Wealth
-              &amp; Finance, and more.
+              Featured on Salesforce AppExchange, in the Celonis Innovation community, and recognised in enterprise AI automation publications. Rollio is a certified Celonis integration partner.
+
             </p>
             <p className="mt-4 text-sm">
               Press contact:{" "}
