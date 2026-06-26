@@ -21,6 +21,7 @@ const columns: Col[] = [
     title: "Company",
     links: [
       { href: "/about", label: "About Us", typed: true },
+      { href: "/careers", label: "Careers", typed: true },
       { href: "/blog", label: "Insights & Resources", typed: true },
       { href: "/case-studies/campari", label: "Case Studies", typed: true },
       { href: "/consultation-booking", label: "Contact", typed: true },

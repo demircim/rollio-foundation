@@ -23,7 +23,14 @@ const nav: NavItem[] = [
   },
   { kind: "link", label: "Platform Engine", href: "/how-it-works", typed: true },
   { kind: "link", label: "Insights", href: "/blog", typed: true },
-  { kind: "link", label: "About", href: "/about", typed: true },
+  {
+    kind: "menu",
+    label: "Company",
+    children: [
+      { href: "/about", label: "About", typed: true },
+      { href: "/careers", label: "Careers", typed: true },
+    ],
+  },
 ];
 
 function NavLink({
