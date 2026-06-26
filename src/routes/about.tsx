@@ -128,13 +128,16 @@ function AboutPage() {
           </h2>
           <div className="mt-6 space-y-5 text-lg text-muted-foreground">
             <p>
-              Every enterprise has world-class talent spending countless hours acting as human bridges between unstructured emails and rigid ERP systems. They copy-paste data, chase approvals across chat threads, and manually resolve exceptions that systems were never built to handle alone.
+              AI agents are only as good as the data they can read. And most enterprise data isn't readable to them.
             </p>
             <p className="font-medium text-foreground">
-              Rollio was founded on a hard truth: billions are spent on process mining and RPA, yet the actual work remains manual — because existing tools only understand structured data. But 80% of enterprise business happens in unstructured context: emails, contracts, approvals, and chat.
+              Structured data — transactions in SAP, processes in Celonis, tickets in ServiceNow — is only part of the picture. The decisions that move those processes forward live somewhere else: in emails, contracts, approval chains, and chat threads. That's 80% of enterprise business happening in unstructured context. Context that AI agents currently cannot see.
             </p>
             <p>
-              We built the Contextual Data Engine to close this gap — bridging your ERP, your process intelligence tools, and your unstructured communications into a unified, AI-executable context. Without it, true AI autonomy is impossible. With it, your agents can do real work.
+              Without it, agents can report on what happened. But they can't understand why, who needs to act, or what the right next step is. Real work requires both layers — and no system before Rollio connected them.
+            </p>
+            <p>
+              We built the Contextual Data Engine to make all of it readable. It translates structured systems and unstructured communications into a unified, AI-executable context — so agents don't just observe your processes. They can act on them.
             </p>
           </div>
         </div>
