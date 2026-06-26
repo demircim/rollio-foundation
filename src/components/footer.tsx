@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Twitter, ShieldCheck, BadgeCheck } from "lucide-react";
+import { Linkedin, ShieldCheck, BadgeCheck } from "lucide-react";
 import { HubSpotForm } from "@/components/hubspot-form";
 
 type Col = {
@@ -116,18 +116,11 @@ export function Footer() {
           <p>© {new Date().getFullYear()} Rollio, Inc.</p>
           <div className="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/company/5252491/"
               aria-label="Rollio on LinkedIn"
               className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-surface-light/70 transition-colors hover:border-accent hover:text-accent"
             >
               <Linkedin className="h-4 w-4" />
-            </a>
-            <a
-              href="https://twitter.com/"
-              aria-label="Rollio on Twitter"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-surface-light/70 transition-colors hover:border-accent hover:text-accent"
-            >
-              <Twitter className="h-4 w-4" />
             </a>
           </div>
         </div>
