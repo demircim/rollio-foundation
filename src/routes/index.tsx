@@ -128,34 +128,35 @@ const useCases = [
 
 const whyChoose = [
   {
+    icon: Workflow,
+    eyebrow: "The Missing Bridge",
+    title: "Works with Celonis, ServiceNow, AND your ERP — simultaneously.",
+    body: "Most tools pick one system. Rollio connects all three: process intelligence from Celonis, workflows from ServiceNow, and real-time data from SAP or your ERP for business-critical decisions. The bridge your AI stack was missing.",
+    cta: "See the architecture",
+  },
+  {
     icon: Sparkles,
-    eyebrow: "Complete Context",
-    title: "Understands 100% of your business — including the 80% everyone misses.",
-    body: "Most tools read only your structured data. Your real intelligence — customer intent, context, exceptions — lives in emails, tickets, and notes. Rollio reads both, so the work gets done right.",
-    cta: "See how complete context works",
+    eyebrow: "No Data Scientists",
+    title: "AI that learns your business. Not the other way around.",
+    body: "No ML engineers, no data science team, no months of model training. The Contextual Data Engine understands your specific processes, business rules, and terminology — then automates accordingly. Your team deploys, controls, and governs everything.",
+    cta: "See how it works",
   },
   {
     icon: Zap,
-    eyebrow: "Real Execution",
-    title: "It acts, it doesn't just report.",
-    body: "Analytics tools tell you what's wrong. Rollio tells you and fixes it in real time, around the clock, within the rules you set. No approval delays, no manual steps.",
+    eyebrow: "Three Levels of Autonomy",
+    title: "From routine commands to complex human + AI decisions.",
+    body: "Rollio operates at three levels: fully autonomous for routine processes, end-to-end orchestration for complex multi-step workflows, and — for true exceptions — brings the right people together with full AI context so decisions happen in minutes, not days.",
     cta: "See execution in action",
   },
   {
-    icon: Workflow,
-    eyebrow: "Keeps Getting Smarter",
-    title: "Automation that improves every day.",
-    body: "Old-style automation breaks the moment your process changes and becomes a maintenance burden. Rollio learns continuously and adapts on its own. No retraining, no brittle rules.",
-    cta: "Learn how it keeps improving",
-  },
-  {
     icon: ShieldCheck,
-    eyebrow: "Live in 90 Days",
-    title: "No rip-and-replace.",
-    body: "Rollio works on top of the systems you already have — Salesforce, Celonis, Microsoft, ServiceNow, SAP — reading without disrupting. Measurable results in 90 days.",
+    eyebrow: "Non-Linear Scaling",
+    title: "Scale revenue without scaling your back-office team.",
+    body: "More sales volume shouldn't mean more Finance or Ops headcount. Rollio removes the human bottleneck — handling more transactions, more exceptions, more coordination — at constant team size. Your business scales; your team stays focused on strategy.",
     cta: "View implementation timeline",
   },
 ];
+
 
 const proofLogos = ["Celonis", "Campari", "W&S Financial Group", "Capital One", "Manroland Goss", "Macquarie", "Waters Corp."];
 
@@ -165,7 +166,7 @@ export const Route = createFileRoute("/")({
   head: () =>
     buildSeo({
       path: "/",
-      title: "Rollio — Discovers What Matters. Executes What Works.",
+      title: "Rollio — Autonomous AI Agents for Enterprise Operations | Scale Without Headcount",
       description:
         "Rollio reads your whole business — structured data and the messy 80% in emails, tickets, and notes — then its AI agents do the work, around the clock.",
       ogType: "website",
@@ -200,13 +201,13 @@ function Home() {
         <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
           <div>
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-              Enterprise AI Agents for ERP & CRM
+              Autonomous AI Agents · SAP · Celonis · ServiceNow
             </span>
             <h1 className="mt-6 text-balance text-surface-light">
-              No AI Autonomy Without Context. <span className="text-accent">We Give Agents the Full Picture.</span>
+              Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-surface-light/80 md:text-xl">
-              Most enterprise AI projects fail because models lack business context. Rollio bridges the gap between rigid data silos (like SAP or ServiceNow) and true AI capability. We contextualize 100% of your data—from structured fields to messy emails—empowering AI agents to execute complex back-office workflows autonomously or with Human-in-the-Loop control.
+              Rollio bridges SAP, Celonis, and ServiceNow with true AI autonomy. Our Contextual Data Engine translates structured ERP data AND unstructured communications — emails, tickets, documents — into AI-executable context. So your agents don't just answer questions. They clear last-mile bottlenecks, coordinate approvals, and execute complex workflows end-to-end. No data scientists required.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
@@ -215,9 +216,10 @@ function Home() {
                 </Link>
               </Button>
               <Button variant="outline-light" size="lg" asChild>
-                <Link to="/consultation-booking">Talk to an AI Architect</Link>
+                <Link to="/how-it-works">See How It Works</Link>
               </Button>
             </div>
+
           </div>
           <HeroVisual />
         </div>
@@ -227,20 +229,23 @@ function Home() {
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>Proof</CardEyebrow>
-          <h2>Results that speak for themselves.</h2>
+          <h2>Trusted by global enterprises — results they can talk about.</h2>
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
-            <p className="font-display text-5xl font-bold tracking-tight text-primary md:text-6xl">
-              24%
-            </p>
-            <p className="mt-2 text-lg font-medium text-foreground">
-              Improvement in Cash Conversion Cycle
-            </p>
-            <p className="mt-1 text-muted-foreground italic">
-              "From insight to action, automatically."
-            </p>
+            <ul className="space-y-3 text-muted-foreground">
+              {[
+                "Reduces manual inquiries and saves time for credit managers",
+                "Speeds up order resolution and fulfillment through AI-driven collaboration",
+                "Delivers immediate process transparency and intelligence where teams work",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-accent" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
             <blockquote className="mt-8 border-l-2 border-accent pl-4 text-foreground">
               "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
               <footer className="mt-2 text-sm text-muted-foreground not-italic">
@@ -248,6 +253,7 @@ function Home() {
                 Campari Group
               </footer>
             </blockquote>
+
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button variant="primary" asChild>
                 <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
@@ -412,53 +418,46 @@ function Home() {
         </Grid>
       </Section>
 
-      {/* ---------- Section 8 — Campari story ---------- */}
+      {/* ---------- Section 8 — Built for every enterprise function ---------- */}
       <Section tone="default">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-start">
-          <div>
-            <span className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Finance &amp; Operations
-            </span>
-            <h2 className="mt-4">How Campari works with Rollio.</h2>
+        <div className="max-w-2xl">
+          <h2>Built for every enterprise function.</h2>
+        </div>
 
-            <dl className="mt-8 space-y-6">
-              <StoryRow
-                term="Challenge"
-                desc="Manual AR/AP/Collections scattered across systems; unpredictable cash flow; hundreds of hours a month of manual work; SAP plus email-based approvals; a cash conversion cycle stretched too long."
-              />
-              <StoryRow
-                term="Solution"
-                desc="Rollio's finance AI agents read the complete picture (SAP plus emails, spreadsheets, notes) and do the AR/AP/Collections work — approval routing, payment timing, vendor management."
-              />
-              <StoryRow
-                term="Result"
-                desc="Improved cash conversion cycle. Less manual AR/AP work, eliminated payment delays, and better vendor on-time payment."
-              />
-            </dl>
+        <Grid cols={2} gap="lg" className="mt-12">
+          <Card variant="elevated">
+            <CardTitle>CFO &amp; Finance</CardTitle>
+            <CardBody>
+              Accelerate cash collections, reduce DSO, and automate last-mile AR/AP coordination. Scale transaction volume without adding Finance headcount.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardTitle>CIO &amp; IT</CardTitle>
+            <CardBody>
+              Deploy AI automation without data scientists. Works on top of SAP, Celonis, or ServiceNow. SOC 2 Type II, zero-trust, and compliant out of the box.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardTitle>COO &amp; Operations</CardTitle>
+            <CardBody>
+              Remove the coordination bottleneck between systems and people. Agents execute complex multi-step workflows end-to-end, escalating only true exceptions.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardTitle>AI &amp; Automation CoE</CardTitle>
+            <CardBody>
+              Your Center of Excellence finally has an execution layer. Rollio connects your process intelligence tools to real ERP action — turning insights into outcomes without custom development.
+            </CardBody>
+          </Card>
+        </Grid>
 
-            <blockquote className="mt-8 border-l-2 border-accent pl-4 text-foreground">
-              "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
-              <footer className="mt-2 text-sm text-muted-foreground not-italic">
-                — Laura Buseghin, Global Director Process Optimization &amp; Automation, Campari Group
-              </footer>
-            </blockquote>
-
-            <Button variant="primary" className="mt-8" asChild>
-              <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
-                Watch the Story <ArrowRight />
-              </a>
-            </Button>
-          </div>
-
-          <div className="space-y-6">
-            <Grid cols={2} gap="sm">
-              <MetricTile value="24%" label="Cash conversion improvement" />
-              <MetricTile value="60%" label="Less manual AR/AP" />
-            </Grid>
-            <VideoPlaceholder label="Laura Buseghin, Campari (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
-          </div>
+        <div className="mt-12 flex justify-center">
+          <Button variant="primary" asChild>
+            <Link to="/consultation-booking">Book a Use-Case Assessment</Link>
+          </Button>
         </div>
       </Section>
+
 
       {/* ---------- Section 9 — FAQ ---------- */}
       <Section tone="muted">
@@ -651,25 +650,5 @@ function VideoPlaceholder({ label, src }: { label: string; src?: string }) {
         <p className="mt-2 text-sm text-foreground">{label}</p>
       </div>
     </div>
-  );
-}
-
-function StoryRow({ term, desc }: { term: string; desc: string }) {
-  return (
-    <div>
-      <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-        {term}
-      </dt>
-      <dd className="mt-1 text-muted-foreground">{desc}</dd>
-    </div>
-  );
-}
-
-function MetricTile({ value, label }: { value: string; label: string }) {
-  return (
-    <Card variant="elevated" className="p-5 text-center">
-      <p className="font-display text-2xl font-bold text-primary md:text-3xl">{value}</p>
-      <p className="mt-1 text-xs text-muted-foreground">{label}</p>
-    </Card>
   );
 }
