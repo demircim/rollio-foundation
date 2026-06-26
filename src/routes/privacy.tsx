@@ -10,7 +10,7 @@ export const Route = createFileRoute("/privacy")({
       path: "/privacy",
       title: "Privacy Policy — Rollio",
       description:
-        "Zero data-at-rest architecture. Inherited permissions. SOC 2 Type II. GDPR, HIPAA, and CCPA ready. How Rollio protects your data.",
+        "Zero data-at-rest architecture. Inherited permissions. SOC 2 Type II certified. How Rollio keeps your enterprise data private and secure.",
     }),
   component: PrivacyPage,
 });
