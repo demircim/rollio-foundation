@@ -82,7 +82,7 @@ const workflows = [
     title: "Incident response",
     steps: [
       "Triage and classify",
-      "Pull CMDB and recent changes",
+      "Pull configuration context and recent changes",
       "Match prior incidents",
       "Route with full context",
       "Track resolution",
