@@ -159,7 +159,7 @@ function Home() {
         className="relative overflow-hidden !py-20 md:!py-32"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, #0B1220 0%, #0C2D5E 100%)",
+            "linear-gradient(180deg, #08081A 0%, #0D0D24 100%)",
         }}
       >
         {/* Subtle teal→violet glow */}
@@ -407,7 +407,7 @@ function Home() {
         className="relative overflow-hidden"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, #0B1220 0%, #0C2D5E 100%)",
+            "linear-gradient(180deg, #08081A 0%, #0D0D24 100%)",
         }}
       >
         <div

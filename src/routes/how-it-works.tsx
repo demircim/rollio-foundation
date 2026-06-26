@@ -101,7 +101,7 @@ function Hero() {
       className="relative overflow-hidden !py-0"
       data-hero-dark
     >
-      <div className="relative bg-gradient-to-br from-[#0C2D5E] via-[#0E3A75] to-[#00B9A6]/70">
+      <div className="relative bg-gradient-to-br from-[#0D0D24] via-[#1A1A4A] to-[#6366F1]/70">
         {/* floating orbs */}
         <div
           aria-hidden
@@ -667,7 +667,7 @@ function CtaSection() {
       id="cta-target"
       className="relative overflow-hidden !py-0"
     >
-      <div className="relative bg-gradient-to-br from-[#0C2D5E] via-[#0E3A75] to-[#004D7A]">
+      <div className="relative bg-gradient-to-br from-[#0D0D24] via-[#1A1A4A] to-[#3B3BBF]">
         <div
           aria-hidden
           className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-accent/20 blur-3xl"

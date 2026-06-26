@@ -187,7 +187,7 @@ function CampariCaseStudy() {
         tone="dark"
         data-hero-dark
         className="relative overflow-hidden !py-20 md:!py-28"
-        style={{ backgroundImage: "linear-gradient(180deg, #0B1220 0%, #0C2D5E 100%)" }}
+        style={{ backgroundImage: "linear-gradient(180deg, #08081A 0%, #0D0D24 100%)" }}
       >
         <div
           aria-hidden
@@ -466,7 +466,7 @@ function CampariCaseStudy() {
       <Section
         tone="dark"
         className="relative overflow-hidden"
-        style={{ backgroundImage: "linear-gradient(180deg, #0B1220 0%, #0C2D5E 100%)" }}
+        style={{ backgroundImage: "linear-gradient(180deg, #08081A 0%, #0D0D24 100%)" }}
       >
         <div
           aria-hidden
