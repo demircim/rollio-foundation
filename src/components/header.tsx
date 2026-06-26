@@ -10,7 +10,7 @@ type NavItem =
   | { kind: "menu"; label: string; children: NavChild[] };
 
 const nav: NavItem[] = [
-  { kind: "link", label: "Home", href: "/", typed: true },
+  
   {
     kind: "menu",
     label: "Solutions",
