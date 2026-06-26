@@ -341,11 +341,6 @@ function ClaimsPage() {
                 Book a Claims Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Claims Guide (placeholder)">
-                <Download /> Download Guide
-              </a>
-            </Button>
           </div>
         </div>
       </Section>
