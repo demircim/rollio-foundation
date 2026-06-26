@@ -36,7 +36,7 @@ const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "What systems does Rollio work with?",
     answer:
-      "Ready-made connections cover Salesforce, Celonis, Microsoft Dynamics 365, Teams, Microsoft 365, ServiceNow, SAP S/4HANA, SAP ECC, SuccessFactors, and other systems through APIs, secure exports, and approved integration patterns.",
+      "Ready-made connections cover Salesforce, Celonis, Microsoft, ServiceNow, SAP S/4HANA, SAP ECC, and other systems through APIs and MCP.",
   },
   {
     question: "What's the difference between Rollio and RPA (like UiPath)?",
