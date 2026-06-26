@@ -138,22 +138,6 @@ function AboutPage() {
               Markus leads Rollio's vision and strategy. Before founding Rollio, he spent years observing enterprise architectures fail because they couldn't process unstructured context. That frustration became the founding thesis for the Contextual Data Engine.
             </p>
           </figure>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              { role: "Chief Product Officer", note: "Building autonomous agents that execute" },
-              { role: "Chief Technology Officer", note: "Semantic understanding + execution architecture" },
-              { role: "Chief Commercial Officer", note: "Customer success & outcomes" },
-            ].map((m) => (
-              <div key={m.role} className="rounded-xl border bg-card p-5">
-                <p className="font-semibold">{m.role}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{m.note}</p>
-                <p className="mt-3 text-xs uppercase tracking-wider text-muted-foreground/70">
-                  Coming soon
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </Section>
 
@@ -166,8 +150,6 @@ function AboutPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { metric: "Enterprise customers", value: "Fortune 500", note: "Finance, Operations, Claims, ITSM" },
-              { metric: "Working capital freed", value: "$2.1M+", note: "Campari alone — across customers, growing" },
-              { metric: "Autonomous executions", value: "Millions / yr", note: "Across customer workflows daily" },
               { metric: "Outcome-based pricing", value: "100%", note: "We only win when you win" },
               { metric: "Compliance", value: "SOC 2 Type II", note: "GDPR · HIPAA-ready · FedRAMP path" },
               { metric: "Time to value", value: "90 days", note: "From kickoff to production agents" },
