@@ -64,15 +64,18 @@ export const listPublishedPosts = createServerFn({ method: "GET" })
       return q;
     };
 
-    const [r1, r2] = await Promise.all([
-      fetchPage(0, 49),
-      fetchPage(50, 99),
+    const [r1, r2, r3] = await Promise.all([
+      fetchPage(0, 9),
+      fetchPage(10, 19),
+      fetchPage(20, 35),
     ]);
 
     if (r1.error) throw new Error(r1.error.message);
     if (r2.error) throw new Error(r2.error.message);
+    if (r3.error) throw new Error(r3.error.message);
 
-    return [...(r1.data ?? []), ...(r2.data ?? [])] as BlogPostCard[];
+    return [...(r1.data ?? []), ...(r2.data ?? []), ...(r3.data ?? [])] as BlogPostCard[];
+
   });
 
 
