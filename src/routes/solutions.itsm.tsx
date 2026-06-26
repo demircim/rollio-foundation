@@ -154,7 +154,7 @@ function ITSMPage() {
             <span className="text-accent">Context-Aware Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            IT tickets are natural language — and standard RPA can't read them. Rollio's Contextual Data Engine translates unstructured intent into structured actions, bridges ServiceNow with your CMDB and HRIS, and empowers AI Agents to resolve L1/L2 tickets end-to-end. No data scientists required.
+            IT tickets are natural language — and standard RPA can't read them. Rollio's Contextual Data Engine translates unstructured intent into structured actions, bridges ServiceNow with your existing identity and configuration data, and empowers AI Agents to resolve L1/L2 tickets end-to-end. No data scientists required.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
