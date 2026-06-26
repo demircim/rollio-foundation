@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Clock, Download, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, TrendingUp } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
