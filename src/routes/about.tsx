@@ -257,8 +257,8 @@ function AboutPage() {
               Press &amp; Media
             </h3>
             <p className="mt-3 text-muted-foreground">
-              Featured in Salesforce AppExchange, Celonis Innovation Blog, Wealth
-              &amp; Finance, and more.
+              Featured on Salesforce AppExchange, in the Celonis Innovation community, and recognised in enterprise AI automation publications. Rollio is a certified Celonis integration partner.
+
             </p>
             <p className="mt-4 text-sm">
               Press contact:{" "}
