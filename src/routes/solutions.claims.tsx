@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Clock, Download, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, TrendingUp } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
@@ -154,7 +154,7 @@ function ClaimsPage() {
             <span className="text-accent">with zero compliance risk.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Claims don't arrive neatly formatted; they arrive as messy emails, PDFs, and photos. Rollio's Contextual Data Engine reads the unstructured reality, cross-references it with your policy systems, and empowers AI Agents to adjudicate claims autonomously or prep them perfectly for a Human Supervisor.
+            Claims arrive as messy emails, PDFs, and photos — not clean structured data. Rollio reads the unstructured reality, cross-references it with your policy systems, and empowers AI Agents to intake, validate, and adjudicate claims autonomously or prep them for a Human Supervisor. No data scientists required.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
@@ -162,11 +162,7 @@ function ClaimsPage() {
                 Book a Claims Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Claims Guide (placeholder)">
-                <Download /> Download Claims Guide
-              </a>
-            </Button>
+
           </div>
         </div>
       </Section>
@@ -344,11 +340,6 @@ function ClaimsPage() {
               <Link to="/consultation-booking">
                 Book a Claims Assessment <ArrowRight />
               </Link>
-            </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Claims Guide (placeholder)">
-                <Download /> Download Guide
-              </a>
             </Button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Clock, Download, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, TrendingUp } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
@@ -154,7 +154,7 @@ function ITSMPage() {
             <span className="text-accent">Context-Aware Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Most IT tickets are messy, unstructured human text that standard RPA bots cannot process. Rollio's Contextual Data Engine translates natural language into structured actions, empowering AI Agents to resolve Level 1 & 2 tickets autonomously directly within your ITSM platform.
+            IT tickets are natural language — and standard RPA can't read them. Rollio's Contextual Data Engine translates unstructured intent into structured actions, bridges ServiceNow with your CMDB and HRIS, and empowers AI Agents to resolve L1/L2 tickets end-to-end. No data scientists required.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
@@ -162,11 +162,7 @@ function ITSMPage() {
                 Book an ITSM Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download ITSM Guide (placeholder)">
-                <Download /> Download ITSM Guide
-              </a>
-            </Button>
+
           </div>
         </div>
       </Section>
@@ -345,11 +341,6 @@ function ITSMPage() {
               <Link to="/consultation-booking">
                 Book an ITSM Assessment <ArrowRight />
               </Link>
-            </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download ITSM Guide (placeholder)">
-                <Download /> Download Guide
-              </a>
             </Button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Clock, Download, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, TrendingUp } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
@@ -154,7 +154,7 @@ function OrderToCashPage() {
             <span className="text-accent">Context-Aware AI Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Your ERP only sees the transaction. Rollio's Contextual Data Engine reads the missing 80%—emails, claims, and contracts—empowering AI Agents to resolve invoice exceptions, manage vendors, and close the order-to-cash loop autonomously.
+            Your ERP only sees the transaction. Rollio reads the full context — emails, contracts, PO history — and bridges SAP, Celonis, and ServiceNow so AI Agents can resolve invoice exceptions, manage vendor communications, and close the order-to-cash loop autonomously. No data scientists required.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
@@ -162,11 +162,7 @@ function OrderToCashPage() {
                 Book an O2C Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download O2C Guide (placeholder)">
-                <Download /> Download O2C Guide
-              </a>
-            </Button>
+
           </div>
         </div>
       </Section>
@@ -377,11 +373,6 @@ function OrderToCashPage() {
               <Link to="/consultation-booking">
                 Book an O2C Assessment <ArrowRight />
               </Link>
-            </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download O2C Guide (placeholder)">
-                <Download /> Download Guide
-              </a>
             </Button>
           </div>
         </div>

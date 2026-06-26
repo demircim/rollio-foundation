@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Clock, Download, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, TrendingUp } from "lucide-react";
 import { Section } from "@/components/section";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
@@ -154,7 +154,7 @@ function FinancePage() {
             <span className="text-accent">Context-Aware AI Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            Your ERP is the system of record, but the context for every transaction lives in emails, PDFs, and spreadsheets. Rollio's Contextual Data Engine bridges the gap, empowering AI Agents to autonomously handle reconciliation, accruals, and journal entries—leaving a perfect audit trail.
+            The context your ERP is missing lives in emails, PDFs, and spreadsheets. Rollio bridges your GL with the full unstructured picture, empowering Finance AI Agents to autonomously handle reconciliation, accruals, and journal entries — and cut your month-end close to 3–5 days. No data scientists required.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
@@ -162,12 +162,8 @@ function FinancePage() {
                 Book a Finance Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Finance Guide (placeholder)">
-                <Download /> Download Finance Guide
-              </a>
-            </Button>
           </div>
+
         </div>
       </Section>
 
@@ -344,11 +340,6 @@ function FinancePage() {
               <Link to="/consultation-booking">
                 Book a Finance Assessment <ArrowRight />
               </Link>
-            </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Finance Guide (placeholder)">
-                <Download /> Download Guide
-              </a>
             </Button>
           </div>
         </div>
