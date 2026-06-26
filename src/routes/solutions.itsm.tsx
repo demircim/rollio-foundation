@@ -38,7 +38,7 @@ export const Route = createFileRoute("/solutions/itsm")({
       path: "/solutions/itsm",
       title: "Autonomous AI Agents for ITSM & Ticketing | Rollio",
       description:
-        "Deploy AI Agents that read unstructured IT tickets, cross-reference your CMDB, and autonomously resolve L1/L2 requests within ServiceNow or Jira.",
+        "Deploy AI Agents that read unstructured IT tickets and autonomously resolve L1/L2 requests within ServiceNow, Jira, or your existing ITSM platform.",
       jsonLd: [
         breadcrumbListLd([
           { name: "Home", path: "/" },
