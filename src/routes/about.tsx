@@ -154,7 +154,7 @@ function AboutPage() {
               { metric: "Enterprise customers", value: "Global Enterprise", note: "FS/Insurance · Manufacturing · ITSM · Tech" },
               { metric: "Outcome-based pricing", value: "100%", note: "We only win when you win" },
               { metric: "Compliance", value: "SOC 2 Type II", note: "GDPR · HIPAA-ready · FedRAMP path" },
-              { metric: "Time to value", value: "90 days", note: "From kickoff to production agents" },
+              { metric: "Time to first value", value: "30 days", note: "Pilot results within the first month" },
             ].map((t) => (
               <div key={t.metric} className="rounded-2xl border bg-card p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
