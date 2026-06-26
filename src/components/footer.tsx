@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Twitter, ShieldCheck, BadgeCheck } from "lucide-react";
+import { Linkedin, ShieldCheck, BadgeCheck } from "lucide-react";
 import { HubSpotForm } from "@/components/hubspot-form";
 
 type Col = {
