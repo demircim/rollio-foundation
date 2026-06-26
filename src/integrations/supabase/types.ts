@@ -73,7 +73,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_published_posts: {
+        Args: { p_limit?: number; p_tag?: string }
+        Returns: {
+          author: string
+          excerpt: string
+          featured_image: string
+          id: string
+          published_at: string
+          read_time: number
+          slug: string
+          tags: string[]
+          title: string
+        }[]
+      }
     }
     Enums: {
       blog_post_status: "draft" | "published"
