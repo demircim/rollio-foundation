@@ -68,7 +68,7 @@ const workflows = [
   {
     title: "New-hire onboarding",
     steps: [
-      "Read HRIS new-hire record",
+      "Read new-hire record from HR system",
       "Create accounts across systems",
       "Assign licenses by role",
       "Order and ship equipment",
