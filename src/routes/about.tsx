@@ -143,32 +143,6 @@ function AboutPage() {
         </div>
       </Section>
 
-      {/* Traction */}
-      <Section className="!py-16 md:!py-24">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Our Traction
-          </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { metric: "Enterprise customers", value: "Global Enterprise", note: "FS/Insurance · Manufacturing · ITSM · Tech" },
-              { metric: "Outcome-based pricing", value: "100%", note: "We only win when you win" },
-              { metric: "Compliance", value: "SOC 2 Type II", note: "Certified · All production systems" },
-              { metric: "Time to first value", value: "30 days", note: "Pilot results within the first month" },
-            ].map((t) => (
-              <div key={t.metric} className="rounded-2xl border bg-card p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                  {t.metric}
-                </p>
-                <p className="mt-2 font-display text-3xl font-bold tracking-tight">
-                  {t.value}
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">{t.note}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
 
       {/* Where based */}
       <Section tone="muted" className="!py-16 md:!py-24">
