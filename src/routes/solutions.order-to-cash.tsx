@@ -374,11 +374,6 @@ function OrderToCashPage() {
                 Book an O2C Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download O2C Guide (placeholder)">
-                <Download /> Download Guide
-              </a>
-            </Button>
           </div>
         </div>
       </Section>
