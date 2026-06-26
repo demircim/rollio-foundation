@@ -26,6 +26,7 @@ import { Route as SolutionsOrderToCashRouteImport } from './routes/solutions.ord
 import { Route as SolutionsItsmRouteImport } from './routes/solutions.itsm'
 import { Route as SolutionsFinanceRouteImport } from './routes/solutions.finance'
 import { Route as SolutionsClaimsRouteImport } from './routes/solutions.claims'
+import { Route as CaseStudiesWesternSouthernRouteImport } from './routes/case-studies.western-southern'
 import { Route as CaseStudiesCampariRouteImport } from './routes/case-studies.campari'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
@@ -116,6 +117,12 @@ const SolutionsClaimsRoute = SolutionsClaimsRouteImport.update({
   path: '/solutions/claims',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesWesternSouthernRoute =
+  CaseStudiesWesternSouthernRouteImport.update({
+    id: '/case-studies/western-southern',
+    path: '/case-studies/western-southern',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CaseStudiesCampariRoute = CaseStudiesCampariRouteImport.update({
   id: '/case-studies/campari',
   path: '/case-studies/campari',
@@ -158,6 +165,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
+  '/case-studies/western-southern': typeof CaseStudiesWesternSouthernRoute
   '/solutions/claims': typeof SolutionsClaimsRoute
   '/solutions/finance': typeof SolutionsFinanceRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
@@ -180,6 +188,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
+  '/case-studies/western-southern': typeof CaseStudiesWesternSouthernRoute
   '/solutions/claims': typeof SolutionsClaimsRoute
   '/solutions/finance': typeof SolutionsFinanceRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
@@ -205,6 +214,7 @@ export interface FileRoutesById {
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
+  '/case-studies/western-southern': typeof CaseStudiesWesternSouthernRoute
   '/solutions/claims': typeof SolutionsClaimsRoute
   '/solutions/finance': typeof SolutionsFinanceRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
@@ -230,6 +240,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/blog/$slug'
     | '/case-studies/campari'
+    | '/case-studies/western-southern'
     | '/solutions/claims'
     | '/solutions/finance'
     | '/solutions/itsm'
@@ -252,6 +263,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/case-studies/campari'
+    | '/case-studies/western-southern'
     | '/solutions/claims'
     | '/solutions/finance'
     | '/solutions/itsm'
@@ -276,6 +288,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin'
     | '/blog/$slug'
     | '/case-studies/campari'
+    | '/case-studies/western-southern'
     | '/solutions/claims'
     | '/solutions/finance'
     | '/solutions/itsm'
@@ -300,6 +313,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
+  CaseStudiesWesternSouthernRoute: typeof CaseStudiesWesternSouthernRoute
   SolutionsClaimsRoute: typeof SolutionsClaimsRoute
   SolutionsFinanceRoute: typeof SolutionsFinanceRoute
   SolutionsItsmRoute: typeof SolutionsItsmRoute
@@ -428,6 +442,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsClaimsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/western-southern': {
+      id: '/case-studies/western-southern'
+      path: '/case-studies/western-southern'
+      fullPath: '/case-studies/western-southern'
+      preLoaderRoute: typeof CaseStudiesWesternSouthernRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case-studies/campari': {
       id: '/case-studies/campari'
       path: '/case-studies/campari'
@@ -505,6 +526,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   CaseStudiesCampariRoute: CaseStudiesCampariRoute,
+  CaseStudiesWesternSouthernRoute: CaseStudiesWesternSouthernRoute,
   SolutionsClaimsRoute: SolutionsClaimsRoute,
   SolutionsFinanceRoute: SolutionsFinanceRoute,
   SolutionsItsmRoute: SolutionsItsmRoute,
