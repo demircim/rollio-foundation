@@ -58,7 +58,7 @@ export const listPublishedPosts = createServerFn({ method: "GET" })
       .order("published_at", { ascending: false });
 
     if (data.tag) query = query.contains("tags", [data.tag]);
-    if (data.limit) query = query.limit(data.limit);
+    query = query.limit(data.limit ?? 100);
 
     const { data: rows, error } = await query;
     if (error) throw new Error(error.message);

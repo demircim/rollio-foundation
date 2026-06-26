@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 const postsQuery = queryOptions({
   queryKey: ["blog", "published"],
   queryFn: () => listPublishedPosts({ data: {} }),
+  staleTime: 0,
 });
 
 export const Route = createFileRoute("/blog/")({
