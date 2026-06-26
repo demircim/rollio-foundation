@@ -474,69 +474,114 @@ function Home() {
 // ---------- Local presentation helpers ----------
 
 function HeroVisual() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 120);
+    return () => clearTimeout(t);
+  }, []);
+
+  const sources = [
+    { label: "Email · invoice dispute", icon: "✉" },
+    { label: "Teams · approval request", icon: "💬" },
+    { label: "SAP · open PO #4821", icon: "⚙" },
+    { label: "Ticket · SLA at risk", icon: "🎫" },
+  ];
+
+  const actions = [
+    "Invoice exception resolved",
+    "Approval routed with context",
+    "PO matched & payment scheduled",
+    "Ticket triaged & escalated",
+  ];
+
   return (
-    <div className="relative">
-      <div className="grid grid-cols-2 gap-4">
-        {/* Before */}
-        <div className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-surface-light/60">
-            Before
+    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-start gap-3">
+        {/* Sources */}
+        <div>
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-surface-light/40">
+            Your data
           </p>
-          <p className="mt-2 text-sm font-medium text-surface-light">
-            Raw Data (No Context)
-          </p>
-          <div className="mt-4 space-y-2">
-            {[
-              "Email · approval needed",
-              "Ticket #4821 · pending",
-              "Spreadsheet · v12 final",
-              "Slack thread · 14 replies",
-              "PO #88-19 · unmatched",
-            ].map((t, i) => (
+          <div className="space-y-2">
+            {sources.map((s, i) => (
               <div
-                key={t}
-                className="rounded-md bg-white/5 px-3 py-2 text-xs text-surface-light/70"
-                style={{ transform: `translateX(${(i % 2) * 8}px)` }}
+                key={s.label}
+                className="rounded-lg bg-white/5 px-3 py-2 text-xs text-surface-light/70 transition-all duration-500"
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateX(0)" : "translateX(-10px)",
+                  transitionDelay: `${i * 120}ms`,
+                }}
               >
-                {t}
+                <span className="mr-1.5">{s.icon}</span>
+                {s.label}
               </div>
             ))}
           </div>
         </div>
 
-        {/* After */}
-        <div
-          className="rounded-xl border border-accent/30 bg-white/5 p-5 backdrop-blur-sm"
-          style={{ boxShadow: "0 0 60px -20px rgba(0,185,166,0.5)" }}
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-            After
+        {/* Engine */}
+        <div className="flex flex-col items-center justify-start pt-7">
+          <div
+            className="relative flex h-14 w-14 items-center justify-center rounded-full border border-accent/50 transition-all duration-700"
+            style={{ opacity: visible ? 1 : 0, transitionDelay: "400ms" }}
+          >
+            <div className="absolute inset-0 animate-ping rounded-full border border-accent/20" />
+            <Sparkles className="h-5 w-5 text-accent" />
+          </div>
+          <p
+            className="mt-2 text-center text-[9px] font-semibold uppercase tracking-[0.1em] text-accent transition-opacity duration-500"
+            style={{ opacity: visible ? 1 : 0, transitionDelay: "500ms" }}
+          >
+            Contextual
+            <br />
+            Data Engine
           </p>
-          <p className="mt-2 text-sm font-medium text-surface-light">
-            Contextualized AI Execution
+        </div>
+
+        {/* Actions */}
+        <div>
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-surface-light/40">
+            AI actions
           </p>
-          <div className="mt-4 space-y-2">
-            {[
-              "Context mapped from email & SAP",
-              "AI Agent resolved exception",
-              "Human Supervisor approved",
-              "Payment scheduled (early-discount)",
-              "Audit trail logged in ERP",
-            ].map((t) => (
+          <div className="space-y-2">
+            {actions.map((a, i) => (
               <div
-                key={t}
-                className="flex items-center gap-2 rounded-md bg-accent/10 px-3 py-2 text-xs text-surface-light"
+                key={a}
+                className="flex items-start gap-2 rounded-lg bg-accent/10 px-3 py-2 text-xs text-surface-light transition-all duration-500"
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateX(0)" : "translateX(10px)",
+                  transitionDelay: `${600 + i * 120}ms`,
+                }}
               >
-                <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-accent" />
-                {t}
+                <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-accent" />
+                {a}
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Connecting arrows */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-[36%] flex items-center transition-opacity duration-700"
+        style={{ opacity: visible ? 0.3 : 0, transitionDelay: "350ms" }}
+        aria-hidden
+      >
+        <ArrowRight className="h-4 w-4 text-accent" />
+      </div>
+      <div
+        className="pointer-events-none absolute inset-y-0 left-[62%] flex items-center transition-opacity duration-700"
+        style={{ opacity: visible ? 0.3 : 0, transitionDelay: "550ms" }}
+        aria-hidden
+      >
+        <ArrowRight className="h-4 w-4 text-accent" />
+      </div>
     </div>
   );
 }
+
 
 function HowItWorksTabs() {
   const [active, setActive] = useState(howTabs[0].key);
