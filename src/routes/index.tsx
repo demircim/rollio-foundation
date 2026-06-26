@@ -459,7 +459,7 @@ function Home() {
               <MetricTile value="60%" label="Less manual AR/AP" />
               <MetricTile value="[X] days" label="Faster payment cycle" />
             </Grid>
-            <VideoPlaceholder label="Laura Buseghin, Campari (3–5 min)" />
+            <VideoPlaceholder label="Laura Buseghin, Campari (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
           </div>
         </div>
       </Section>
