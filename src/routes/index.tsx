@@ -179,8 +179,8 @@ function Home() {
             <h1 className="mt-6 text-balance text-surface-light">
               Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-surface-light/80 md:text-xl">
-              Rollio bridges SAP, Celonis, and ServiceNow with true AI autonomy. Our Contextual Data Engine translates structured ERP data AND unstructured communications — emails, Teams messages, tickets, documents — into AI-executable context. So your agents don't just answer questions. They clear last-mile bottlenecks, coordinate approvals, and execute complex workflows end-to-end. No data scientists required.
+            <p className="mt-6 max-w-xl text-lg text-surface-light/80 md:text-xl">
+              Rollio's Contextual Data Engine reads your ERP data and the unstructured context around it — emails, tickets, approvals — and turns both into actions your AI agents can execute end-to-end.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
@@ -189,9 +189,10 @@ function Home() {
                 </Link>
               </Button>
               <Button variant="outline-light" size="lg" asChild>
-                <Link to="/how-it-works">See How It Works</Link>
+                <a href="#how-it-works">See How It Works</a>
               </Button>
             </div>
+
 
           </div>
           <HeroVisual />
