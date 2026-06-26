@@ -26,9 +26,6 @@ export const Route = createFileRoute("/security")({
   component: SecurityPage,
 });
 
-const certs = [
-  { name: "SOC 2 Type II", status: "Certified", scope: "All production systems" },
-];
 
 export default function SecurityPage() {
   return (
