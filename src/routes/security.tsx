@@ -195,7 +195,7 @@ export default function SecurityPage() {
           <div className="flex items-center gap-3">
             <Cloud className="h-6 w-6 text-accent" />
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-              Infrastructure &amp; Compliance
+              Infrastructure &amp; Certification
             </p>
           </div>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-4xl">
