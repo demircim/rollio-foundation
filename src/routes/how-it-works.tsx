@@ -693,7 +693,7 @@ function CtaSection() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline-light">
-              <Link to="/case-studies/campari">Watch Campari Case Study</Link>
+              <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
             </Button>
           </div>
         </div>

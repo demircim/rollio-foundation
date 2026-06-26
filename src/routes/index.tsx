@@ -250,9 +250,9 @@ function Home() {
             </blockquote>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button variant="primary" asChild>
-                <Link to="/case-studies/campari">
-                  Watch Full Case Study <ArrowRight />
-                </Link>
+                <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
+                  Watch: Campari Story <ArrowRight />
+                </a>
               </Button>
             </div>
           </div>
@@ -444,9 +444,9 @@ function Home() {
             </blockquote>
 
             <Button variant="primary" className="mt-8" asChild>
-              <Link to="/case-studies/campari">
-                Read Full Case Study <ArrowRight />
-              </Link>
+              <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
+                Watch the Story <ArrowRight />
+              </a>
             </Button>
           </div>
 
@@ -499,7 +499,7 @@ function Home() {
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
-              <Link to="/case-studies/campari">Watch Campari Case Study</Link>
+              <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
             </Button>
           </div>
           <p className="mt-6 max-w-xl text-surface-light/75">
