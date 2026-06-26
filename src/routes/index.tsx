@@ -128,34 +128,35 @@ const useCases = [
 
 const whyChoose = [
   {
+    icon: Workflow,
+    eyebrow: "The Missing Bridge",
+    title: "Works with Celonis, ServiceNow, AND your ERP — simultaneously.",
+    body: "Most tools pick one system. Rollio connects all three: process intelligence from Celonis, workflows from ServiceNow, and real-time data from SAP or your ERP for business-critical decisions. The bridge your AI stack was missing.",
+    cta: "See the architecture",
+  },
+  {
     icon: Sparkles,
-    eyebrow: "Complete Context",
-    title: "Understands 100% of your business — including the 80% everyone misses.",
-    body: "Most tools read only your structured data. Your real intelligence — customer intent, context, exceptions — lives in emails, tickets, and notes. Rollio reads both, so the work gets done right.",
-    cta: "See how complete context works",
+    eyebrow: "No Data Scientists",
+    title: "AI that learns your business. Not the other way around.",
+    body: "No ML engineers, no data science team, no months of model training. The Contextual Data Engine understands your specific processes, business rules, and terminology — then automates accordingly. Your team deploys, controls, and governs everything.",
+    cta: "See how it works",
   },
   {
     icon: Zap,
-    eyebrow: "Real Execution",
-    title: "It acts, it doesn't just report.",
-    body: "Analytics tools tell you what's wrong. Rollio tells you and fixes it in real time, around the clock, within the rules you set. No approval delays, no manual steps.",
+    eyebrow: "Three Levels of Autonomy",
+    title: "From routine commands to complex human + AI decisions.",
+    body: "Rollio operates at three levels: fully autonomous for routine processes, end-to-end orchestration for complex multi-step workflows, and — for true exceptions — brings the right people together with full AI context so decisions happen in minutes, not days.",
     cta: "See execution in action",
   },
   {
-    icon: Workflow,
-    eyebrow: "Keeps Getting Smarter",
-    title: "Automation that improves every day.",
-    body: "Old-style automation breaks the moment your process changes and becomes a maintenance burden. Rollio learns continuously and adapts on its own. No retraining, no brittle rules.",
-    cta: "Learn how it keeps improving",
-  },
-  {
     icon: ShieldCheck,
-    eyebrow: "Live in 90 Days",
-    title: "No rip-and-replace.",
-    body: "Rollio works on top of the systems you already have — Salesforce, Celonis, Microsoft, ServiceNow, SAP — reading without disrupting. Measurable results in 90 days.",
+    eyebrow: "Non-Linear Scaling",
+    title: "Scale revenue without scaling your back-office team.",
+    body: "More sales volume shouldn't mean more Finance or Ops headcount. Rollio removes the human bottleneck — handling more transactions, more exceptions, more coordination — at constant team size. Your business scales; your team stays focused on strategy.",
     cta: "View implementation timeline",
   },
 ];
+
 
 const proofLogos = ["Celonis", "Campari", "W&S Financial Group", "Capital One", "Manroland Goss", "Macquarie", "Waters Corp."];
 
