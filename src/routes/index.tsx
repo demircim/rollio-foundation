@@ -418,53 +418,46 @@ function Home() {
         </Grid>
       </Section>
 
-      {/* ---------- Section 8 — Campari story ---------- */}
+      {/* ---------- Section 8 — Built for every enterprise function ---------- */}
       <Section tone="default">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-start">
-          <div>
-            <span className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Finance &amp; Operations
-            </span>
-            <h2 className="mt-4">How Campari works with Rollio.</h2>
+        <div className="max-w-2xl">
+          <h2>Built for every enterprise function.</h2>
+        </div>
 
-            <dl className="mt-8 space-y-6">
-              <StoryRow
-                term="Challenge"
-                desc="Manual AR/AP/Collections scattered across systems; unpredictable cash flow; hundreds of hours a month of manual work; SAP plus email-based approvals; a cash conversion cycle stretched too long."
-              />
-              <StoryRow
-                term="Solution"
-                desc="Rollio's finance AI agents read the complete picture (SAP plus emails, spreadsheets, notes) and do the AR/AP/Collections work — approval routing, payment timing, vendor management."
-              />
-              <StoryRow
-                term="Result"
-                desc="Improved cash conversion cycle. Less manual AR/AP work, eliminated payment delays, and better vendor on-time payment."
-              />
-            </dl>
+        <Grid cols={2} gap="lg" className="mt-12">
+          <Card variant="elevated">
+            <CardTitle>CFO &amp; Finance</CardTitle>
+            <CardBody>
+              Accelerate cash collections, reduce DSO, and automate last-mile AR/AP coordination. Scale transaction volume without adding Finance headcount.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardTitle>CIO &amp; IT</CardTitle>
+            <CardBody>
+              Deploy AI automation without data scientists. Works on top of SAP, Celonis, or ServiceNow. SOC 2 Type II, zero-trust, and compliant out of the box.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardTitle>COO &amp; Operations</CardTitle>
+            <CardBody>
+              Remove the coordination bottleneck between systems and people. Agents execute complex multi-step workflows end-to-end, escalating only true exceptions.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardTitle>AI &amp; Automation CoE</CardTitle>
+            <CardBody>
+              Your Center of Excellence finally has an execution layer. Rollio connects your process intelligence tools to real ERP action — turning insights into outcomes without custom development.
+            </CardBody>
+          </Card>
+        </Grid>
 
-            <blockquote className="mt-8 border-l-2 border-accent pl-4 text-foreground">
-              "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
-              <footer className="mt-2 text-sm text-muted-foreground not-italic">
-                — Laura Buseghin, Global Director Process Optimization &amp; Automation, Campari Group
-              </footer>
-            </blockquote>
-
-            <Button variant="primary" className="mt-8" asChild>
-              <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
-                Watch the Story <ArrowRight />
-              </a>
-            </Button>
-          </div>
-
-          <div className="space-y-6">
-            <Grid cols={2} gap="sm">
-              <MetricTile value="24%" label="Cash conversion improvement" />
-              <MetricTile value="60%" label="Less manual AR/AP" />
-            </Grid>
-            <VideoPlaceholder label="Laura Buseghin, Campari (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
-          </div>
+        <div className="mt-12 flex justify-center">
+          <Button variant="primary" asChild>
+            <Link to="/consultation-booking">Book a Use-Case Assessment</Link>
+          </Button>
         </div>
       </Section>
+
 
       {/* ---------- Section 9 — FAQ ---------- */}
       <Section tone="muted">
