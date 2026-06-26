@@ -205,11 +205,26 @@ function Home() {
             Trusted by global leaders in critical operations
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-muted-foreground/80">
-            {proofLogos.map((logo) => (
-              <span key={logo} className="font-display text-base font-semibold">
-                {logo}
-              </span>
-            ))}
+            {proofLogos.map((logo) => {
+              if (logo === "W&S Financial Group") {
+                return (
+                  <span key={logo} className="group inline-flex flex-col items-center">
+                    <span className="font-display text-base font-semibold">{logo}</span>
+                    <Link
+                      to="/case-studies/western-southern"
+                      className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-accent opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+                    >
+                      Read story →
+                    </Link>
+                  </span>
+                );
+              }
+              return (
+                <span key={logo} className="font-display text-base font-semibold">
+                  {logo}
+                </span>
+              );
+            })}
           </div>
         </div>
       </section>
