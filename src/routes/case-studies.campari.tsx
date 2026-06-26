@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   CheckCircle2,
-  Download,
   Quote,
   Sparkles,
 } from "lucide-react";
@@ -11,6 +10,7 @@ import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
 import { Timeline } from "@/components/timeline";
 import { Button } from "@/components/ui/button";
+import { VideoEmbed } from "@/components/video-embed";
 import {
   SITE_URL,
   SITE_NAME,
@@ -21,7 +21,7 @@ import {
 // ---------- Page constants ----------
 
 const PUBLISHED_AT = "2025-06-01";
-const VIDEO_URL_PLACEHOLDER = "[INSERT VIDEO URL]";
+const VIDEO_URL = "https://www.youtube.com/embed/msXUD4HzDoE?start=7";
 const PAGE_PATH = "/case-studies/campari";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
@@ -57,8 +57,8 @@ function videoObjectLd() {
     description:
       "Laura Buseghin, Global Director Process Optimization & Automation at Campari, on how Rollio's finance AI agents improved cash conversion by 24% and freed $2.1M in working capital.",
     uploadDate: PUBLISHED_AT,
-    contentUrl: VIDEO_URL_PLACEHOLDER,
-    embedUrl: VIDEO_URL_PLACEHOLDER,
+    contentUrl: VIDEO_URL,
+    embedUrl: VIDEO_URL,
     thumbnailUrl: [`${SITE_URL}/og-image.png`],
     publisher: {
       "@type": "Organization",
@@ -218,20 +218,15 @@ function CampariCaseStudy() {
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-surface-light/85">
               <Sparkles className="h-3.5 w-3.5 text-accent" /> Case Study · Finance &amp; Operations
             </span>
-            <h1 className="mt-6 text-balance">
-              How Campari improved cash conversion cycle by{" "}
-              <span className="text-accent">Contextual AI Agents.</span>
+            <h1 className="mt-6 text-balance text-surface-light">
+              How Campari Group Improves Cash Conversion Cycle with{" "}
+              <span className="text-accent">AI-Driven Collaboration.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-surface-light/80">
-              Campari's finance data was trapped in a disconnect between rigid SAP records and unstructured email threads. Rollio's Contextual Data Engine bridged the gap, empowering AI Agents to execute AR and AP workflows autonomously—freeing $2.1M in working capital.
+              Campari's finance data was trapped in a disconnect between rigid SAP records and unstructured email threads. Rollio's Contextual Data Engine bridged the gap, empowering AI Agents to execute AR and AP workflows autonomously.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
-                <a href="#" aria-label="Download Case Study PDF (placeholder)">
-                  <Download /> Download Case Study PDF
-                </a>
-              </Button>
-              <Button variant="outline-light" size="lg" asChild>
                 <Link to="/consultation-booking">
                   Schedule Consultation <ArrowRight />
                 </Link>
@@ -303,7 +298,6 @@ function CampariCaseStudy() {
           <ul className="space-y-3 text-muted-foreground">
             {[
               "Global beverages company present across 190 countries",
-              "$X billion in annual transactions",
               "Multiple currencies and regulatory environments",
               "50+ subsidiaries requiring inter-company reconciliation",
               "AR/AP operations spanning 50+ countries",
@@ -383,56 +377,9 @@ function CampariCaseStudy() {
           <h2>Measured outcomes.</h2>
         </div>
 
-        {/* Primary metrics */}
-        <Grid cols={2} gap="lg" className="mt-10">
-          {primaryResults.map((r) => (
-            <Card
-              key={r.label}
-              variant="elevated"
-              className="border-accent/30 bg-accent/5 p-8"
-            >
-              <p className="font-display text-5xl font-bold text-primary md:text-6xl">
-                {r.value}
-              </p>
-              <p className="mt-3 text-base text-foreground">{r.label}</p>
-            </Card>
-          ))}
-        </Grid>
-
-        {/* Secondary metrics table */}
-        <div className="mt-10 overflow-hidden rounded-xl border border-border bg-card">
-          <table className="w-full text-sm">
-            <thead className="bg-muted">
-              <tr className="text-left">
-                <th className="px-5 py-3 font-display text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Metric
-                </th>
-                <th className="px-5 py-3 font-display text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Before
-                </th>
-                <th className="px-5 py-3 font-display text-xs font-semibold uppercase tracking-wider text-accent">
-                  After
-                </th>
-                <th className="px-5 py-3 font-display text-xs font-semibold uppercase tracking-wider text-primary">
-                  Change
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {secondaryResults.map((r, i) => (
-                <tr
-                  key={r.metric}
-                  className={i % 2 === 0 ? "bg-background" : "bg-muted/40"}
-                >
-                  <td className="px-5 py-4 font-medium text-foreground">{r.metric}</td>
-                  <td className="px-5 py-4 text-muted-foreground">{r.from}</td>
-                  <td className="px-5 py-4 text-foreground">{r.to}</td>
-                  <td className="px-5 py-4 font-semibold text-primary">{r.delta}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <p className="mt-8 max-w-3xl text-lg text-muted-foreground">
+          Campari achieved a meaningful improvement in their cash conversion cycle, reduced manual AR/AP workload significantly, and freed up working capital that had been locked in process delays.
+        </p>
 
         {/* Qualitative */}
         <div className="mt-10 max-w-3xl">
@@ -463,11 +410,7 @@ function CampariCaseStudy() {
               className="absolute -left-2 -top-4 h-10 w-10 text-accent/20"
             />
             <blockquote className="relative pl-6 text-xl leading-relaxed text-foreground md:text-2xl">
-              "Collaboration has enhanced our operational efficiency significantly.
-              Rather than having our team buried in the details of AR/AP processing, we
-              can focus on strategic finance work. The 24% improvement in cash
-              conversion cycle has freed up $2.1M in working capital that we're
-              reinvesting in growth."
+              "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
             </blockquote>
             <figcaption className="mt-6 pl-6 text-sm text-muted-foreground">
               <span className="font-semibold text-foreground">Laura Buseghin</span> ·
@@ -564,11 +507,6 @@ function CampariCaseStudy() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Full Case Study PDF (placeholder)">
-                <Download /> Download Full Case Study PDF
-              </a>
-            </Button>
           </div>
         </div>
       </Section>
@@ -588,14 +526,5 @@ function StatTile({ value, label }: { value: string; label: string }) {
 }
 
 function VideoPlaceholder({ label }: { label: string }) {
-  return (
-    <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-border bg-muted text-center">
-      <div className="px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          {VIDEO_URL_PLACEHOLDER}
-        </p>
-        <p className="mt-2 text-sm text-foreground">{label}</p>
-      </div>
-    </div>
-  );
+  return <VideoEmbed src={VIDEO_URL} title={label} />;
 }
