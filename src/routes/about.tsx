@@ -64,11 +64,12 @@ function AboutPage() {
               Rollio was founded on a hard truth: Billions are spent on RPA and process mining, yet the actual work remains manual. Why? Because existing tools only understand structured data.
             </p>
             <p className="font-medium text-foreground">
-              But 80% of enterprise business happens in unstructured context—emails, claims, and chat.
+              But 80% of enterprise business happens in unstructured context — emails, contracts, approvals, and chat. And existing tools — whether Celonis, ServiceNow, or basic RPA — lack the translation layer that converts this unstructured reality into data AI agents can actually act on.
             </p>
             <p>
-              We built Rollio to solve this specific architectural gap. We realized that without a Contextual Data Engine to translate human communication into machine-actionable data, true AI autonomy is impossible.
+              We built Rollio to close this gap. The Contextual Data Engine is that missing translation layer — bridging your ERP, your process intelligence tools, and your unstructured communications into a unified, AI-executable context. Without it, true AI autonomy is impossible. With it, your agents can do real work.
             </p>
+
             <p>
               We are not another dashboard. We are not another brittle bot. We are the execution layer for the modern enterprise.
             </p>
