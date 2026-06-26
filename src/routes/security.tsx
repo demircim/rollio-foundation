@@ -21,19 +21,11 @@ export const Route = createFileRoute("/security")({
       path: "/security",
       title: "Security & Trust — Rollio",
       description:
-        "Zero data-at-rest. Inherited permissions. SOC 2 Type II, GDPR, HIPAA-eligible, FedRAMP-pathway. How Rollio keeps enterprise data safe.",
+        "Zero data-at-rest. Inherited permissions. SOC 2 Type II certified. How Rollio keeps enterprise data safe.",
     }),
   component: SecurityPage,
 });
 
-const certs = [
-  { name: "SOC 2 Type II", status: "Certified", scope: "All production systems" },
-  { name: "GDPR", status: "Compliant", scope: "Data processing & DPA" },
-  { name: "HIPAA", status: "Eligible", scope: "Healthcare-ready architecture" },
-  { name: "FedRAMP", status: "In progress", scope: "Government cloud certification" },
-  { name: "CCPA", status: "Compliant", scope: "California privacy law" },
-  { name: "ISO 27001", status: "Planned", scope: "Information security management" },
-];
 
 export default function SecurityPage() {
   return (
@@ -200,7 +192,7 @@ export default function SecurityPage() {
           <div className="flex items-center gap-3">
             <Cloud className="h-6 w-6 text-accent" />
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-              Infrastructure &amp; Compliance
+              Infrastructure &amp; Certification
             </p>
           </div>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-4xl">
@@ -228,26 +220,6 @@ export default function SecurityPage() {
             </div>
           </div>
 
-          <div className="mt-10 overflow-x-auto rounded-2xl border bg-card">
-            <table className="w-full text-left text-sm">
-              <thead className="border-b bg-muted/50 text-xs uppercase tracking-wider text-muted-foreground">
-                <tr>
-                  <th className="px-4 py-3">Certification</th>
-                  <th className="px-4 py-3">Status</th>
-                  <th className="px-4 py-3">Scope</th>
-                </tr>
-              </thead>
-              <tbody>
-                {certs.map((c) => (
-                  <tr key={c.name} className="border-b last:border-0">
-                    <td className="px-4 py-3 font-medium">{c.name}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{c.status}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{c.scope}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </Section>
 

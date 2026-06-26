@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, ShieldCheck, BadgeCheck } from "lucide-react";
+import { Linkedin, ShieldCheck } from "lucide-react";
 import { HubSpotForm } from "@/components/hubspot-form";
 
 type Col = {
@@ -102,11 +102,10 @@ export function Footer() {
           <NewsletterForm />
           <div>
             <h4 className="font-display text-xs font-semibold uppercase tracking-wider text-surface-light">
-              Trust & Compliance
+              Security
             </h4>
             <div className="mt-4 flex flex-wrap gap-3">
               <TrustBadge icon={ShieldCheck} label="SOC 2 Type II" />
-              <TrustBadge icon={BadgeCheck} label="ISO 27001" />
             </div>
           </div>
         </div>
