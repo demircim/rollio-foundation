@@ -138,22 +138,6 @@ function AboutPage() {
               Markus leads Rollio's vision and strategy. Before founding Rollio, he spent years observing enterprise architectures fail because they couldn't process unstructured context. That frustration became the founding thesis for the Contextual Data Engine.
             </p>
           </figure>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              { role: "Chief Product Officer", note: "Building autonomous agents that execute" },
-              { role: "Chief Technology Officer", note: "Semantic understanding + execution architecture" },
-              { role: "Chief Commercial Officer", note: "Customer success & outcomes" },
-            ].map((m) => (
-              <div key={m.role} className="rounded-xl border bg-card p-5">
-                <p className="font-semibold">{m.role}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{m.note}</p>
-                <p className="mt-3 text-xs uppercase tracking-wider text-muted-foreground/70">
-                  Coming soon
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </Section>
 
