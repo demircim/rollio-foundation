@@ -41,7 +41,7 @@ const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "What's the difference between Rollio and RPA (like UiPath)?",
     answer:
-      "Both automate, but very differently. RPA is rules-based ('if X, then Y') — it breaks when reality is more complex, reads only structured data, and needs reprogramming when your process changes. Rollio understands context, works across structured and unstructured information, and adapts within the business rules you set.",
+      "Both automate, but at different layers. RPA works at the UI layer — it mimics clicks and keystrokes, following rigid rules that break when screens or processes change. Rollio works at the data and context layer — reading structured ERP data and unstructured communications simultaneously, and acting within the business rules you set rather than scripted steps.",
   },
   {
     question: "Can we start small and expand?",
