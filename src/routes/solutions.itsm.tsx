@@ -202,9 +202,9 @@ function ITSMPage() {
 
         <Grid cols={3} gap="lg" className="mt-12">
           {[
-            { title: "Contextual Triage", body: "Every ticket is read, understood, categorized, and prioritized in seconds—with relevant CMDB context automatically attached." },
+            { title: "Contextual Triage", body: "Every ticket is read, understood, categorized, and prioritized in seconds — with relevant service context automatically attached." },
             { title: "Autonomous L1/L2 Resolution", body: "Password resets, access provisioning, and VPN troubleshooting are executed end-to-end without human touch." },
-            { title: "AI-Assisted Incident Response", body: "Agents instantly pull related configuration items, recent changes, and prior incident patterns so engineers can act immediately." },
+            { title: "AI-Assisted Incident Response", body: "Agents instantly pull related incidents, recent changes, and prior patterns from your systems so engineers can act immediately." },
             { title: "Intelligent Change Management", body: "Change requests are cross-referenced against policies and historical patterns, surfacing risk profiles for Human Supervisors." },
             { title: "Zero-Touch Onboarding", body: "Cross-system account creation, license assignment, and access provisioning are fully executed by Day 1." },
             { title: "Continuous SLA Enforcement", body: "Agents monitor SLA thresholds proactively, resolving imminent breaches or escalating them before they impact users." },
