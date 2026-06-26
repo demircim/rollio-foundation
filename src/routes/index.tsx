@@ -260,7 +260,7 @@ function Home() {
             </div>
           </div>
 
-          <VideoPlaceholder label="Campari customer story (3–5 min)" />
+          <VideoPlaceholder label="Campari customer story (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
         </div>
 
         {/* Logo strip placeholder */}
@@ -459,7 +459,7 @@ function Home() {
               <MetricTile value="60%" label="Less manual AR/AP" />
               <MetricTile value="[X] days" label="Faster payment cycle" />
             </Grid>
-            <VideoPlaceholder label="Laura Buseghin, Campari (3–5 min)" />
+            <VideoPlaceholder label="Laura Buseghin, Campari (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
           </div>
         </div>
       </Section>
@@ -642,18 +642,15 @@ function BeforeAfterVisual() {
   );
 }
 
-function VideoPlaceholder({ label }: { label: string }) {
-  // Visible placeholder — swap `src` once a real URL exists.
-  const placeholderSrc = "[INSERT VIDEO URL]";
-  const isReal = /^https?:\/\//.test(placeholderSrc);
-  if (isReal) {
-    return <VideoEmbed src={placeholderSrc} title={label} />;
+function VideoPlaceholder({ label, src }: { label: string; src?: string }) {
+  if (src && /^https?:\/\//.test(src)) {
+    return <VideoEmbed src={src} title={label} />;
   }
   return (
     <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-border bg-muted text-center">
       <div className="px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          [INSERT VIDEO URL]
+          Video coming soon
         </p>
         <p className="mt-2 text-sm text-foreground">{label}</p>
       </div>
