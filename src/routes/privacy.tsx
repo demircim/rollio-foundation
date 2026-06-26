@@ -72,37 +72,30 @@ function PrivacyPage() {
       <Section tone="muted" className="!py-16 md:!py-24">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Compliance &amp; Certifications
+            Our Certification
           </h2>
-          <div className="mt-6 space-y-5 text-muted-foreground">
-            <p>
-              <span className="font-semibold text-foreground">SOC 2 Type II.</span>{" "}
-              Independently audited annually against AICPA standards for security,
-              availability, confidentiality, processing integrity, and privacy.
+          <div className="mt-6 rounded-2xl border bg-card p-8">
+            <p className="font-semibold text-foreground text-lg">SOC 2 Type II</p>
+            <p className="mt-3 text-muted-foreground">
+              Rollio has achieved SOC 2 Type II certification. Our systems, processes, and controls have been independently audited and verified by a third-party auditor against AICPA standards for Security, Availability, Confidentiality, Processing Integrity, and Privacy. The audit covers all Rollio production systems, infrastructure, and operations. We are audited annually.
             </p>
-            <p>
-              <span className="font-semibold text-foreground">GDPR ready.</span>{" "}
-              Architected to support data subject rights — access, deletion, and
-              portability — through your source systems. Standard Contractual Clauses
-              for EU transfers.
-            </p>
-            <p>
-              <span className="font-semibold text-foreground">HIPAA compatible.</span>{" "}
-              Our zero-data-at-rest architecture and inherited permissions support
-              healthcare compliance. BAAs available on request.
-            </p>
-            <p>
-              <span className="font-semibold text-foreground">FedRAMP pathway.</span>{" "}
-              We're pursuing FedRAMP authorization for government agency customers.
-            </p>
-            <p>
-              <span className="font-semibold text-foreground">CCPA compliant.</span>{" "}
-              California Consumer Privacy Act requirements supported through our data
-              processor model. We do not sell or share your personal information.
+            <p className="mt-4 text-sm text-muted-foreground">
+              Enterprise customers may request a copy of the audit report under NDA. Email{" "}
+              <a
+                href="mailto:security@rollio.ai"
+                className="font-medium text-foreground underline-offset-4 hover:underline"
+              >
+                security@rollio.ai
+              </a>{" "}
+              with "SOC 2 Report Request" in the subject.
             </p>
           </div>
+          <p className="mt-8 text-xs text-muted-foreground">
+            Last updated: July 2025
+          </p>
         </div>
       </Section>
+
 
       <Section className="!py-16 md:!py-24">
         <div className="mx-auto max-w-3xl space-y-12">
