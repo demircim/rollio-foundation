@@ -31,7 +31,7 @@ const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "How secure is Rollio with our data?",
     answer:
-      "Security is foundational. Certifications and compliance include SOC 2 Type II, zero-trust architecture, GDPR alignment, HIPAA-ready controls, and FedRAMP-ready practices. Data handling includes read-only access where possible, encryption in transit and at rest, inherited permissions, audit logs, and no unnecessary data duplication.",
+      "Security is foundational. Rollio is SOC 2 Type II certified with zero-trust architecture and inherited permissions from your own systems. Data handling: read-only access where possible, encryption in transit and at rest, audit logs on every agent action, and no unnecessary data duplication.",
   },
   {
     question: "How does outcome-based pricing work?",
