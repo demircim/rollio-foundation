@@ -28,11 +28,6 @@ export const Route = createFileRoute("/security")({
 
 const certs = [
   { name: "SOC 2 Type II", status: "Certified", scope: "All production systems" },
-  { name: "GDPR", status: "Compliant", scope: "Data processing & DPA" },
-  { name: "HIPAA", status: "Eligible", scope: "Healthcare-ready architecture" },
-  { name: "FedRAMP", status: "In progress", scope: "Government cloud certification" },
-  { name: "CCPA", status: "Compliant", scope: "California privacy law" },
-  { name: "ISO 27001", status: "Planned", scope: "Information security management" },
 ];
 
 export default function SecurityPage() {
