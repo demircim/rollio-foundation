@@ -21,7 +21,7 @@ export const Route = createFileRoute("/security")({
       path: "/security",
       title: "Security & Trust — Rollio",
       description:
-        "Zero data-at-rest. Inherited permissions. SOC 2 Type II, GDPR, HIPAA-eligible, FedRAMP-pathway. How Rollio keeps enterprise data safe.",
+        "Zero data-at-rest. Inherited permissions. SOC 2 Type II certified. How Rollio keeps enterprise data safe.",
     }),
   component: SecurityPage,
 });
