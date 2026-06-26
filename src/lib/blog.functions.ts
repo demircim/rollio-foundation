@@ -49,10 +49,12 @@ export const listPublishedPosts = createServerFn({ method: "GET" })
   )
   .handler(async ({ data }) => {
     const supabase = getPublicClient();
+    const now = new Date().toISOString();
     let query = supabase
       .from("blog_posts")
       .select(CARD_COLUMNS)
       .eq("status", "published")
+      .lte("published_at", now)
       .order("published_at", { ascending: false });
 
     if (data.tag) query = query.contains("tags", [data.tag]);
@@ -70,10 +72,12 @@ export const getPublishedPostBySlug = createServerFn({ method: "GET" })
   )
   .handler(async ({ data }) => {
     const supabase = getPublicClient();
+    const now = new Date().toISOString();
     const { data: row, error } = await supabase
       .from("blog_posts")
       .select(FULL_COLUMNS)
       .eq("status", "published")
+      .lte("published_at", now)
       .eq("slug", data.slug)
       .maybeSingle();
     if (error) throw new Error(error.message);
@@ -93,12 +97,14 @@ export const getRelatedPosts = createServerFn({ method: "GET" })
   )
   .handler(async ({ data }) => {
     const supabase = getPublicClient();
+    const now = new Date().toISOString();
     const limit = data.limit ?? 3;
 
     let query = supabase
       .from("blog_posts")
       .select(CARD_COLUMNS)
       .eq("status", "published")
+      .lte("published_at", now)
       .neq("slug", data.slug)
       .order("published_at", { ascending: false })
       .limit(limit);
