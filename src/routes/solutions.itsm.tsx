@@ -22,7 +22,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "How does Rollio handle incident response and change management?",
     answer:
-      "Incidents are triaged, classified, and routed with relevant context from the CMDB, recent changes, and prior incidents pulled in automatically. Change requests are checked against policy and prior outcomes; risky changes are escalated to CAB with the full impact assessment attached.",
+      "Incidents are triaged, classified, and routed with relevant context from recent changes and prior incidents pulled in automatically. Change requests are checked against policy and prior outcomes; risky changes are escalated to CAB with the full impact assessment attached.",
   },
   {
     question: "What about user onboarding and offboarding?",
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/solutions/itsm")({
       path: "/solutions/itsm",
       title: "Autonomous AI Agents for ITSM & Ticketing | Rollio",
       description:
-        "Deploy AI Agents that read unstructured IT tickets, cross-reference your CMDB, and autonomously resolve L1/L2 requests within ServiceNow or Jira.",
+        "Deploy AI Agents that read unstructured IT tickets and autonomously resolve L1/L2 requests within ServiceNow, Jira, or your existing ITSM platform.",
       jsonLd: [
         breadcrumbListLd([
           { name: "Home", path: "/" },
@@ -68,7 +68,7 @@ const workflows = [
   {
     title: "New-hire onboarding",
     steps: [
-      "Read HRIS new-hire record",
+      "Read new-hire record from HR system",
       "Create accounts across systems",
       "Assign licenses by role",
       "Order and ship equipment",
@@ -82,7 +82,7 @@ const workflows = [
     title: "Incident response",
     steps: [
       "Triage and classify",
-      "Pull CMDB and recent changes",
+      "Pull configuration context and recent changes",
       "Match prior incidents",
       "Route with full context",
       "Track resolution",
@@ -105,7 +105,7 @@ const timelineSteps = [
     label: "Week 1–2",
     title: "Discovery",
     description:
-      "Map your ticketing system, common request types, the CMDB, and the email/Slack context around them. Identify the highest-impact routine tickets and define a 30-day pilot.",
+      "Map your ticketing system, common request types, and the email and chat context around them. Identify the highest-impact routine tickets and define a 30-day pilot.",
   },
   {
     label: "Week 3–6",
@@ -154,7 +154,7 @@ function ITSMPage() {
             <span className="text-accent">Context-Aware Agents.</span>
           </h1>
           <p className="mt-6 text-lg text-surface-light/80 md:text-xl">
-            IT tickets are natural language — and standard RPA can't read them. Rollio's Contextual Data Engine translates unstructured intent into structured actions, bridges ServiceNow with your CMDB and HRIS, and empowers AI Agents to resolve L1/L2 tickets end-to-end. No data scientists required.
+            IT tickets are natural language — and standard RPA can't read them. Rollio's Contextual Data Engine translates unstructured intent into structured actions, bridges ServiceNow with your existing identity and configuration data, and empowers AI Agents to resolve L1/L2 tickets end-to-end. No data scientists required.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
@@ -177,7 +177,7 @@ function ITSMPage() {
                 Your users don't submit perfectly formatted requests; they write natural language. Because standard workflows and RPA bots cannot understand unstructured text, automation breaks at step one. Your ticketing system becomes an expensive routing tool.
               </p>
               <p>
-                Highly paid engineers spend 60% of their day reading tickets, manually checking the CMDB, verifying HRIS data, and executing routine fixes (like password resets or VPN access). Volume outpaces headcount, resulting in bloated MTTR (Mean Time to Resolution) and frustrated users.
+                Highly paid engineers spend 60% of their day reading tickets, manually verifying identity and access data, and executing routine fixes (like password resets or VPN access). Volume outpaces headcount, resulting in bloated MTTR (Mean Time to Resolution) and frustrated users.
               </p>
             </div>
           </div>
@@ -196,15 +196,15 @@ function ITSMPage() {
           <CardEyebrow>The Solution</CardEyebrow>
           <h2>Contextual resolution, not just routing.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio bridges the gap. By contextualizing the unstructured intent of a user's ticket with your structured CMDB and identity data, our AI Agents actually solve problems end-to-end, escalating only complex incidents to human engineers.
+            Rollio bridges the gap. By contextualizing the unstructured intent of a user's ticket with your structured identity and service management data, our AI Agents actually solve problems end-to-end, escalating only complex incidents to human engineers.
           </p>
         </div>
 
         <Grid cols={3} gap="lg" className="mt-12">
           {[
-            { title: "Contextual Triage", body: "Every ticket is read, understood, categorized, and prioritized in seconds—with relevant CMDB context automatically attached." },
+            { title: "Contextual Triage", body: "Every ticket is read, understood, categorized, and prioritized in seconds — with relevant service context automatically attached." },
             { title: "Autonomous L1/L2 Resolution", body: "Password resets, access provisioning, and VPN troubleshooting are executed end-to-end without human touch." },
-            { title: "AI-Assisted Incident Response", body: "Agents instantly pull related configuration items, recent changes, and prior incident patterns so engineers can act immediately." },
+            { title: "AI-Assisted Incident Response", body: "Agents instantly pull related incidents, recent changes, and prior patterns from your systems so engineers can act immediately." },
             { title: "Intelligent Change Management", body: "Change requests are cross-referenced against policies and historical patterns, surfacing risk profiles for Human Supervisors." },
             { title: "Zero-Touch Onboarding", body: "Cross-system account creation, license assignment, and access provisioning are fully executed by Day 1." },
             { title: "Continuous SLA Enforcement", body: "Agents monitor SLA thresholds proactively, resolving imminent breaches or escalating them before they impact users." },
