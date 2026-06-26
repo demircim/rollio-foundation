@@ -128,16 +128,19 @@ function AboutPage() {
           </h2>
           <div className="mt-6 space-y-5 text-lg text-muted-foreground">
             <p>
-              AI agents are only as good as the data they can read. And most enterprise data isn't readable to them.
+              AI agents are only as good as the data they can understand. And most enterprise data isn't understandable to them — even when it's technically accessible.
             </p>
             <p className="font-medium text-foreground">
-              Structured data — transactions in SAP, processes in Celonis, tickets in ServiceNow — is only part of the picture. The decisions that move those processes forward live somewhere else: in emails, contracts, approval chains, and chat threads. That's 80% of enterprise business happening in unstructured context. Context that AI agents currently cannot see.
+              What AI agents see today are tables. Rows of orders, line items, account numbers — without clear relationships, without ownership, without context. A purchase order without the email thread behind it. A credit block without the approval history. Data that exists, but means nothing on its own.
             </p>
             <p>
-              Without it, agents can report on what happened. But they can't understand why, who needs to act, or what the right next step is. Real work requires both layers — and no system before Rollio connected them.
+              And that's only the 20% that's structured. The other 80% of enterprise business — the decisions, the approvals, the exceptions, the context — lives in emails, contracts, and chat threads. AI agents currently cannot see any of it.
             </p>
             <p>
-              We built the Contextual Data Engine to make all of it readable. It translates structured systems and unstructured communications into a unified, AI-executable context — so agents don't just observe your processes. They can act on them.
+              Without both layers, agents can report on what happened. But they can't understand why, who needs to act, or what the right next step is.
+            </p>
+            <p>
+              We built the Contextual Data Engine to change this. It doesn't just pass raw tables to an agent — it translates structured systems and unstructured communications into relational, contextual data that AI agents can actually understand and act on. That's the missing layer. That's Rollio.
             </p>
           </div>
         </div>
