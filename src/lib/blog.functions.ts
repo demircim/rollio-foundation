@@ -40,7 +40,7 @@ function getPublicClient() {
   );
 }
 
-/** List published posts, newest first. Optional tag filter. Uses RPC to bypass PostgREST row limit. */
+/** List published posts, newest first. Optional tag filter. */
 export const listPublishedPosts = createServerFn({ method: "GET" })
   .inputValidator((input: unknown) =>
     z
@@ -51,32 +51,23 @@ export const listPublishedPosts = createServerFn({ method: "GET" })
     const supabase = getPublicClient();
     const now = new Date().toISOString();
     const tag = data.tag;
+    const limit = data.limit ?? 100;
 
-    const fetchPage = (from: number, to: number) => {
-      let q = supabase
-        .from("blog_posts")
-        .select(CARD_COLUMNS)
-        .eq("status", "published")
-        .lte("published_at", now)
-        .order("published_at", { ascending: false })
-        .range(from, to);
-      if (tag) q = q.contains("tags", [tag]);
-      return q;
-    };
+    let query = supabase
+      .from("blog_posts")
+      .select(CARD_COLUMNS)
+      .eq("status", "published")
+      .lte("published_at", now)
+      .order("published_at", { ascending: false })
+      .limit(limit);
 
-    const [r1, r2, r3] = await Promise.all([
-      fetchPage(0, 9),
-      fetchPage(10, 19),
-      fetchPage(20, 35),
-    ]);
+    if (tag) query = query.contains("tags", [tag]);
 
-    if (r1.error) throw new Error(r1.error.message);
-    if (r2.error) throw new Error(r2.error.message);
-    if (r3.error) throw new Error(r3.error.message);
-
-    return [...(r1.data ?? []), ...(r2.data ?? []), ...(r3.data ?? [])] as BlogPostCard[];
-
+    const { data: rows, error } = await query;
+    if (error) throw new Error(error.message);
+    return (rows ?? []) as BlogPostCard[];
   });
+
 
 
 
