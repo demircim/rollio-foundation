@@ -22,7 +22,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "How does Rollio handle incident response and change management?",
     answer:
-      "Incidents are triaged, classified, and routed with relevant context from the CMDB, recent changes, and prior incidents pulled in automatically. Change requests are checked against policy and prior outcomes; risky changes are escalated to CAB with the full impact assessment attached.",
+      "Incidents are triaged, classified, and routed with relevant context from recent changes and prior incidents pulled in automatically. Change requests are checked against policy and prior outcomes; risky changes are escalated to CAB with the full impact assessment attached.",
   },
   {
     question: "What about user onboarding and offboarding?",
