@@ -342,11 +342,6 @@ function ITSMPage() {
                 Book an ITSM Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download ITSM Guide (placeholder)">
-                <Download /> Download Guide
-              </a>
-            </Button>
           </div>
         </div>
       </Section>
