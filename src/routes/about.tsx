@@ -243,14 +243,13 @@ function AboutPage() {
               features — join us. We're building autonomous agents that work.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              Careers page coming soon —{" "}
-              <a
-                href="mailto:hello@rollio.ai"
-                className="font-medium text-foreground underline-offset-4 hover:underline"
-              >
-                hello@rollio.ai
-              </a>
+              We're building a small, exceptional team. See open roles or reach out directly.
             </p>
+            <div className="mt-5">
+              <Button variant="primary" asChild>
+                <Link to="/careers">View Open Roles</Link>
+              </Button>
+            </div>
           </div>
           <div className="rounded-2xl border bg-card p-8">
             <h3 className="font-display text-2xl font-bold tracking-tight">
