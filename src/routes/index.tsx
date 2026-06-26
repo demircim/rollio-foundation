@@ -34,21 +34,6 @@ const HOME_FAQS: { question: string; answer: string }[] = [
       "Security is foundational. Rollio is SOC 2 Type II certified with zero-trust architecture and inherited permissions from your own systems. Data handling: read-only access where possible, encryption in transit and at rest, audit logs on every agent action, and no unnecessary data duplication.",
   },
   {
-    question: "How does outcome-based pricing work?",
-    answer:
-      "You pay based on the results your business achieves — not features or seats. Instead of a fixed subscription, pricing tracks measurable outcomes: faster payment cycles, reduced manual work, fewer exceptions, captured savings, faster approvals, or other business metrics agreed before launch.",
-  },
-  {
-    question: "What's the investment range?",
-    answer:
-      "It's outcome-based and varies with the outcomes you're targeting, how many processes are in scope, and integration complexity. A small pilot usually starts with one process and a narrow success metric; broader deployments expand pricing as measurable value is proven.",
-  },
-  {
-    question: "What if we don't see the outcomes we're targeting?",
-    answer:
-      "That's the point of outcome-based pricing — we're aligned with your success. If the targeted outcomes aren't reached, pricing adjusts accordingly. Whether the goal is a cash-conversion improvement, shorter approval cycle, lower exception rate, or fewer manual hours, the commercial model follows the business result.",
-  },
-  {
     question: "What systems does Rollio work with?",
     answer:
       "Ready-made connections cover Salesforce, Celonis, Microsoft Dynamics 365, Teams, Microsoft 365, ServiceNow, SAP S/4HANA, SAP ECC, SuccessFactors, and other systems through APIs, secure exports, and approved integration patterns.",
