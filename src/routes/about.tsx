@@ -150,8 +150,6 @@ function AboutPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { metric: "Enterprise customers", value: "Fortune 500", note: "Finance, Operations, Claims, ITSM" },
-              { metric: "Working capital freed", value: "$2.1M+", note: "Campari alone — across customers, growing" },
-              { metric: "Autonomous executions", value: "Millions / yr", note: "Across customer workflows daily" },
               { metric: "Outcome-based pricing", value: "100%", note: "We only win when you win" },
               { metric: "Compliance", value: "SOC 2 Type II", note: "GDPR · HIPAA-ready · FedRAMP path" },
               { metric: "Time to value", value: "90 days", note: "From kickoff to production agents" },
