@@ -652,23 +652,3 @@ function VideoPlaceholder({ label, src }: { label: string; src?: string }) {
     </div>
   );
 }
-
-function StoryRow({ term, desc }: { term: string; desc: string }) {
-  return (
-    <div>
-      <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-        {term}
-      </dt>
-      <dd className="mt-1 text-muted-foreground">{desc}</dd>
-    </div>
-  );
-}
-
-function MetricTile({ value, label }: { value: string; label: string }) {
-  return (
-    <Card variant="elevated" className="p-5 text-center">
-      <p className="font-display text-2xl font-bold text-primary md:text-3xl">{value}</p>
-      <p className="mt-1 text-xs text-muted-foreground">{label}</p>
-    </Card>
-  );
-}
