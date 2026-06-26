@@ -623,20 +623,3 @@ function HowItWorksTabs() {
   );
 }
 
-
-
-function VideoPlaceholder({ label, src }: { label: string; src?: string }) {
-  if (src && /^https?:\/\//.test(src)) {
-    return <VideoEmbed src={src} title={label} />;
-  }
-  return (
-    <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-border bg-muted text-center">
-      <div className="px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          Video coming soon
-        </p>
-        <p className="mt-2 text-sm text-foreground">{label}</p>
-      </div>
-    </div>
-  );
-}
