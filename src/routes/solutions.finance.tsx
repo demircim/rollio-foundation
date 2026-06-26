@@ -341,10 +341,6 @@ function FinancePage() {
                 Book a Finance Assessment <ArrowRight />
               </Link>
             </Button>
-
-                <Download /> Download Guide
-              </a>
-            </Button>
           </div>
         </div>
       </Section>
