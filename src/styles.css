@@ -60,58 +60,59 @@
   --radius: 0.5rem;
 
   /* Brand palette */
-  --navy: #0C2D5E;
-  --teal: #00B9A6;
-  --teal-text: #0E8C7C;
+  --navy: #0D0D24;
+  --teal: #6366F1;
+  --teal-text: #6366F1;
   --violet: #7C6FF0;
-  --ink: #0C2D5E;
-  --body: #475067;
-  --bg-alt: #F5F7FA;
-  --surface-dark: #0B1220;
-  --surface-dark-elev: #131C2E;
-  --surface-light: #F5F6F8;
-  --dark-muted: #9AA7BD;
+  --ink: #0D0D24;
+  --body: #4B4F6B;
+  --bg-alt: #F4F4FC;
+  --surface-dark: #08081A;
+  --surface-dark-elev: #131330;
+  --surface-light: #F5F5FF;
+  --dark-muted: #9A9ABD;
 
-  --background: #FFFFFF;
-  --foreground: #0C2D5E;
+  --background: #F9F9FE;
+  --foreground: #0D0D24;
   --card: #FFFFFF;
-  --card-foreground: #0C2D5E;
+  --card-foreground: #0D0D24;
   --popover: #FFFFFF;
-  --popover-foreground: #0C2D5E;
-  --primary: #0C2D5E;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F5F7FA;
-  --secondary-foreground: #0C2D5E;
-  --muted: #F5F7FA;
-  --muted-foreground: #7A8499;
-  --accent: #00B9A6;
-  --accent-foreground: #04201C;
+  --popover-foreground: #0D0D24;
+  --primary: #0D0D24;
+  --primary-foreground: #F5F5FF;
+  --secondary: #F4F4FC;
+  --secondary-foreground: #0D0D24;
+  --muted: #F4F4FC;
+  --muted-foreground: #6B6F8C;
+  --accent: #6366F1;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #FFFFFF;
-  --border: #E6E9F0;
-  --input: #E6E9F0;
-  --ring: #00B9A6;
+  --border: #E2E2F0;
+  --input: #E2E2F0;
+  --ring: #6366F1;
 }
 
 .dark {
-  --background: #0B1220;
-  --foreground: #F5F6F8;
-  --card: #131C2E;
-  --card-foreground: #F5F6F8;
-  --popover: #131C2E;
-  --popover-foreground: #F5F6F8;
-  --primary: #00B9A6;
-  --primary-foreground: #0B1220;
-  --secondary: #131C2E;
-  --secondary-foreground: #F5F6F8;
-  --muted: #131C2E;
-  --muted-foreground: #9AA7BD;
-  --accent: #00B9A6;
-  --accent-foreground: #0B1220;
+  --background: #08081A;
+  --foreground: #F5F5FF;
+  --card: #131330;
+  --card-foreground: #F5F5FF;
+  --popover: #131330;
+  --popover-foreground: #F5F5FF;
+  --primary: #6366F1;
+  --primary-foreground: #FFFFFF;
+  --secondary: #131330;
+  --secondary-foreground: #F5F5FF;
+  --muted: #131330;
+  --muted-foreground: #9A9ABD;
+  --accent: #6366F1;
+  --accent-foreground: #FFFFFF;
   --border: rgba(255,255,255,0.10);
   --input: rgba(255,255,255,0.15);
-  --ring: #00B9A6;
+  --ring: #6366F1;
 }
+
 
 @layer base {
   * {

@@ -19,12 +19,12 @@ export const Route = createFileRoute("/consultation-booking")({
 function ConsultationBookingPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#0B1220] text-surface-light">
+      <section className="relative overflow-hidden bg-[#08081A] text-surface-light">
         <div
           className="absolute inset-0 opacity-60"
           style={{
             background:
-              "radial-gradient(ellipse at 30% 20%, rgba(20,184,166,0.18), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(139,92,246,0.18), transparent 60%), linear-gradient(135deg, #0B1220 0%, #0C2D5E 100%)",
+              "radial-gradient(ellipse at 30% 20%, rgba(99,102,241,0.18), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(139,92,246,0.18), transparent 60%), linear-gradient(135deg, #08081A 0%, #0D0D24 100%)",
           }}
           aria-hidden
         />
