@@ -509,7 +509,46 @@ function HeroVisual() {
   );
 }
 
-function BeforeAfterVisual() {
+function HowItWorksTabs() {
+  const [active, setActive] = useState(howTabs[0].key);
+  const current = howTabs.find((t) => t.key === active) ?? howTabs[0];
+  return (
+    <div>
+      <div role="tablist" aria-label="How Rollio works" className="flex flex-wrap gap-x-8 gap-y-2 border-b border-border">
+        {howTabs.map((tab) => {
+          const isActive = tab.key === active;
+          return (
+            <button
+              key={tab.key}
+              role="tab"
+              type="button"
+              aria-selected={isActive}
+              onClick={() => setActive(tab.key)}
+              className={`relative -mb-px py-3 text-sm font-semibold uppercase tracking-[0.12em] transition-colors ${
+                isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {tab.label}
+              <span
+                aria-hidden
+                className={`absolute inset-x-0 -bottom-px h-0.5 transition-opacity ${
+                  isActive ? "bg-accent opacity-100" : "opacity-0"
+                }`}
+              />
+            </button>
+          );
+        })}
+      </div>
+      <div className="mt-8 max-w-3xl">
+        <h3 className="font-display text-2xl font-semibold text-foreground md:text-3xl">
+          {current.title}
+        </h3>
+        <p className="mt-4 text-lg text-muted-foreground">{current.body}</p>
+      </div>
+    </div>
+  );
+}
+
   return (
     <div className="grid gap-4">
       <div className="rounded-xl border border-border bg-card p-6">
