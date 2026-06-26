@@ -311,9 +311,10 @@ function Home() {
           <CardEyebrow>The Solution</CardEyebrow>
           <h2>From discovering what matters to executing what works.</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Rollio brings together two things most tools miss:
+            Three capabilities. One platform.
           </p>
         </div>
+
 
         <Grid cols={3} className="mt-12">
           <Card variant="elevated">
