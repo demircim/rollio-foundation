@@ -82,7 +82,7 @@ const howTabs = [
     key: "bridge",
     label: "Bridge",
     title: "Connects everything your AI needs.",
-    body: "Rollio reads structured data from SAP, Celonis, and ServiceNow — and the unstructured context in emails, documents, and approvals. It translates both into a single, AI-executable picture of your business. No data scientists required.",
+    body: "Rollio reads structured data from SAP, Celonis, and ServiceNow — and the unstructured context in emails, Teams messages, documents, and approvals. It translates both into a single, AI-executable picture of your business. No data scientists required.",
   },
   {
     key: "execute",
