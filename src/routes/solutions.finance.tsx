@@ -341,8 +341,7 @@ function FinancePage() {
                 Book a Finance Assessment <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Finance Guide (placeholder)">
+
                 <Download /> Download Guide
               </a>
             </Button>
