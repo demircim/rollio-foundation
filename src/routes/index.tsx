@@ -201,13 +201,13 @@ function Home() {
         <div className="relative z-10 grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
           <div>
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-              Enterprise AI Agents for ERP & CRM
+              Autonomous AI Agents · SAP · Celonis · ServiceNow
             </span>
             <h1 className="mt-6 text-balance text-surface-light">
-              No AI Autonomy Without Context. <span className="text-accent">We Give Agents the Full Picture.</span>
+              Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-surface-light/80 md:text-xl">
-              Most enterprise AI projects fail because models lack business context. Rollio bridges the gap between rigid data silos (like SAP or ServiceNow) and true AI capability. We contextualize 100% of your data—from structured fields to messy emails—empowering AI agents to execute complex back-office workflows autonomously or with Human-in-the-Loop control.
+              Rollio bridges SAP, Celonis, and ServiceNow with true AI autonomy. Our Contextual Data Engine translates structured ERP data AND unstructured communications — emails, tickets, documents — into AI-executable context. So your agents don't just answer questions. They clear last-mile bottlenecks, coordinate approvals, and execute complex workflows end-to-end. No data scientists required.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
@@ -216,9 +216,10 @@ function Home() {
                 </Link>
               </Button>
               <Button variant="outline-light" size="lg" asChild>
-                <Link to="/consultation-booking">Talk to an AI Architect</Link>
+                <Link to="/how-it-works">See How It Works</Link>
               </Button>
             </div>
+
           </div>
           <HeroVisual />
         </div>
