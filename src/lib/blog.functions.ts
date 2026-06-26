@@ -49,14 +49,32 @@ export const listPublishedPosts = createServerFn({ method: "GET" })
   )
   .handler(async ({ data }) => {
     const supabase = getPublicClient();
-    const { data: rows, error } = await supabase.rpc("get_published_posts", {
-      p_tag: data.tag ?? undefined,
-      p_limit: data.limit ?? 100,
-    });
+    const now = new Date().toISOString();
+    const tag = data.tag;
 
-    if (error) throw new Error(error.message);
-    return (rows ?? []) as BlogPostCard[];
+    const fetchPage = (from: number, to: number) => {
+      let q = supabase
+        .from("blog_posts")
+        .select(CARD_COLUMNS)
+        .eq("status", "published")
+        .lte("published_at", now)
+        .order("published_at", { ascending: false })
+        .range(from, to);
+      if (tag) q = q.contains("tags", [tag]);
+      return q;
+    };
+
+    const [r1, r2] = await Promise.all([
+      fetchPage(0, 49),
+      fetchPage(50, 99),
+    ]);
+
+    if (r1.error) throw new Error(r1.error.message);
+    if (r2.error) throw new Error(r2.error.message);
+
+    return [...(r1.data ?? []), ...(r2.data ?? [])] as BlogPostCard[];
   });
+
 
 
 /** Get a single published post by slug. Returns null if not found. */
