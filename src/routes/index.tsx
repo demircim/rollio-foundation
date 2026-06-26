@@ -334,7 +334,8 @@ function Home() {
       </Section>
 
       {/* ---------- Section 5 — How It Works (Tabs) ---------- */}
-      <Section tone="muted">
+      <Section tone="muted" id="how-it-works">
+
         <div className="max-w-2xl">
           <CardEyebrow>How It Works</CardEyebrow>
           <h2>Bridge. Execute. Scale.</h2>
