@@ -137,7 +137,7 @@ function AboutPage() {
               <p className="text-sm text-muted-foreground">CEO &amp; Co-Founder</p>
             </figcaption>
             <p className="mt-6 text-muted-foreground">
-              Markus leads Rollio's vision and strategy. Before founding Rollio, he spent years working with global enterprises — watching teams spend their days acting as human bridges between SAP, Celonis, ServiceNow, and the email threads, spreadsheets, and chat conversations that surrounded them. That frustration became the founding thesis: without a translation layer, AI agents will always hit a ceiling.
+              Markus leads Rollio's vision and strategy. Before founding Rollio, he spent years working with global enterprises watching teams spend their days acting as human bridges between SAP, Celonis, ServiceNow, and the emails, spreadsheets, and approvals surrounding them. That frustration became Rollio's founding thesis: without a translation layer, AI agents will always hit a ceiling.
             </p>
           </figure>
         </div>
@@ -257,7 +257,7 @@ function AboutPage() {
               Press &amp; Media
             </h3>
             <p className="mt-3 text-muted-foreground">
-              Featured on Salesforce AppExchange, in the Celonis Innovation community, and recognised in enterprise AI automation publications. Rollio is a certified Celonis integration partner.
+              Featured on Salesforce AppExchange, recognised in the Celonis Innovation community, and covered in enterprise AI automation publications. Rollio is a certified Celonis integration partner.
 
             </p>
             <p className="mt-4 text-sm">
