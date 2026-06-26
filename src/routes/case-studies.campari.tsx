@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   CheckCircle2,
-  Download,
   Quote,
   Sparkles,
 } from "lucide-react";
@@ -508,11 +507,6 @@ function CampariCaseStudy() {
                 Schedule Consultation <ArrowRight />
               </Link>
             </Button>
-            <Button variant="outline-light" size="lg" asChild>
-              <a href="#" aria-label="Download Full Case Study PDF (placeholder)">
-                <Download /> Download Full Case Study PDF
-              </a>
-            </Button>
           </div>
         </div>
       </Section>
@@ -532,14 +526,5 @@ function StatTile({ value, label }: { value: string; label: string }) {
 }
 
 function VideoPlaceholder({ label }: { label: string }) {
-  return (
-    <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-border bg-muted text-center">
-      <div className="px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          {VIDEO_URL_PLACEHOLDER}
-        </p>
-        <p className="mt-2 text-sm text-foreground">{label}</p>
-      </div>
-    </div>
-  );
+  return <VideoEmbed src={VIDEO_URL} title={label} />;
 }
