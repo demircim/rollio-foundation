@@ -250,9 +250,9 @@ function Home() {
             </blockquote>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button variant="primary" asChild>
-                <Link to="/case-studies/campari">
-                  Watch Full Case Study <ArrowRight />
-                </Link>
+                <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
+                  Watch: Campari Story <ArrowRight />
+                </a>
               </Button>
             </div>
           </div>
