@@ -177,7 +177,7 @@ function ITSMPage() {
                 Your users don't submit perfectly formatted requests; they write natural language. Because standard workflows and RPA bots cannot understand unstructured text, automation breaks at step one. Your ticketing system becomes an expensive routing tool.
               </p>
               <p>
-                Highly paid engineers spend 60% of their day reading tickets, manually checking the CMDB, verifying HRIS data, and executing routine fixes (like password resets or VPN access). Volume outpaces headcount, resulting in bloated MTTR (Mean Time to Resolution) and frustrated users.
+                Highly paid engineers spend 60% of their day reading tickets, manually verifying identity and access data, and executing routine fixes (like password resets or VPN access). Volume outpaces headcount, resulting in bloated MTTR (Mean Time to Resolution) and frustrated users.
               </p>
             </div>
           </div>
