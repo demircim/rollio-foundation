@@ -242,10 +242,10 @@ function Home() {
               "From insight to action, automatically."
             </p>
             <blockquote className="mt-8 border-l-2 border-accent pl-4 text-foreground">
-              "Collaboration has enhanced our operational efficiency significantly."
+              "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
               <footer className="mt-2 text-sm text-muted-foreground not-italic">
                 — Laura Buseghin, Global Director Process Optimization &amp; Automation,
-                Campari
+                Campari Group
               </footer>
             </blockquote>
             <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -254,9 +254,6 @@ function Home() {
                   Watch Full Case Study <ArrowRight />
                 </Link>
               </Button>
-              <span className="text-sm text-muted-foreground">
-                More customer stories coming soon.
-              </span>
             </div>
           </div>
 
@@ -435,14 +432,14 @@ function Home() {
               />
               <StoryRow
                 term="Result"
-                desc="24% improvement in cash conversion cycle. Plus 60% less manual AR/AP work, eliminated payment delays, and better vendor on-time payment."
+                desc="Improved cash conversion cycle. Less manual AR/AP work, eliminated payment delays, and better vendor on-time payment."
               />
             </dl>
 
             <blockquote className="mt-8 border-l-2 border-accent pl-4 text-foreground">
-              "Collaboration has enhanced our operational efficiency significantly."
+              "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
               <footer className="mt-2 text-sm text-muted-foreground not-italic">
-                — Laura Buseghin, Campari
+                — Laura Buseghin, Global Director Process Optimization &amp; Automation, Campari Group
               </footer>
             </blockquote>
 
@@ -454,10 +451,9 @@ function Home() {
           </div>
 
           <div className="space-y-6">
-            <Grid cols={3} gap="sm">
+            <Grid cols={2} gap="sm">
               <MetricTile value="24%" label="Cash conversion improvement" />
               <MetricTile value="60%" label="Less manual AR/AP" />
-              <MetricTile value="[X] days" label="Faster payment cycle" />
             </Grid>
             <VideoPlaceholder label="Laura Buseghin, Campari (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
           </div>
