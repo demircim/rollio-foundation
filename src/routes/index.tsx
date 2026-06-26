@@ -346,25 +346,17 @@ function Home() {
         </Grid>
       </Section>
 
-      {/* ---------- Section 5 — How It Works (Timeline) ---------- */}
+      {/* ---------- Section 5 — How It Works (Tabs) ---------- */}
       <Section tone="muted">
         <div className="max-w-2xl">
           <CardEyebrow>How It Works</CardEyebrow>
-          <h2>Your path to hands-free execution: 90 days.</h2>
+          <h2>Bridge. Execute. Scale.</h2>
         </div>
         <div className="mt-12">
-          <Timeline items={timelineSteps} />
+          <HowItWorksTabs />
         </div>
-
-        <Card variant="elevated" className="mt-12 max-w-3xl border-accent/30 bg-accent/5">
-          <p className="text-base text-foreground">
-            <strong className="text-primary">Most customers see measurable results
-            within 30 days of piloting.</strong>{" "}
-            Faster approvals, less manual work, better cash flow, fewer errors, happier
-            customers.
-          </p>
-        </Card>
       </Section>
+
 
 
 
