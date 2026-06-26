@@ -444,9 +444,9 @@ function Home() {
             </blockquote>
 
             <Button variant="primary" className="mt-8" asChild>
-              <Link to="/case-studies/campari">
-                Read Full Case Study <ArrowRight />
-              </Link>
+              <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
+                Watch the Story <ArrowRight />
+              </a>
             </Button>
           </div>
 
