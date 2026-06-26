@@ -225,7 +225,24 @@ function Home() {
         </div>
       </Section>
 
+      {/* ---------- Logo strip (standalone) ---------- */}
+      <section className="border-b border-border bg-background py-10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            Trusted by global leaders in critical operations
+          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-muted-foreground/80">
+            {proofLogos.map((logo) => (
+              <span key={logo} className="font-display text-base font-semibold">
+                {logo}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ---------- Section 2 — Proof (Campari) ---------- */}
+
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>Proof</CardEyebrow>
