@@ -151,7 +151,7 @@ function AboutPage() {
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { metric: "Enterprise customers", value: "Fortune 500", note: "Finance, Operations, Claims, ITSM" },
+              { metric: "Enterprise customers", value: "Global Enterprise", note: "FS/Insurance · Manufacturing · ITSM · Tech" },
               { metric: "Outcome-based pricing", value: "100%", note: "We only win when you win" },
               { metric: "Compliance", value: "SOC 2 Type II", note: "GDPR · HIPAA-ready · FedRAMP path" },
               { metric: "Time to value", value: "90 days", note: "From kickoff to production agents" },
