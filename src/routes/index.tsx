@@ -494,7 +494,7 @@ function Home() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
               <Link to="/consultation-booking">
-                Schedule Consultation (Free) <ArrowRight />
+                Book a Use-Case Assessment <ArrowRight />
               </Link>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
@@ -502,19 +502,9 @@ function Home() {
             </Button>
           </div>
           <p className="mt-6 max-w-xl text-surface-light/75">
-            Let's talk about the outcomes you want and how Rollio can deliver them. 30
-            minutes, no obligation.
+            30 minutes. No obligation. Let's find your highest-impact automation opportunity.
           </p>
-          <p className="mt-6 text-sm text-surface-light/60">
-            Trusted by Campari and enterprise teams worldwide. Our outcome-based model
-            means we only succeed when you succeed. Questions?{" "}
-            <a
-              href="mailto:hello@rollio.ai"
-              className="inline-flex items-center gap-1 text-accent hover:underline"
-            >
-              <Mail className="h-3.5 w-3.5" /> hello@rollio.ai
-            </a>
-          </p>
+
         </div>
       </Section>
     </>
