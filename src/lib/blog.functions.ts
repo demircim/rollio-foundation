@@ -50,9 +50,10 @@ export const listPublishedPosts = createServerFn({ method: "GET" })
   .handler(async ({ data }) => {
     const supabase = getPublicClient();
     const { data: rows, error } = await supabase.rpc("get_published_posts", {
-      p_tag: data.tag ?? null,
+      p_tag: data.tag ?? undefined,
       p_limit: data.limit ?? 100,
     });
+
     if (error) throw new Error(error.message);
     return (rows ?? []) as BlogPostCard[];
   });
