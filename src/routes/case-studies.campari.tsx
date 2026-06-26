@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import {
   ArrowRight,
   CheckCircle2,
@@ -173,25 +173,9 @@ const roadmap = [
 // ---------- Route ----------
 
 export const Route = createFileRoute("/case-studies/campari")({
-  head: () =>
-    buildSeo({
-      path: PAGE_PATH,
-      title:
-        "Campari Case Study — 24% Faster Cash Conversion with Rollio",
-      description:
-        "How Campari Group used Rollio's Contextual AI Agents to bridge SAP and email data, cutting cash conversion by 24% and freeing $2.1M in working capital.",
-      ogType: "article",
-      jsonLd: [
-        breadcrumbListLd([
-          { name: "Home", path: "/" },
-          { name: "Case Studies", path: "/" },
-          { name: "Campari Group", path: PAGE_PATH },
-        ]),
-        articleLd(),
-        videoObjectLd(),
-      ],
-    }),
-  component: CampariCaseStudy,
+  beforeLoad: () => {
+    throw redirect({ to: "/" });
+  },
 });
 
 function CampariCaseStudy() {

@@ -157,7 +157,7 @@ const whyChoose = [
   },
 ];
 
-const proofLogos = ["Campari", "More customer stories coming soon"];
+const proofLogos = ["Celonis", "Campari", "W&S Financial Group", "Capital One", "Manroland Goss", "Macquarie", "Waters Corp."];
 
 // ---------- Route ----------
 
@@ -260,10 +260,10 @@ function Home() {
           <VideoPlaceholder label="Campari customer story (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
         </div>
 
-        {/* Logo strip placeholder */}
+        {/* Logo strip */}
         <div className="mt-14 border-t border-border pt-8">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-            Trusted by
+            Trusted by global leaders in critical operations
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-x-10 gap-y-3 text-muted-foreground/80">
             {proofLogos.map((logo) => (
