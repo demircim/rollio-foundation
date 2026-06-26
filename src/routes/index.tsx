@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Sparkles, Workflow, ShieldCheck, Zap } from "lucide-react";
 import { Section } from "@/components/section";
@@ -6,8 +6,8 @@ import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/faq";
-import { VideoEmbed } from "@/components/video-embed";
 import { buildSeo, organizationLd, websiteLd, faqPageLd } from "@/lib/seo";
+
 
 
 // ---------- FAQ content (Appendix A, plain-business voice) ----------
@@ -179,8 +179,8 @@ function Home() {
             <h1 className="mt-6 text-balance text-surface-light">
               Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-surface-light/80 md:text-xl">
-              Rollio bridges SAP, Celonis, and ServiceNow with true AI autonomy. Our Contextual Data Engine translates structured ERP data AND unstructured communications — emails, Teams messages, tickets, documents — into AI-executable context. So your agents don't just answer questions. They clear last-mile bottlenecks, coordinate approvals, and execute complex workflows end-to-end. No data scientists required.
+            <p className="mt-6 max-w-xl text-lg text-surface-light/80 md:text-xl">
+              Rollio's Contextual Data Engine reads your ERP data and the unstructured context around it — emails, tickets, approvals — and turns both into actions your AI agents can execute end-to-end.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
@@ -189,9 +189,10 @@ function Home() {
                 </Link>
               </Button>
               <Button variant="outline-light" size="lg" asChild>
-                <Link to="/how-it-works">See How It Works</Link>
+                <a href="#how-it-works">See How It Works</a>
               </Button>
             </div>
+
 
           </div>
           <HeroVisual />
@@ -229,51 +230,63 @@ function Home() {
         </div>
       </section>
 
-      {/* ---------- Section 2 — Proof (Campari) ---------- */}
-
+      {/* ---------- Customer Stories ---------- */}
       <Section tone="default">
         <div className="max-w-2xl">
-          <CardEyebrow>Proof</CardEyebrow>
-          <h2>Trusted by global enterprises — results they can talk about.</h2>
+          <CardEyebrow>Customer Stories</CardEyebrow>
+          <h2>Global enterprises. Real results.</h2>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div>
-            <ul className="space-y-3 text-muted-foreground">
-              {[
-                "Reduces manual inquiries and saves time for credit managers",
-                "Speeds up order resolution and fulfillment through AI-driven collaboration",
-                "Delivers immediate process transparency and intelligence where teams work",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-accent" aria-hidden />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <blockquote className="mt-8 border-l-2 border-accent pl-4 text-foreground">
-              "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
-              <footer className="mt-2 text-sm text-muted-foreground not-italic">
-                — Laura Buseghin, Global Director Process Optimization &amp; Automation,
-                Campari Group
-              </footer>
-            </blockquote>
-
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <Button variant="primary" asChild>
-                <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
-                  Watch: Campari Story <ArrowRight />
-                </a>
-              </Button>
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          {/* Campari */}
+          <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
+            <span className="inline-flex w-fit items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
+              Finance &amp; Operations
+            </span>
+            <p className="mt-6 text-xl font-medium leading-snug text-foreground md:text-2xl">
+              "Collaboration Agent will enhance our operational efficiency and improve transparency."
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Laura Buseghin · Global Director Process Optimization &amp; Automation, Campari Group
+            </p>
+            <div className="mt-auto pt-8">
+              <a
+                href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+              >
+                ▶ Watch the story <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
-          <VideoPlaceholder label="Campari customer story (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
+          {/* W&S */}
+          <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
+            <span className="inline-flex w-fit items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
+              Financial Services
+            </span>
+            <p className="mt-6 text-xl font-medium leading-snug text-foreground md:text-2xl">
+              "Now we are experiencing more productivity while servicing customers. Our agents are trained significantly quicker."
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Joe Lynch · VP Client Relationship Center, Western &amp; Southern Financial Group
+            </p>
+            <div className="mt-auto flex flex-wrap items-center gap-4 pt-8">
+              <Link
+                to="/case-studies/western-southern"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+              >
+                Read the story <ArrowRight className="h-4 w-4" />
+              </Link>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-500">
+                🏆 Stevie Award Winner
+              </span>
+            </div>
+          </div>
         </div>
-
-
-
       </Section>
+
 
 
 
@@ -321,7 +334,8 @@ function Home() {
       </Section>
 
       {/* ---------- Section 5 — How It Works (Tabs) ---------- */}
-      <Section tone="muted">
+      <Section tone="muted" id="how-it-works">
+
         <div className="max-w-2xl">
           <CardEyebrow>How It Works</CardEyebrow>
           <h2>Bridge. Execute. Scale.</h2>
@@ -460,69 +474,114 @@ function Home() {
 // ---------- Local presentation helpers ----------
 
 function HeroVisual() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 120);
+    return () => clearTimeout(t);
+  }, []);
+
+  const sources = [
+    { label: "Email · invoice dispute", icon: "✉" },
+    { label: "Teams · approval request", icon: "💬" },
+    { label: "SAP · open PO #4821", icon: "⚙" },
+    { label: "Ticket · SLA at risk", icon: "🎫" },
+  ];
+
+  const actions = [
+    "Invoice exception resolved",
+    "Approval routed with context",
+    "PO matched & payment scheduled",
+    "Ticket triaged & escalated",
+  ];
+
   return (
-    <div className="relative">
-      <div className="grid grid-cols-2 gap-4">
-        {/* Before */}
-        <div className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-surface-light/60">
-            Before
+    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-start gap-3">
+        {/* Sources */}
+        <div>
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-surface-light/40">
+            Your data
           </p>
-          <p className="mt-2 text-sm font-medium text-surface-light">
-            Raw Data (No Context)
-          </p>
-          <div className="mt-4 space-y-2">
-            {[
-              "Email · approval needed",
-              "Ticket #4821 · pending",
-              "Spreadsheet · v12 final",
-              "Slack thread · 14 replies",
-              "PO #88-19 · unmatched",
-            ].map((t, i) => (
+          <div className="space-y-2">
+            {sources.map((s, i) => (
               <div
-                key={t}
-                className="rounded-md bg-white/5 px-3 py-2 text-xs text-surface-light/70"
-                style={{ transform: `translateX(${(i % 2) * 8}px)` }}
+                key={s.label}
+                className="rounded-lg bg-white/5 px-3 py-2 text-xs text-surface-light/70 transition-all duration-500"
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateX(0)" : "translateX(-10px)",
+                  transitionDelay: `${i * 120}ms`,
+                }}
               >
-                {t}
+                <span className="mr-1.5">{s.icon}</span>
+                {s.label}
               </div>
             ))}
           </div>
         </div>
 
-        {/* After */}
-        <div
-          className="rounded-xl border border-accent/30 bg-white/5 p-5 backdrop-blur-sm"
-          style={{ boxShadow: "0 0 60px -20px rgba(0,185,166,0.5)" }}
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-            After
+        {/* Engine */}
+        <div className="flex flex-col items-center justify-start pt-7">
+          <div
+            className="relative flex h-14 w-14 items-center justify-center rounded-full border border-accent/50 transition-all duration-700"
+            style={{ opacity: visible ? 1 : 0, transitionDelay: "400ms" }}
+          >
+            <div className="absolute inset-0 animate-ping rounded-full border border-accent/20" />
+            <Sparkles className="h-5 w-5 text-accent" />
+          </div>
+          <p
+            className="mt-2 text-center text-[9px] font-semibold uppercase tracking-[0.1em] text-accent transition-opacity duration-500"
+            style={{ opacity: visible ? 1 : 0, transitionDelay: "500ms" }}
+          >
+            Contextual
+            <br />
+            Data Engine
           </p>
-          <p className="mt-2 text-sm font-medium text-surface-light">
-            Contextualized AI Execution
+        </div>
+
+        {/* Actions */}
+        <div>
+          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-surface-light/40">
+            AI actions
           </p>
-          <div className="mt-4 space-y-2">
-            {[
-              "Context mapped from email & SAP",
-              "AI Agent resolved exception",
-              "Human Supervisor approved",
-              "Payment scheduled (early-discount)",
-              "Audit trail logged in ERP",
-            ].map((t) => (
+          <div className="space-y-2">
+            {actions.map((a, i) => (
               <div
-                key={t}
-                className="flex items-center gap-2 rounded-md bg-accent/10 px-3 py-2 text-xs text-surface-light"
+                key={a}
+                className="flex items-start gap-2 rounded-lg bg-accent/10 px-3 py-2 text-xs text-surface-light transition-all duration-500"
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateX(0)" : "translateX(10px)",
+                  transitionDelay: `${600 + i * 120}ms`,
+                }}
               >
-                <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-accent" />
-                {t}
+                <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-accent" />
+                {a}
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Connecting arrows */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-[36%] flex items-center transition-opacity duration-700"
+        style={{ opacity: visible ? 0.3 : 0, transitionDelay: "350ms" }}
+        aria-hidden
+      >
+        <ArrowRight className="h-4 w-4 text-accent" />
+      </div>
+      <div
+        className="pointer-events-none absolute inset-y-0 left-[62%] flex items-center transition-opacity duration-700"
+        style={{ opacity: visible ? 0.3 : 0, transitionDelay: "550ms" }}
+        aria-hidden
+      >
+        <ArrowRight className="h-4 w-4 text-accent" />
+      </div>
     </div>
   );
 }
+
 
 function HowItWorksTabs() {
   const [active, setActive] = useState(howTabs[0].key);
@@ -564,20 +623,3 @@ function HowItWorksTabs() {
   );
 }
 
-
-
-function VideoPlaceholder({ label, src }: { label: string; src?: string }) {
-  if (src && /^https?:\/\//.test(src)) {
-    return <VideoEmbed src={src} title={label} />;
-  }
-  return (
-    <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-border bg-muted text-center">
-      <div className="px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-          Video coming soon
-        </p>
-        <p className="mt-2 text-sm text-foreground">{label}</p>
-      </div>
-    </div>
-  );
-}
