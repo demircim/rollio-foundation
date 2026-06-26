@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Sparkles, Workflow, ShieldCheck, Zap } from "lucide-react";
 import { Section } from "@/components/section";
@@ -6,8 +6,8 @@ import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/card";
 import { Grid } from "@/components/grid";
 import { Button } from "@/components/ui/button";
 import { FAQ } from "@/components/faq";
-import { VideoEmbed } from "@/components/video-embed";
 import { buildSeo, organizationLd, websiteLd, faqPageLd } from "@/lib/seo";
+
 
 
 // ---------- FAQ content (Appendix A, plain-business voice) ----------
