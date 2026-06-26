@@ -392,9 +392,9 @@ function Home() {
       {/* ---------- Section 7 — Why Choose (2x2) ---------- */}
       <Section tone="muted">
         <div className="max-w-2xl">
-          <CardEyebrow>Why Rollio</CardEyebrow>
-          <h2>Why customers choose Rollio.</h2>
+          <h2>Why Rollio.</h2>
         </div>
+
 
         <Grid cols={2} gap="lg" className="mt-12">
           {whyChoose.map(({ icon: Icon, eyebrow, title, body, cta }) => (
