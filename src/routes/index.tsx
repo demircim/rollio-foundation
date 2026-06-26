@@ -180,7 +180,7 @@ function Home() {
               Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-surface-light/80 md:text-xl">
-              Rollio bridges SAP, Celonis, and ServiceNow with true AI autonomy. Our Contextual Data Engine translates structured ERP data AND unstructured communications — emails, tickets, documents — into AI-executable context. So your agents don't just answer questions. They clear last-mile bottlenecks, coordinate approvals, and execute complex workflows end-to-end. No data scientists required.
+              Rollio bridges SAP, Celonis, and ServiceNow with true AI autonomy. Our Contextual Data Engine translates structured ERP data AND unstructured communications — emails, Teams messages, tickets, documents — into AI-executable context. So your agents don't just answer questions. They clear last-mile bottlenecks, coordinate approvals, and execute complex workflows end-to-end. No data scientists required.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
