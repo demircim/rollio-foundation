@@ -281,29 +281,8 @@ function Home() {
         </div>
       </Section>
 
-      {/* ---------- Section 3 — Problem ---------- */}
-      <Section tone="muted">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-          <div className="max-w-2xl">
-            <CardEyebrow>The Core Problem</CardEyebrow>
-            <h2>
-              Why 80% of Enterprise AI projects fail at the data layer.
-            </h2>
-            <div className="mt-6 space-y-5 text-lg text-muted-foreground">
-              <p>
-                You have structured data in SAP, Salesforce, and ServiceNow. You have unconstructed data in emails, claims, and service tickets. But your systems cannot connect the dots.
-              </p>
-              <p>
-                Standard AI models and RPA bots break when reality gets complex because they lack contextual understanding. Your team spends hundreds of hours manually bridging the gap: reading an email, checking the ERP, validating a claim, and updating a ticket.
-              </p>
-              <p>
-                <strong>Without contextual data, you cannot build autonomous AI agents.</strong> You are stuck paying for expensive workarounds while your back-office processes hit a scaling wall.
-              </p>
-            </div>
-          </div>
-          <BeforeAfterVisual />
-        </div>
-      </Section>
+
+
 
       {/* ---------- Section 4 — Solution ---------- */}
       <Section tone="default">
