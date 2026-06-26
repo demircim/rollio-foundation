@@ -105,7 +105,7 @@ const timelineSteps = [
     label: "Week 1–2",
     title: "Discovery",
     description:
-      "Map your ticketing system, common request types, the CMDB, and the email/Slack context around them. Identify the highest-impact routine tickets and define a 30-day pilot.",
+      "Map your ticketing system, common request types, and the email and chat context around them. Identify the highest-impact routine tickets and define a 30-day pilot.",
   },
   {
     label: "Week 3–6",
