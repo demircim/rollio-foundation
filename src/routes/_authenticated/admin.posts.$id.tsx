@@ -38,11 +38,25 @@ import { toast } from "sonner";
 import { ArrowLeft, Upload, X } from "lucide-react";
 
 const TAG_OPTIONS = [
-  "Process Optimization",
-  "Cost Savings",
-  "Automation Alternatives",
-  "Use Case Deep-Dive",
-  "Thought Leadership",
+  "AI Agents",
+  "Agentic AI",
+  "Enterprise AI",
+  "Operations",
+  "Finance",
+  "Scaling",
+  "Process Automation",
+  "Automation",
+  "Procurement",
+  "Order-to-Cash",
+  "Risk Management",
+  "Compliance",
+  "Audit",
+  "Implementation",
+  "IT Operations",
+  "Strategy",
+  "Business Transformation",
+  "Execution Excellence",
+  "ROI",
 ];
 
 const SIGNED_URL_TTL_SECONDS = 60 * 60 * 24 * 365 * 10; // ~10 years
