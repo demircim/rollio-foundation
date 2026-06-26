@@ -86,10 +86,11 @@ function AboutPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {[
               {
-                title: "Context is Everything",
+                title: "Context is the Missing Link",
                 body:
-                  "Data without context is just noise. We believe AI must understand the 'why' behind a transaction before it can autonomously execute the 'how'.",
+                  "SAP has the transaction. Celonis has the process. ServiceNow has the ticket. But none of them alone gives an AI agent what it needs to act. Rollio connects the dots — structured data, unstructured communications, and business rules — into one coherent picture.",
               },
+
               {
                 title: "Execution over Analysis",
                 body:
