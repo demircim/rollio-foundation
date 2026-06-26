@@ -230,51 +230,63 @@ function Home() {
         </div>
       </section>
 
-      {/* ---------- Section 2 — Proof (Campari) ---------- */}
-
+      {/* ---------- Customer Stories ---------- */}
       <Section tone="default">
         <div className="max-w-2xl">
-          <CardEyebrow>Proof</CardEyebrow>
-          <h2>Trusted by global enterprises — results they can talk about.</h2>
+          <CardEyebrow>Customer Stories</CardEyebrow>
+          <h2>Global enterprises. Real results.</h2>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div>
-            <ul className="space-y-3 text-muted-foreground">
-              {[
-                "Reduces manual inquiries and saves time for credit managers",
-                "Speeds up order resolution and fulfillment through AI-driven collaboration",
-                "Delivers immediate process transparency and intelligence where teams work",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-accent" aria-hidden />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <blockquote className="mt-8 border-l-2 border-accent pl-4 text-foreground">
-              "Collaboration Agent will enhance our operational efficiency and improve transparency. It also lets us expose process intelligence to the wider organization."
-              <footer className="mt-2 text-sm text-muted-foreground not-italic">
-                — Laura Buseghin, Global Director Process Optimization &amp; Automation,
-                Campari Group
-              </footer>
-            </blockquote>
-
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <Button variant="primary" asChild>
-                <a href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s" target="_blank" rel="noopener noreferrer">
-                  Watch: Campari Story <ArrowRight />
-                </a>
-              </Button>
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          {/* Campari */}
+          <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
+            <span className="inline-flex w-fit items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
+              Finance &amp; Operations
+            </span>
+            <p className="mt-6 text-xl font-medium leading-snug text-foreground md:text-2xl">
+              "Collaboration Agent will enhance our operational efficiency and improve transparency."
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Laura Buseghin · Global Director Process Optimization &amp; Automation, Campari Group
+            </p>
+            <div className="mt-auto pt-8">
+              <a
+                href="https://www.youtube.com/watch?v=msXUD4HzDoE&t=7s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+              >
+                ▶ Watch the story <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
-          <VideoPlaceholder label="Campari customer story (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
+          {/* W&S */}
+          <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
+            <span className="inline-flex w-fit items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
+              Financial Services
+            </span>
+            <p className="mt-6 text-xl font-medium leading-snug text-foreground md:text-2xl">
+              "Now we are experiencing more productivity while servicing customers. Our agents are trained significantly quicker."
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Joe Lynch · VP Client Relationship Center, Western &amp; Southern Financial Group
+            </p>
+            <div className="mt-auto flex flex-wrap items-center gap-4 pt-8">
+              <Link
+                to="/case-studies/western-southern"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+              >
+                Read the story <ArrowRight className="h-4 w-4" />
+              </Link>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-500">
+                🏆 Stevie Award Winner
+              </span>
+            </div>
+          </div>
         </div>
-
-
-
       </Section>
+
 
 
 
