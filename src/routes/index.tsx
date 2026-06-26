@@ -260,7 +260,7 @@ function Home() {
             </div>
           </div>
 
-          <VideoPlaceholder label="Campari customer story (3–5 min)" />
+          <VideoPlaceholder label="Campari customer story (3–5 min)" src="https://www.youtube.com/embed/msXUD4HzDoE?start=7" />
         </div>
 
         {/* Logo strip placeholder */}
