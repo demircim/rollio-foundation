@@ -16,6 +16,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PilotConsultationRouteImport } from './routes/pilot-consultation'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
 import { Route as AboutRouteImport } from './routes/about'
@@ -66,6 +67,11 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
 const ConsultationBookingRoute = ConsultationBookingRouteImport.update({
   id: '/consultation-booking',
   path: '/consultation-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -155,6 +161,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
+  '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
   '/pilot-consultation': typeof PilotConsultationRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
+  '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
   '/pilot-consultation': typeof PilotConsultationRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
+  '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
   '/pilot-consultation': typeof PilotConsultationRoute
@@ -230,6 +239,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-co-workers'
     | '/auth'
+    | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
     | '/pilot-consultation'
@@ -254,6 +264,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-co-workers'
     | '/auth'
+    | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
     | '/pilot-consultation'
@@ -278,6 +289,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-co-workers'
     | '/auth'
+    | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
     | '/pilot-consultation'
@@ -304,6 +316,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AiCoWorkersRoute: typeof AiCoWorkersRoute
   AuthRoute: typeof AuthRoute
+  CareersRoute: typeof CareersRoute
   ConsultationBookingRoute: typeof ConsultationBookingRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PilotConsultationRoute: typeof PilotConsultationRoute
@@ -370,6 +383,13 @@ declare module '@tanstack/react-router' {
       path: '/consultation-booking'
       fullPath: '/consultation-booking'
       preLoaderRoute: typeof ConsultationBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -517,6 +537,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AiCoWorkersRoute: AiCoWorkersRoute,
   AuthRoute: AuthRoute,
+  CareersRoute: CareersRoute,
   ConsultationBookingRoute: ConsultationBookingRoute,
   HowItWorksRoute: HowItWorksRoute,
   PilotConsultationRoute: PilotConsultationRoute,
