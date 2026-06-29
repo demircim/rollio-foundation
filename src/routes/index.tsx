@@ -224,6 +224,48 @@ function Home() {
         </div>
       </section>
 
+      {/* ── Why Enterprise AI Pilots Fail ─────────────────── */}
+      <Section tone="muted">
+        <div className="max-w-2xl">
+          <CardEyebrow>The Enterprise AI Problem</CardEyebrow>
+          <h2>Why 74% of enterprise AI pilots never reach production.</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            The reason is almost never the model. It's the data. Enterprise AI agents can't act on data they can't understand — and most enterprise data falls into one of three traps.
+          </p>
+        </div>
+
+        <Grid cols={3} className="mt-12">
+          <Card variant="elevated">
+            <CardEyebrow>Failure Mode 01</CardEyebrow>
+            <CardTitle>Empty Metadata</CardTitle>
+            <CardBody>
+              SAP fields like KUNNR, VBELN, and ERDAT tell a database engineer where data lives. They tell an AI agent nothing. Fewer than 5% of enterprise ERP fields have any documented business description. Agents operating on raw schemas make confident-sounding mistakes.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardEyebrow>Failure Mode 02</CardEyebrow>
+            <CardTitle>The Invisible 80%</CardTitle>
+            <CardBody>
+              80% of enterprise business context lives in emails, chat, contracts, and approvals — not in database rows. The credit manager's email about a payment plan. The account manager's Slack flag about a relationship risk. AI agents built on structured data alone are blind to all of it.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardEyebrow>Failure Mode 03</CardEyebrow>
+            <CardTitle>The Context Window Trap</CardTitle>
+            <CardBody>
+              Teams respond by stuffing prompts with schema docs and glossaries. It works in demos. In production, static context goes stale, consumes the context window, and breaks on edge cases the docs didn't anticipate. It cannot scale to an enterprise.
+            </CardBody>
+          </Card>
+        </Grid>
+
+        <div className="mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-8">
+          <p className="text-lg font-medium text-foreground">
+            "The difference is not the intelligence of the AI model. The difference is whether the model has the semantic context it needs to translate intent into correct action."
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">— Markus Demirci, CEO of Rollio</p>
+        </div>
+      </Section>
+
       {/* ---------- Customer Stories ---------- */}
       <Section tone="default">
         <div className="max-w-2xl">
