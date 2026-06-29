@@ -23,7 +23,6 @@ import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as SolutionsOrderToCashRouteImport } from './routes/solutions.order-to-cash'
 import { Route as SolutionsItsmRouteImport } from './routes/solutions.itsm'
 import { Route as SolutionsFinanceRouteImport } from './routes/solutions.finance'
@@ -104,11 +103,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => BlogRoute,
-} as any)
 const SolutionsOrderToCashRoute = SolutionsOrderToCashRouteImport.update({
   id: '/solutions/order-to-cash',
   path: '/solutions/order-to-cash',
@@ -184,7 +178,6 @@ export interface FileRoutesByFullPath {
   '/solutions/finance': typeof SolutionsFinanceRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
-  '/blog/': typeof BlogIndexRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
 }
@@ -193,6 +186,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -208,7 +202,6 @@ export interface FileRoutesByTo {
   '/solutions/finance': typeof SolutionsFinanceRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
-  '/blog': typeof BlogIndexRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
 }
@@ -236,7 +229,6 @@ export interface FileRoutesById {
   '/solutions/finance': typeof SolutionsFinanceRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/order-to-cash': typeof SolutionsOrderToCashRoute
-  '/blog/': typeof BlogIndexRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_authenticated/admin/posts/$id': typeof AuthenticatedAdminPostsIdRoute
 }
@@ -264,7 +256,6 @@ export interface FileRouteTypes {
     | '/solutions/finance'
     | '/solutions/itsm'
     | '/solutions/order-to-cash'
-    | '/blog/'
     | '/admin/'
     | '/admin/posts/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -273,6 +264,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-co-workers'
     | '/auth'
+    | '/blog'
     | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
@@ -288,7 +280,6 @@ export interface FileRouteTypes {
     | '/solutions/finance'
     | '/solutions/itsm'
     | '/solutions/order-to-cash'
-    | '/blog'
     | '/admin'
     | '/admin/posts/$id'
   id:
@@ -315,7 +306,6 @@ export interface FileRouteTypes {
     | '/solutions/finance'
     | '/solutions/itsm'
     | '/solutions/order-to-cash'
-    | '/blog/'
     | '/_authenticated/admin/'
     | '/_authenticated/admin/posts/$id'
   fileRoutesById: FileRoutesById
@@ -443,13 +433,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof BlogRoute
-    }
     '/solutions/order-to-cash': {
       id: '/solutions/order-to-cash'
       path: '/solutions/order-to-cash'
@@ -549,12 +532,10 @@ const AuthenticatedRouteRouteWithChildren =
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
-  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
-  BlogIndexRoute: BlogIndexRoute,
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
