@@ -286,25 +286,19 @@ function SemanticArchitecture() {
       n: "01",
       question: "What's relevant?",
       title: "Semantic Index",
-      body: "Every ERP field — KUNNR, VBELN, ERDAT — gets a plain-language business description generated automatically. The agent now knows that KUNNR is a customer account number tied to a credit limit, not an opaque key. No manual data dictionaries. No months of documentation work.",
-      color: "rgba(99,102,241,0.15)",
-      border: "rgba(99,102,241,0.4)",
+      body: "Every ERP field — KUNNR, VBELN, ERDAT — gets an auto-generated plain-language description. The agent now knows KUNNR is a customer account tied to a credit limit, not an opaque key. No manual data dictionaries. No months of documentation.",
     },
     {
       n: "02",
       question: "What's related?",
       title: "Knowledge Graph",
-      body: "Structural foreign keys tell you where data links. Semantic edges tell you why it matters. The Knowledge Graph connects a credit block to the open invoice, the invoice to the email dispute, and the dispute to the key account manager — relationships no schema can express.",
-      color: "rgba(0,185,166,0.12)",
-      border: "rgba(0,185,166,0.35)",
+      body: "Structural foreign keys tell you where data links. Semantic edges tell you why it matters. The Knowledge Graph connects a credit block to the open invoice, the invoice to the email dispute, and the dispute to the account manager — relationships no schema can express.",
     },
     {
       n: "03",
       question: "How to compute?",
       title: "Progressive Skills",
-      body: "Instead of stuffing a context window with every schema doc and policy PDF, Progressive Skills inject only the rules, calculations, and business logic the agent needs for this specific task. Precise context, not a data dump — so agents stay fast and accurate at scale.",
-      color: "rgba(139,92,246,0.12)",
-      border: "rgba(139,92,246,0.35)",
+      body: "Instead of flooding the context window with schema docs and policy PDFs, Progressive Skills inject only the rules and logic the agent needs for this specific task. Precise context, not a data dump — so agents stay fast and accurate at enterprise scale.",
     },
   ];
 
@@ -327,26 +321,19 @@ function SemanticArchitecture() {
           {layers.map((layer, i) => (
             <div
               key={layer.n}
-              className="relative rounded-2xl border p-8 opacity-0 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-              style={{
-                backgroundColor: layer.color,
-                borderColor: layer.border,
-                ...(inView
+              className="rounded-2xl border border-accent/25 bg-accent/5 p-8 opacity-0 transition-all duration-300 hover:-translate-y-2 hover:border-accent/50 hover:shadow-xl"
+              style={
+                inView
                   ? {
                       animation: `scaleIn 0.7s cubic-bezier(0.34,1.56,0.64,1) ${0.15 * (i + 1)}s forwards`,
                     }
-                  : {}),
-              }}
+                  : undefined
+              }
             >
-              <p
-                className="text-[10px] font-bold uppercase tracking-[0.2em]"
-                style={{ color: "var(--accent)" }}
-              >
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
                 Layer {layer.n}
               </p>
-              <p
-                className="mt-1 text-xs font-semibold italic text-muted-foreground"
-              >
+              <p className="mt-1 text-xs italic text-muted-foreground">
                 "{layer.question}"
               </p>
               <h3 className="mt-4 font-display text-xl font-bold tracking-tight">
@@ -359,9 +346,9 @@ function SemanticArchitecture() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-accent/20 bg-accent/5 p-8 text-center">
+        <div className="mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-6 text-center">
           <p className="text-base font-medium text-foreground">
-            Together, these three layers transform raw enterprise data into something AI agents can actually reason about — and act on.
+            Together, these three layers transform raw enterprise data into something AI agents can reason about — and act on.
           </p>
         </div>
       </div>
