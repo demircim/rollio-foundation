@@ -175,10 +175,10 @@ function OrderToCashPage() {
             <h2>Your ERP lacks the context to automate.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                Standard RPA bots and SAP workflows fail when exceptions occur because they cannot read unstructured data. When a price mismatch or missing PO reference happens, the automation stops.
+                AI agents can only execute on data they understand. In Order-to-Cash, that creates two compounding problems: the structured data in your ERP is context-free — fields without relationships, transactions without ownership, purchase orders without the approval threads that created them. And 80% of the actual business context — the vendor email dispute, the credit hold conversation, the approval that resolved the exception — exists entirely outside your ERP.
               </p>
               <p>
-                Your finance team spends hours manually digging through email threads to find the context, reconciling it with the ERP, and chasing vendors. The result: bloated DSO (Days Sales Outstanding), missed early-payment discounts, and a scaling wall for your back-office.
+                When an exception occurs, the agent sees the mismatch in the system but not the resolution thread in the inbox. Without both layers, automation stops — and your finance team spends hours manually digging through emails to find the context, chasing vendors, and pushing DSO higher with every cycle.
               </p>
             </div>
           </div>
