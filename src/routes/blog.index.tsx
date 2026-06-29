@@ -33,17 +33,12 @@ export const Route = createFileRoute("/blog/")({
 
 function BlogIndexPage() {
   const posts = useSuspenseQuery(postsQuery).data;
-
   return (
     <Section tone="default">
-      <div className="max-w-2xl">
-        <CardEyebrow>Latest Insights</CardEyebrow>
-        <h2>Engineering notes &amp; case studies.</h2>
-      </div>
       {posts.length === 0 ? (
-        <p className="mt-8 text-muted-foreground">No posts yet. Check back soon.</p>
+        <p className="text-muted-foreground">No posts yet. Check back soon.</p>
       ) : (
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}
