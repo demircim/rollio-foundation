@@ -165,7 +165,7 @@ function Home() {
               Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg text-surface-light/75 md:text-xl">
-              Bridges your ERP, your processes, and the unstructured context between them — so AI agents can execute real work, end-to-end.
+              AI agents are only as powerful as the data they can understand. Rollio makes your entire enterprise — structured ERP systems and the unstructured 80% in emails, approvals, and chat — readable, contextual, and executable.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
