@@ -22,7 +22,7 @@ const nav: NavItem[] = [
     ],
   },
   { kind: "link", label: "Platform Engine", href: "/how-it-works", typed: true },
-  { kind: "link", label: "Insights", href: "/blog", typed: true },
+  { kind: "link", label: "Insights", href: "https://www.rollio.ai/blog", typed: false },
   {
     kind: "menu",
     label: "Company",
