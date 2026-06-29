@@ -3,7 +3,7 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { Section } from "@/components/section";
 import { CardEyebrow } from "@/components/card";
 import { BlogCard } from "@/components/blog-card";
-import { breadcrumbListLd } from "@/lib/seo";
+import { buildSeo, breadcrumbListLd } from "@/lib/seo";
 import { listPublishedPosts } from "@/lib/blog.functions";
 
 const postsQuery = queryOptions({
@@ -13,17 +13,19 @@ const postsQuery = queryOptions({
 
 export const Route = createFileRoute("/blog/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(postsQuery),
-  head: () => ({
-    meta: [],
-    links: [],
-    scripts: [],
-    jsonLd: [
-      breadcrumbListLd([
-        { name: "Home", path: "/" },
-        { name: "Insights", path: "/blog" },
-      ]),
-    ],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/blog",
+      title: "Insights & Resources — Rollio Blog",
+      description:
+        "Articles on enterprise AI automation, Order-to-Cash, agentic workflows, and the Contextual Data Engine. From the Rollio team.",
+      jsonLd: [
+        breadcrumbListLd([
+          { name: "Home", path: "/" },
+          { name: "Insights", path: "/blog" },
+        ]),
+      ],
+    }),
   component: BlogIndexPage,
   errorComponent: BlogIndexError,
   notFoundComponent: BlogIndexNotFound,
