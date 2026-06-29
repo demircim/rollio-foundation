@@ -17,6 +17,7 @@ import { Route as PilotConsultationRouteImport } from './routes/pilot-consultati
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
 import { Route as CareersRouteImport } from './routes/careers'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
 import { Route as AboutRouteImport } from './routes/about'
@@ -74,6 +75,11 @@ const CareersRoute = CareersRouteImport.update({
   path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -99,9 +105,9 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
 } as any)
 const SolutionsOrderToCashRoute = SolutionsOrderToCashRouteImport.update({
   id: '/solutions/order-to-cash',
@@ -135,9 +141,9 @@ const CaseStudiesCampariRoute = CaseStudiesCampariRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
-  getParentRoute: () => rootRouteImport,
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
@@ -161,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -212,6 +219,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
+  '/blog': typeof BlogRouteWithChildren
   '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -239,6 +247,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-co-workers'
     | '/auth'
+    | '/blog'
     | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
@@ -289,6 +298,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-co-workers'
     | '/auth'
+    | '/blog'
     | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
@@ -316,6 +326,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AiCoWorkersRoute: typeof AiCoWorkersRoute
   AuthRoute: typeof AuthRoute
+  BlogRoute: typeof BlogRouteWithChildren
   CareersRoute: typeof CareersRoute
   ConsultationBookingRoute: typeof ConsultationBookingRoute
   HowItWorksRoute: typeof HowItWorksRoute
@@ -324,14 +335,12 @@ export interface RootRouteChildren {
   SecurityRoute: typeof SecurityRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
-  BlogSlugRoute: typeof BlogSlugRoute
   CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
   CaseStudiesWesternSouthernRoute: typeof CaseStudiesWesternSouthernRoute
   SolutionsClaimsRoute: typeof SolutionsClaimsRoute
   SolutionsFinanceRoute: typeof SolutionsFinanceRoute
   SolutionsItsmRoute: typeof SolutionsItsmRoute
   SolutionsOrderToCashRoute: typeof SolutionsOrderToCashRoute
-  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -392,6 +401,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -429,10 +445,10 @@ declare module '@tanstack/react-router' {
     }
     '/blog/': {
       id: '/blog/'
-      path: '/blog'
+      path: '/'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/solutions/order-to-cash': {
       id: '/solutions/order-to-cash'
@@ -478,10 +494,10 @@ declare module '@tanstack/react-router' {
     }
     '/blog/$slug': {
       id: '/blog/$slug'
-      path: '/blog/$slug'
+      path: '/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/_authenticated/admin': {
       id: '/_authenticated/admin'
@@ -531,12 +547,25 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AiCoWorkersRoute: AiCoWorkersRoute,
   AuthRoute: AuthRoute,
+  BlogRoute: BlogRouteWithChildren,
   CareersRoute: CareersRoute,
   ConsultationBookingRoute: ConsultationBookingRoute,
   HowItWorksRoute: HowItWorksRoute,
@@ -545,14 +574,12 @@ const rootRouteChildren: RootRouteChildren = {
   SecurityRoute: SecurityRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
-  BlogSlugRoute: BlogSlugRoute,
   CaseStudiesCampariRoute: CaseStudiesCampariRoute,
   CaseStudiesWesternSouthernRoute: CaseStudiesWesternSouthernRoute,
   SolutionsClaimsRoute: SolutionsClaimsRoute,
   SolutionsFinanceRoute: SolutionsFinanceRoute,
   SolutionsItsmRoute: SolutionsItsmRoute,
   SolutionsOrderToCashRoute: SolutionsOrderToCashRoute,
-  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
