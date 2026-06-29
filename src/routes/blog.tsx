@@ -1,16 +1,8 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { Section } from "@/components/section";
 import { CardEyebrow } from "@/components/card";
-import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog")({
-  head: () =>
-    buildSeo({
-      path: "/blog",
-      title: "Insights & Resources — Rollio Blog",
-      description:
-        "Articles on enterprise AI automation, Order-to-Cash, agentic workflows, and the Contextual Data Engine. From the Rollio team.",
-    }),
   component: BlogLayout,
 });
 
