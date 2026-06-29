@@ -12,7 +12,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "Does Rollio work with our ticketing system?",
     answer:
-      "Yes. Ready-made connections to ServiceNow, Jira Service Management, Zendesk, Freshservice, and the major IT platforms. Rollio reads and writes through the connections you already use — your ticketing system stays the system of record.",
+      "Yes. Ready-made connections to Celonis, ServiceNow, Jira Service Management, and other major IT platforms. Rollio reads and writes through the connections you already use — your ticketing system stays the system of record.",
   },
   {
     question: "What tickets can Rollio resolve on its own?",
