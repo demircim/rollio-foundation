@@ -174,10 +174,10 @@ function FinancePage() {
             <h2>Your ERP cannot read unstructured context.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                Standard RPA and ERP automation breaks the moment a transaction doesn't perfectly match. A missing PO reference, an FX rounding difference, or a disputed invoice requires context that your general ledger simply doesn't have.
+                AI agents can only work with data they understand. In Finance and Accounting, that creates two compounding problems: your GL entries and ERP transactions are context-free — debits and credits without supporting logic, accruals without the contract clauses behind them, variances without the approval emails that authorized them. And the supporting documentation — PDFs, email confirmations, Excel schedules — exists entirely outside your ERP.
               </p>
               <p>
-                Highly skilled accountants spend 60% of their month doing manual detective work: digging through email chains to verify discrepancies, copy-pasting data into Excel for reconciliation, and drafting manual journal entries. This burns capital, delays the month-end close, and creates compliance risks.
+                When a reconciliation exception occurs, the agent sees the number but not the reason behind it. Without both layers, automation stops — and skilled accountants spend 60% of their month manually digging through email chains to find context, copy-pasting into Excel, and drafting journal entries by hand.
               </p>
             </div>
           </div>
