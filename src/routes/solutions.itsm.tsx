@@ -174,10 +174,10 @@ function ITSMPage() {
             <h2>Standard IT automation cannot read human context.</h2>
             <div className="mt-6 space-y-5 text-lg text-muted-foreground">
               <p>
-                Your users don't submit perfectly formatted requests; they write natural language. Because standard workflows and RPA bots cannot understand unstructured text, automation breaks at step one. Your ticketing system becomes an expensive routing tool.
+                AI agents can only act on data they understand. In IT service management, that creates two compounding problems: tickets are written in natural language — intent, urgency, and user context that no structured CMDB field can capture. And the supporting data that gives a ticket meaning — configuration history, recent change records, prior incident resolutions — is scattered across systems that aren't connected to your ticketing tool.
               </p>
               <p>
-                Highly paid engineers spend 60% of their day reading tickets, manually verifying identity and access data, and executing routine fixes (like password resets or VPN access). Volume outpaces headcount, resulting in bloated MTTR (Mean Time to Resolution) and frustrated users.
+                When a request arrives, the agent sees what the user typed but not the environment behind it. Without full context, automation stops at routing — and highly paid engineers spend 60% of their day manually gathering the picture before they can even begin to resolve the issue.
               </p>
             </div>
           </div>
