@@ -288,7 +288,7 @@ function Home() {
               "Collaboration Agent will enhance our operational efficiency and improve transparency."
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              Laura Buseghin · Global Director Process Optimization &amp; Automation, Campari Group
+              Laura Buseghin · Process Optimization &amp; Automation Director, Campari Group
             </p>
             <div className="mt-auto pt-8">
               <a
