@@ -54,6 +54,11 @@ const HOME_FAQS: { question: string; answer: string }[] = [
       "Rollio adapts on its own. Old-style automation needs manual rule updates and breaks until they're done. Rollio keeps running within the rules you set, learns the new pattern, updates its understanding, and escalates only when a change requires human approval.",
   },
   {
+    question: "How is Rollio different from SAP Business AI, Salesforce Agentforce, or Celonis?",
+    answer:
+      "SAP, Salesforce, and Celonis are all building toward deeper AI capabilities — with realistic production-ready timelines for most enterprise customers in 2027–2028. Rollio is a semantic intelligence layer that works on top of what you already own, right now. No data migration, no source system changes. You don't wait for your vendor's roadmap — you deploy in weeks and have agents operating against business-ready context before your vendor ships their next major release.",
+  },
+  {
     question: "Who should we talk to first?",
     answer:
       "Schedule a 30-minute consultation with our outcomes team. We'll talk through your top business challenges, the outcomes that matter most, which processes to prioritize, your timeline, and how Rollio can prove value quickly without disrupting the systems you already use.",
