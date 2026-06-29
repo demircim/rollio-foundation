@@ -92,8 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Enterprise automation that scales — Order to Cash, Finance, Claims, and ITSM.",
       },
-      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://www.rollio.ai/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://www.rollio.ai/og-image.png" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
