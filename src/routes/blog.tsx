@@ -24,10 +24,8 @@ function BlogLayout() {
           }}
         />
         <div className="relative z-10 max-w-2xl">
-          <CardEyebrow>Insights &amp; Resources</CardEyebrow>
-          <h1 className="mt-4 text-balance text-surface-light">
-            Enterprise AI. In Practice.
-          </h1>
+          <CardEyebrow>Insights</CardEyebrow>
+          <h1 className="mt-4 text-balance text-surface-light">Enterprise AI. In Practice.</h1>
           <p className="mt-6 text-lg text-surface-light/80">
             Articles on agentic workflows, Order-to-Cash automation, the Contextual Data Engine, and what it really takes to deploy AI at enterprise scale.
           </p>
