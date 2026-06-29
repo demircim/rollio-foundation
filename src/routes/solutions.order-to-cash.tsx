@@ -87,8 +87,8 @@ const workflows = [
       "Weigh discount vs cash flow",
       "Recommend and act",
     ],
-    before: "Missed discounts",
-    after: "Capture $X / year",
+    before: "Discounts missed or overlooked",
+    after: "Capture early-payment discounts",
   },
 ];
 
