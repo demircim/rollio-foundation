@@ -22,7 +22,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "Does Rollio work with our procurement system (SAP, Ariba, Coupa)?",
     answer:
-      "Yes. Ready-made connections to SAP S/4HANA and ECC, Ariba, Coupa, Oracle, NetSuite, and the major e-invoicing networks. Typical integration: 2–3 weeks. Rollio reads and writes through the connectors you already have.",
+      "Yes. Ready-made connections to Celonis, SAP, Ariba, and the major e-invoicing networks. Typical integration: 2–3 weeks. Rollio reads and writes through the connectors you already have.",
   },
   {
     question: "What about contract edge cases — discounts, rebates, special terms?",
