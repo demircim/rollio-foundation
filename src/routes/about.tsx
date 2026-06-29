@@ -142,6 +142,12 @@ function AboutPage() {
             <p>
               We built the Contextual Data Engine to change this. It doesn't just pass raw tables to an agent — it translates structured systems and unstructured communications into relational, contextual data that AI agents can actually understand and act on. That's the missing layer. That's Rollio.
             </p>
+            <p>
+              And because enterprise processes are never static — policies change, exceptions evolve, new systems come online — the Contextual Data Engine continuously adapts. It detects shifts automatically, updates its understanding, and keeps agents operating on the current version of your business reality. Not the version from your last implementation project.
+            </p>
+            <p>
+              SAP, Salesforce, and Celonis are all building toward this vision. Their roadmaps are compelling. Their production-ready timelines are 2027–2028. Rollio exists today. Enterprises that need AI agents executing real work right now don't have to wait for their vendor's next major release — they can deploy in weeks and see outcomes in the first 30 days.
+            </p>
           </div>
         </div>
       </Section>
