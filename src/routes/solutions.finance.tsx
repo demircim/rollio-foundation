@@ -12,7 +12,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "Will Rollio replace our ERP or accounting system?",
     answer:
-      "No. Rollio works on top of SAP, NetSuite, Oracle, Workday, Microsoft Dynamics, and the spreadsheets your team already uses. Your ERP stays the system of record; Rollio reads and writes through the connectors you already have.",
+      "No. Rollio works on top of Celonis, SAP, Microsoft Dynamics, etc, and the spreadsheets your team already uses. Your ERP stays the system of record; Rollio reads and writes through the connectors you already have.",
   },
   {
     question: "How does Rollio handle reconciliation exceptions?",
