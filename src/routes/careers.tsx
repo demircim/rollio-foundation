@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   Briefcase,
@@ -24,8 +24,6 @@ const PAGE_PATH = "/careers";
 const PAGE_TITLE = "Careers at Rollio | Build the Future of Agentic AI";
 const PAGE_DESCRIPTION =
   "Join Rollio's remote-first team to build AI Agents that transform enterprise operations. Open roles in AI engineering, LLM systems, and data infrastructure. Remote · New York HQ.";
-
-// ---------- Content ----------
 
 const whyCards = [
   {
@@ -60,17 +58,6 @@ const cultureCards = [
   },
 ];
 
-const techGroups: { label: string; items: string[] }[] = [
-  { label: "Frontend", items: ["TypeScript", "React", "React Native"] },
-  { label: "Backend", items: ["Python", "FastAPI", "Node.js"] },
-  { label: "AI", items: ["LlamaIndex", "RAG", "Qdrant", "LiteLLM"] },
-  { label: "Data", items: ["PostgreSQL", "Redis", "DynamoDB"] },
-  {
-    label: "Infrastructure",
-    items: ["AWS (Lambda, Step Functions)", "Kubernetes", "Docker"],
-  },
-];
-
 type Role = {
   id: string;
   title: string;
@@ -88,60 +75,42 @@ const roles: Role[] = [
     title: "AI & Software Engineer (Python / LLM)",
     badge: "Remote · Full-time",
     level: "Junior / Senior",
-    apply:
-      "mailto:jobs@rollio.ai?subject=Job%20Application%20AI%20Engineer%20Remote",
-    whatYoullDo:
-      "Design, implement, and deploy AI systems using LLMs, RAG, and foundation models. Write unit-tested, maintainable code. Implement and evaluate LLM applications with clear success metrics. Stay current with the latest in AI.",
-    mustHave:
-      "2+ years Python (or TypeScript). Understanding of ML concepts. Experience with LLM APIs (OpenAI, Anthropic, etc.). Exposure to RAG and vector databases. Familiarity with agentic frameworks (LlamaIndex, LangChain). Strong problem-solving in a collaborative environment. Degree in CS/Engineering/AI or equivalent.",
-    niceToHave:
-      "AWS (Lambda, DynamoDB, Step Functions). FastAPI. Distributed systems. LLM observability/monitoring. Async Python. JavaScript/TypeScript. Production AI systems. Agile.",
+    apply: "mailto:jobs@rollio.ai?subject=Job%20Application%20AI%20Engineer%20Remote",
+    whatYoullDo: "Design, implement, and deploy AI systems using LLMs, RAG, and foundation models. Write unit-tested, maintainable code. Implement and evaluate LLM applications with clear success metrics. Stay current with the latest in AI.",
+    mustHave: "2+ years Python (or TypeScript). Understanding of ML concepts. Experience with LLM APIs (OpenAI, Anthropic, etc.). Exposure to RAG and vector databases. Familiarity with agentic frameworks (LlamaIndex, LangChain). Strong problem-solving in a collaborative environment. Degree in CS/Engineering/AI or equivalent.",
+    niceToHave: "AWS (Lambda, DynamoDB, Step Functions). FastAPI. Distributed systems. LLM observability/monitoring. Async Python. JavaScript/TypeScript. Production AI systems. Agile.",
   },
   {
     id: "ai-engineer-spain",
     title: "AI Engineer — Spain (Remote)",
     badge: "Remote · Spain-eligible · Full-time",
     level: "Semi-Senior / Senior",
-    apply:
-      "mailto:jobs@rollio.ai?subject=Job%20Application%20AI%20Engineer%20Hybrid",
-    whatYoullDo:
-      "Design, implement, and deploy AI systems using LLMs, RAG, and foundation models. Write unit-tested, maintainable code. Implement and evaluate LLM applications with clear success metrics. Stay current with the latest in AI.",
-    mustHave:
-      "3+ years Python, production apps. Strong ML understanding. LLM API experience. Hands-on RAG and vector DB. Agentic frameworks. Problem-solving. Degree or equivalent. Good English.",
-    niceToHave:
-      "AWS, FastAPI, distributed systems, LLM observability, async Python, JS/TS, production AI, agile, mentoring.",
+    apply: "mailto:jobs@rollio.ai?subject=Job%20Application%20AI%20Engineer%20Hybrid",
+    whatYoullDo: "Design, implement, and deploy AI systems using LLMs, RAG, and foundation models. Write unit-tested, maintainable code. Implement and evaluate LLM applications with clear success metrics. Stay current with the latest in AI.",
+    mustHave: "3+ years Python, production apps. Strong ML understanding. LLM API experience. Hands-on RAG and vector DB. Agentic frameworks. Problem-solving. Degree or equivalent. Good English.",
+    niceToHave: "AWS, FastAPI, distributed systems, LLM observability, async Python, JS/TS, production AI, agile, mentoring.",
   },
   {
     id: "ai-engineer-remote",
     title: "AI Engineer (Remote)",
     badge: "Remote · Full-time",
     level: "Semi-Senior / Senior",
-    apply:
-      "mailto:jobs@rollio.ai?subject=Job%20Application%20AI%20Engineer%20Remote",
-    whatYoullDo:
-      "Design, implement, and deploy AI systems using LLMs, RAG, and foundation models. Write unit-tested, maintainable code. Implement and evaluate LLM applications with clear success metrics. Stay current with the latest in AI.",
-    mustHave:
-      "3+ years Python, production apps. Strong ML understanding. LLM API experience. Hands-on RAG and vector DB. Agentic frameworks. Problem-solving. Degree or equivalent. Good English.",
-    niceToHave:
-      "AWS, FastAPI, distributed systems, LLM observability, async Python, JS/TS, production AI, agile, mentoring.",
+    apply: "mailto:jobs@rollio.ai?subject=Job%20Application%20AI%20Engineer%20Remote",
+    whatYoullDo: "Design, implement, and deploy AI systems using LLMs, RAG, and foundation models. Write unit-tested, maintainable code. Implement and evaluate LLM applications with clear success metrics. Stay current with the latest in AI.",
+    mustHave: "3+ years Python, production apps. Strong ML understanding. LLM API experience. Hands-on RAG and vector DB. Agentic frameworks. Problem-solving. Degree or equivalent. Good English.",
+    niceToHave: "AWS, FastAPI, distributed systems, LLM observability, async Python, JS/TS, production AI, agile, mentoring.",
   },
   {
     id: "data-engineer",
     title: "Data Engineer (Remote)",
     badge: "Remote · Full-time",
     level: "Junior / Mid-Level",
-    apply:
-      "mailto:jobs@rollio.ai?subject=Job%20Application%20Data%20Engineer%20Remote",
-    whatYoullDo:
-      "Design and maintain scalable data pipelines and infrastructure. Build data models for PostgreSQL and DynamoDB. Ensure data quality for AI and backend teams. Optimize storage and retrieval. Implement data monitoring.",
-    mustHave:
-      "3+ years as Data Engineer, production-grade systems. Python. PostgreSQL + NoSQL (DynamoDB). ETL/ELT pipelines. Data warehousing. Cloud infrastructure (AWS). Degree or equivalent. Good English.",
-    niceToHave:
-      "Docker/Kubernetes. Infrastructure-as-code (Terraform, CDK). Redis. Data streaming (Kafka, Kinesis). Startup experience. Agile. MLOps/LLMOps interest.",
+    apply: "mailto:jobs@rollio.ai?subject=Job%20Application%20Data%20Engineer%20Remote",
+    whatYoullDo: "Design and maintain scalable data pipelines and infrastructure. Build data models for PostgreSQL and DynamoDB. Ensure data quality for AI and backend teams. Optimize storage and retrieval. Implement data monitoring.",
+    mustHave: "3+ years as Data Engineer, production-grade systems. Python. PostgreSQL + NoSQL (DynamoDB). ETL/ELT pipelines. Data warehousing. Cloud infrastructure (AWS). Degree or equivalent. Good English.",
+    niceToHave: "Docker/Kubernetes. Infrastructure-as-code (Terraform, CDK). Redis. Data streaming (Kafka, Kinesis). Startup experience. Agile. MLOps/LLMOps interest.",
   },
 ];
-
-// ---------- Route ----------
 
 export const Route = createFileRoute("/careers")({
   head: () =>
@@ -162,7 +131,7 @@ export const Route = createFileRoute("/careers")({
 function CareersPage() {
   return (
     <>
-      {/* ---------- Hero (DARK) ---------- */}
+      {/* Hero (DARK) */}
       <Section
         as="header"
         tone="dark"
@@ -202,7 +171,7 @@ function CareersPage() {
         </div>
       </Section>
 
-      {/* ---------- Why Rollio ---------- */}
+      {/* Why Rollio (MUTED) */}
       <Section tone="muted">
         <div className="max-w-2xl">
           <CardEyebrow>Why Rollio</CardEyebrow>
@@ -218,7 +187,7 @@ function CareersPage() {
         </Grid>
       </Section>
 
-      {/* ---------- Culture ---------- */}
+      {/* Culture (DEFAULT) */}
       <Section tone="default">
         <div className="max-w-2xl">
           <CardEyebrow>How we work</CardEyebrow>
@@ -237,35 +206,8 @@ function CareersPage() {
         </Grid>
       </Section>
 
-      {/* ---------- Tech Stack ---------- */}
-      <Section tone="muted">
-        <div className="max-w-2xl">
-          <CardEyebrow>Our tech</CardEyebrow>
-          <h2>What you'll work with.</h2>
-        </div>
-        <div className="mt-12 space-y-6">
-          {techGroups.map((g) => (
-            <div key={g.label} className="flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
-              <p className="w-40 shrink-0 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                {g.label}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {g.items.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-sm font-medium text-foreground"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* ---------- Open Roles ---------- */}
-      <Section tone="default" id="open-roles">
+      {/* Open Roles (MUTED) */}
+      <Section tone="muted" id="open-roles">
         <div className="max-w-2xl">
           <CardEyebrow>Open Roles</CardEyebrow>
           <h2>Current openings.</h2>
@@ -273,7 +215,6 @@ function CareersPage() {
             We're a remote-first team. All roles are open to candidates worldwide unless a specific region is noted.
           </p>
         </div>
-
         <div className="mt-12 rounded-2xl border border-border bg-card">
           <Accordion type="single" collapsible className="w-full">
             {roles.map((role) => (
@@ -311,8 +252,8 @@ function CareersPage() {
         </div>
       </Section>
 
-      {/* ---------- Not seeing your role ---------- */}
-      <Section tone="muted">
+      {/* Not seeing your role (DEFAULT) */}
+      <Section tone="default">
         <div className="mx-auto max-w-2xl text-center">
           <h2>Not seeing your role?</h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -328,8 +269,8 @@ function CareersPage() {
         </div>
       </Section>
 
-      {/* ---------- Office ---------- */}
-      <Section tone="default">
+      {/* Office (MUTED) */}
+      <Section tone="muted">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div className="max-w-xl">
             <CardEyebrow>Where we are</CardEyebrow>
@@ -342,19 +283,14 @@ function CareersPage() {
             <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
               <MapPin className="h-5 w-5" aria-hidden />
             </span>
-            <p className="mt-5 font-display text-lg font-semibold text-foreground">
-              Rollio HQ
-            </p>
+            <p className="mt-5 font-display text-lg font-semibold text-foreground">Rollio HQ</p>
             <p className="mt-2 text-muted-foreground">
               41 Flatbush Ave, Ste 232
               <br />
               Brooklyn, NY 11217
             </p>
             <p className="mt-4 text-sm">
-              <a
-                href="mailto:hello@rollio.ai"
-                className="font-medium text-accent hover:underline"
-              >
+              <a href="mailto:hello@rollio.ai" className="font-medium text-accent hover:underline">
                 hello@rollio.ai
               </a>
             </p>
@@ -362,7 +298,7 @@ function CareersPage() {
         </div>
       </Section>
 
-      {/* ---------- Closing CTA (DARK) ---------- */}
+      {/* Closing CTA (DARK) */}
       <Section
         tone="dark"
         className="relative overflow-hidden"
@@ -378,18 +314,14 @@ function CareersPage() {
         />
         <div className="relative z-10 flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
-            <h2 className="text-surface-light">
-              Ready to build the future of AI?
-            </h2>
+            <h2 className="text-surface-light">Ready to build the future of AI?</h2>
             <p className="mt-3 text-surface-light/75">
               Join a small team doing serious work. Apply today or reach out — we'd love to hear from you.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button variant="primary" size="lg" asChild>
-              <a href="#open-roles">
-                Browse Open Roles <ArrowRight />
-              </a>
+              <a href="#open-roles">Browse Open Roles <ArrowRight /></a>
             </Button>
             <Button variant="outline-light" size="lg" asChild>
               <a href="mailto:jobs@rollio.ai">Get in Touch</a>
@@ -412,9 +344,7 @@ function Chip({ children }: { children: React.ReactNode }) {
 function RoleField({ label, body }: { label: string; body: string }) {
   return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-        {label}
-      </p>
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">{label}</p>
       <p className="mt-2 text-foreground/90">{body}</p>
     </div>
   );
