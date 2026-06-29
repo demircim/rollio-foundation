@@ -54,6 +54,11 @@ const HOME_FAQS: { question: string; answer: string }[] = [
       "Rollio adapts on its own. Old-style automation needs manual rule updates and breaks until they're done. Rollio keeps running within the rules you set, learns the new pattern, updates its understanding, and escalates only when a change requires human approval.",
   },
   {
+    question: "How is Rollio different from SAP Business AI, Salesforce Agentforce, or Celonis?",
+    answer:
+      "SAP, Salesforce, and Celonis are all building toward deeper AI capabilities — with realistic production-ready timelines for most enterprise customers in 2027–2028. Rollio is a semantic intelligence layer that works on top of what you already own, right now. No data migration, no source system changes. You don't wait for your vendor's roadmap — you deploy in weeks and have agents operating against business-ready context before your vendor ships their next major release.",
+  },
+  {
     question: "Who should we talk to first?",
     answer:
       "Schedule a 30-minute consultation with our outcomes team. We'll talk through your top business challenges, the outcomes that matter most, which processes to prioritize, your timeline, and how Rollio can prove value quickly without disrupting the systems you already use.",
@@ -165,7 +170,7 @@ function Home() {
               Scale Your Business <span className="text-accent">Without Scaling Your Team.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg text-surface-light/75 md:text-xl">
-              Bridges your ERP, your processes, and the unstructured context between them — so AI agents can execute real work, end-to-end.
+              AI agents are only as powerful as the data they can understand. Rollio makes your entire enterprise — structured ERP systems and the unstructured 80% in emails, approvals, and chat — readable, contextual, and executable.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button variant="primary" size="lg" asChild>
@@ -223,6 +228,48 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Why Enterprise AI Pilots Fail ─────────────────── */}
+      <Section tone="muted">
+        <div className="max-w-2xl">
+          <CardEyebrow>The Enterprise AI Problem</CardEyebrow>
+          <h2>Why 74% of enterprise AI pilots never reach production.</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            The reason is almost never the model. It's the data. Enterprise AI agents can't act on data they can't understand — and most enterprise data falls into one of three traps.
+          </p>
+        </div>
+
+        <Grid cols={3} className="mt-12">
+          <Card variant="elevated">
+            <CardEyebrow>Failure Mode 01</CardEyebrow>
+            <CardTitle>Empty Metadata</CardTitle>
+            <CardBody>
+              SAP fields like KUNNR, VBELN, and ERDAT tell a database engineer where data lives. They tell an AI agent nothing. Fewer than 5% of enterprise ERP fields have any documented business description. Agents operating on raw schemas make confident-sounding mistakes.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardEyebrow>Failure Mode 02</CardEyebrow>
+            <CardTitle>The Invisible 80%</CardTitle>
+            <CardBody>
+              80% of enterprise business context lives in emails, chat, contracts, and approvals — not in database rows. The credit manager's email about a payment plan. The account manager's Slack flag about a relationship risk. AI agents built on structured data alone are blind to all of it.
+            </CardBody>
+          </Card>
+          <Card variant="elevated">
+            <CardEyebrow>Failure Mode 03</CardEyebrow>
+            <CardTitle>The Context Window Trap</CardTitle>
+            <CardBody>
+              Teams respond by stuffing prompts with schema docs and glossaries. It works in demos. In production, static context goes stale, consumes the context window, and breaks on edge cases the docs didn't anticipate. It cannot scale to an enterprise.
+            </CardBody>
+          </Card>
+        </Grid>
+
+        <div className="mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-8">
+          <p className="text-lg font-medium text-foreground">
+            "The difference is not the intelligence of the AI model. The difference is whether the model has the semantic context it needs to translate intent into correct action."
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">— Markus Demirci, CEO of Rollio</p>
+        </div>
+      </Section>
 
       {/* ---------- Customer Stories ---------- */}
       <Section tone="default">
