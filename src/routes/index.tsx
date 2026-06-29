@@ -46,7 +46,7 @@ const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "Can we start small and expand?",
     answer:
-      "Yes — it's what we recommend. Month 1–2: run a 30-day pilot on one high-impact process at a limited share of volume. Month 3–4: validate outcomes and expand to two or three related processes. Month 5 and beyond: scale to broader volume once the operating model is proven.",
+      "Yes — it's what we recommend. Run a pilot on one high-impact process at a limited share of volume. Validate outcomes and expand to two or three related processes. Scale to broader volume once the operating model is proven.",
   },
   {
     question: "What happens when our processes change?",
