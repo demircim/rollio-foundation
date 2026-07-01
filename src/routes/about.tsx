@@ -37,30 +37,26 @@ const values = [
 const pressLogos = [
   {
     name: "Salesforce",
-    src: "https://www.rollio.ai/wp-content/uploads/2024/03/Salesforce-Logo.png",
     href: "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FMkrnUAD",
   },
   {
     name: "Celonis",
-    src: "https://www.rollio.ai/wp-content/uploads/2024/03/PrimaryLogo-RGB-mono-black-1-300x150.png",
     href: "https://www.celonis.com/blog/what-ai-tools-do-businesses-use-today/",
   },
   {
     name: "IBM",
-    src: "https://www.rollio.ai/wp-content/uploads/2024/03/IBM.png",
     href: "https://www.salesforce.com/video/2520429/",
   },
   {
     name: "TechCrunch",
-    src: "https://www.rollio.ai/wp-content/uploads/2024/03/techcrunch-logo-B444826970-seeklogo-1.png",
     href: "https://techcrunch.com/2016/10/13/the-ai-disruption-wave/",
   },
   {
     name: "Wealth & Finance",
-    src: "https://www.rollio.ai/wp-content/uploads/2024/03/wealth-and-finance-logo-e1562611348703-1.png",
     href: "https://www.wealthandfinance-news.com/winners/rollio-2/",
   },
 ];
+
 
 function AboutPage() {
   return (
