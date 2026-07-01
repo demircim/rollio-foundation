@@ -38,6 +38,9 @@ const columns: Col[] = [
     links: [
       { href: "/privacy", label: "Privacy Policy", typed: true },
       { href: "/terms", label: "Terms of Service", typed: true },
+      { href: "/msa", label: "Master Service Agreement", typed: true },
+      { href: "/accessibility", label: "Accessibility", typed: true },
+      { href: "/vulnerability-disclosure-policy", label: "Vulnerability Disclosure", typed: true },
     ],
   },
 ];
