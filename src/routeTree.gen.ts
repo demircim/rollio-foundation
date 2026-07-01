@@ -9,17 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VulnerabilityDisclosurePolicyRouteImport } from './routes/vulnerability-disclosure-policy'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PilotConsultationRouteImport } from './routes/pilot-consultation'
+import { Route as MsaRouteImport } from './routes/msa'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as ConsultationBookingRouteImport } from './routes/consultation-booking'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AiCoWorkersRouteImport } from './routes/ai-co-workers'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
@@ -35,6 +38,12 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminPostsIdRouteImport } from './routes/_authenticated/admin.posts.$id'
 
+const VulnerabilityDisclosurePolicyRoute =
+  VulnerabilityDisclosurePolicyRouteImport.update({
+    id: '/vulnerability-disclosure-policy',
+    path: '/vulnerability-disclosure-policy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -58,6 +67,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PilotConsultationRoute = PilotConsultationRouteImport.update({
   id: '/pilot-consultation',
   path: '/pilot-consultation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MsaRoute = MsaRouteImport.update({
+  id: '/msa',
+  path: '/msa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -88,6 +102,11 @@ const AuthRoute = AuthRouteImport.update({
 const AiCoWorkersRoute = AiCoWorkersRouteImport.update({
   id: '/ai-co-workers',
   path: '/ai-co-workers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -165,17 +184,20 @@ const AuthenticatedAdminPostsIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/msa': typeof MsaRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/vulnerability-disclosure-policy': typeof VulnerabilityDisclosurePolicyRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -191,16 +213,19 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/msa': typeof MsaRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/vulnerability-disclosure-policy': typeof VulnerabilityDisclosurePolicyRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
   '/case-studies/western-southern': typeof CaseStudiesWesternSouthernRoute
@@ -217,17 +242,20 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/ai-co-workers': typeof AiCoWorkersRoute
   '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/careers': typeof CareersRoute
   '/consultation-booking': typeof ConsultationBookingRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/msa': typeof MsaRoute
   '/pilot-consultation': typeof PilotConsultationRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/vulnerability-disclosure-policy': typeof VulnerabilityDisclosurePolicyRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/campari': typeof CaseStudiesCampariRoute
@@ -245,17 +273,20 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/ai-co-workers'
     | '/auth'
     | '/blog'
     | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
+    | '/msa'
     | '/pilot-consultation'
     | '/privacy'
     | '/security'
     | '/sitemap.xml'
     | '/terms'
+    | '/vulnerability-disclosure-policy'
     | '/admin'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -271,16 +302,19 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/ai-co-workers'
     | '/auth'
     | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
+    | '/msa'
     | '/pilot-consultation'
     | '/privacy'
     | '/security'
     | '/sitemap.xml'
     | '/terms'
+    | '/vulnerability-disclosure-policy'
     | '/blog/$slug'
     | '/case-studies/campari'
     | '/case-studies/western-southern'
@@ -296,17 +330,20 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/about'
+    | '/accessibility'
     | '/ai-co-workers'
     | '/auth'
     | '/blog'
     | '/careers'
     | '/consultation-booking'
     | '/how-it-works'
+    | '/msa'
     | '/pilot-consultation'
     | '/privacy'
     | '/security'
     | '/sitemap.xml'
     | '/terms'
+    | '/vulnerability-disclosure-policy'
     | '/_authenticated/admin'
     | '/blog/$slug'
     | '/case-studies/campari'
@@ -324,17 +361,20 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
   AiCoWorkersRoute: typeof AiCoWorkersRoute
   AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRouteWithChildren
   CareersRoute: typeof CareersRoute
   ConsultationBookingRoute: typeof ConsultationBookingRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  MsaRoute: typeof MsaRoute
   PilotConsultationRoute: typeof PilotConsultationRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  VulnerabilityDisclosurePolicyRoute: typeof VulnerabilityDisclosurePolicyRoute
   CaseStudiesCampariRoute: typeof CaseStudiesCampariRoute
   CaseStudiesWesternSouthernRoute: typeof CaseStudiesWesternSouthernRoute
   SolutionsClaimsRoute: typeof SolutionsClaimsRoute
@@ -345,6 +385,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vulnerability-disclosure-policy': {
+      id: '/vulnerability-disclosure-policy'
+      path: '/vulnerability-disclosure-policy'
+      fullPath: '/vulnerability-disclosure-policy'
+      preLoaderRoute: typeof VulnerabilityDisclosurePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -378,6 +425,13 @@ declare module '@tanstack/react-router' {
       path: '/pilot-consultation'
       fullPath: '/pilot-consultation'
       preLoaderRoute: typeof PilotConsultationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/msa': {
+      id: '/msa'
+      path: '/msa'
+      fullPath: '/msa'
+      preLoaderRoute: typeof MsaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -420,6 +474,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-co-workers'
       fullPath: '/ai-co-workers'
       preLoaderRoute: typeof AiCoWorkersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -563,17 +624,20 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
   AiCoWorkersRoute: AiCoWorkersRoute,
   AuthRoute: AuthRoute,
   BlogRoute: BlogRouteWithChildren,
   CareersRoute: CareersRoute,
   ConsultationBookingRoute: ConsultationBookingRoute,
   HowItWorksRoute: HowItWorksRoute,
+  MsaRoute: MsaRoute,
   PilotConsultationRoute: PilotConsultationRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  VulnerabilityDisclosurePolicyRoute: VulnerabilityDisclosurePolicyRoute,
   CaseStudiesCampariRoute: CaseStudiesCampariRoute,
   CaseStudiesWesternSouthernRoute: CaseStudiesWesternSouthernRoute,
   SolutionsClaimsRoute: SolutionsClaimsRoute,
