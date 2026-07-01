@@ -200,33 +200,20 @@ function AboutPage() {
           <p className="mb-10 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             As seen in
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
-            {pressLogos.map((logo) =>
-              logo.href ? (
-                <a
-                  key={logo.name}
-                  href={logo.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={logo.name}
-                  className="opacity-50 transition-opacity hover:opacity-80"
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.name}
-                    className="h-7 w-auto max-w-[120px] object-contain grayscale"
-                  />
-                </a>
-              ) : (
-                <img
-                  key={logo.name}
-                  src={logo.src}
-                  alt={logo.name}
-                  className="h-7 w-auto max-w-[120px] object-contain grayscale opacity-50"
-                />
-              )
-            )}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 md:gap-x-10">
+            {pressLogos.map((logo) => (
+              <a
+                key={logo.name}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display text-base font-semibold tracking-tight text-muted-foreground/70 transition-colors hover:text-foreground md:text-lg"
+              >
+                {logo.name}
+              </a>
+            ))}
           </div>
+
         </div>
       </Section>
 
